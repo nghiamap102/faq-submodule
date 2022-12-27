@@ -1,0 +1,20 @@
+.buffer-size-control {
+    height: 29px;
+    width: 180px;
+    background: #fff;
+    border-radius: 3px;
+    line-height: 29px;
+    padding: 0 5px 0 5px;
+
+    .label {
+        width: 100px;
+        color: #303030;
+        font-weight: bold;
+    }
+
+    input {
+        text-align: center;
+        border: 1px solid #303030;
+    }
+}
+

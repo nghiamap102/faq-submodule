@@ -1,0 +1,24 @@
+.dropdown-action-button{
+    margin-right: 8px;
+}
+.map-location-expand-icon{
+    width: 2rem;
+    height: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    color: var(--text-color) !important;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .35);
+    
+}
+
+.map-location-control{
+   margin-bottom: 0.5rem;
+   
+   .form-control-column{
+       margin-bottom: unset;
+   }
+}

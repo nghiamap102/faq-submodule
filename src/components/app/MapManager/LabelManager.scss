@@ -1,0 +1,14 @@
+.label-item {
+    padding: 3px;
+    cursor: move;
+    border: 1px dotted white;
+    user-select: none;
+}
+
+.label-item span {
+    cursor: text;
+}
+
+.label-item.label-active {
+    border: 1px dotted orange;
+}

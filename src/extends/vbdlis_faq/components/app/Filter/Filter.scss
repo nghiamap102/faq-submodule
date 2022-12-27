@@ -1,0 +1,17 @@
+.filter {
+    .as-control-container {
+        max-height: 35px;
+        align-items: baseline;
+        overflow: hidden;
+    }
+    .select-container {
+        margin: 0 4px;
+        .as-control-container,
+        .as-container {
+            height: 100%;
+        }
+    }
+    .dropdown-btn-text{
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,17 @@
+.status-text {
+    &.good {
+        color: #00a65a;
+    }
+
+    &.bad {
+        color: #ffc107;
+    }
+
+    &.broken {
+        color: #ff253a;
+    }
+
+    &.no-data{
+        font-style: italic;
+    }
+}

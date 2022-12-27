@@ -1,0 +1,23 @@
+.selection-item {
+    align-items: center;
+    cursor: pointer;
+    padding: 0.5rem;
+    &.show:hover{
+        background-color: var(--contrast-light);
+    }
+    &.show.active {
+        background-color: white;
+        i{
+            color: var(--success-color) !important;
+        }
+    }
+    &.border-bottom{
+        border-bottom: 1px solid var(--border); 
+    }
+}
+.selection-item-text {
+    padding: 0 0 0 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    
+}

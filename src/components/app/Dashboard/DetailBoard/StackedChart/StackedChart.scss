@@ -1,0 +1,185 @@
+.wrapper-detail {
+    .chartjs-size-monitor {
+        position: initial;
+    }
+}
+
+.table-detail-chart {
+    width: calc(100% - 2rem);
+    text-align: center;
+    position: relative;
+    top: 0;
+    margin: 0.5rem 0;
+    border-collapse: collapse;
+
+    .legend-circle {
+        border-radius: 50%;
+        height: 1rem;
+        width: 1rem;
+        margin: 0.5rem;
+    }
+
+    tbody {
+        tr:hover {
+            background-color: rgba(29, 28, 28, 0.315);
+        }
+    }
+
+    td {
+        padding: 6px 0;
+        // padding-right: 12px;
+        max-width: 1px;
+        height: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    td {
+        color: var(--text-color);
+        border: 1px solid var(--border);
+    }
+
+    thead th {
+        position: sticky;
+        top: 0;
+        padding: 6px 0;
+    }
+
+    thead th:first-child {
+        left: 0;
+        z-index: 1;
+        background-color: var(--background-color);
+        opacity: 0.9;
+    }
+
+    tbody th {
+        position: sticky;
+        left: 0;
+        background-color: var(--background-color);
+        opacity: 0.9;
+    }
+}
+
+#chartjs-tooltip {
+    opacity: 1;
+    position: absolute;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border-radius: 6px;
+    transition: all 0.25s ease-in-out;
+    pointer-events: none;
+    border: 1px solid var(--popup-border);
+
+    table {
+        td, th {
+            padding: 3px 10px;
+        }
+
+        th {
+            font-weight: bolder;
+        }
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        margin: auto;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 6px;
+    }
+
+    &.top {
+        &.center:after {
+            border-bottom-color: var(--background-color);
+            top: -11px;
+            left: 0;
+            right: 0;
+        }
+
+        &.left:after {
+            border-bottom-color: var(--background-color);
+            left: 5px;
+            top: -11px;
+        }
+
+        &.right:after {
+            border-bottom-color: var(--background-color);
+            right: 5px;
+            top: -11px;
+        }
+    }
+
+    &.bottom {
+        &.center:after {
+            border-top-color: var(--background-color);
+            bottom: -11px;
+            right: 0;
+            left: 0;
+        }
+
+        &.left:after {
+            border-top-color: var(--background-color);
+            bottom: -11px;
+        }
+
+        &.right:after {
+            border-top-color: var(--background-color);
+            bottom: -11px;
+            right: 5px;
+        }
+    }
+
+    &.center {
+        &.left:after {
+            border-right-color: var(--background-color);
+            margin: auto;
+            left: -11px;
+            bottom: 0;
+            top: 0;
+        }
+
+        &.right:after {
+            border-left-color: var(--background-color);
+            margin: auto;
+            right: -11px;
+            bottom: 0;
+            top: 0;
+        }
+    }
+}
+
+.chartjs-tooltip-key {
+    display: inline-block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-right: 7px;
+}
+
+.detail-chart {
+    flex: 1;
+    //margin-top: 1rem;
+
+    .chartWrapper {
+        position: relative;
+
+        & > canvas {
+            position: absolute;
+            left: 0;
+            top: 0;
+            pointer-events: none;
+            background-color: var(--background-color);
+            opacity: 0.9;
+        }
+    }
+}
+

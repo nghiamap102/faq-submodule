@@ -1,0 +1,256 @@
+.ml-large-ui .ml-search-searchbox {
+    width: 360px;
+    left: 10px;
+    top: 10px;
+}
+
+.visible .ml-search-searchbox {
+    display: block;
+}
+
+.ml-search-searchbox-parent .ml-search-searchbox {
+    position: absolute;
+    z-index: 30;
+}
+
+.ml-search-searchbox {
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border: none;
+    transition: transform 0.3s, visibility 0.3s;
+    transform: translateY(0);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+}
+
+.ml-search-searchbox-top-content {
+    z-index: 31;
+    position: relative;
+
+    .ml-search-left-panel {
+        position: absolute;
+        top: 0;
+        width: 50px;
+    }
+
+    .ml-search-icon {
+        height: 30px;
+        padding: 8px;
+        cursor: pointer;
+        transition: opacity 0.3s;
+    }
+
+}
+
+.ml-search-searchbox-top-header {
+    width: 100%;
+    height: 33px;
+    border-bottom: 1px solid var(--border);
+
+    button {
+        box-sizing: content-box;
+        position: absolute;
+        cursor: pointer;
+
+        padding: 8px;
+        width: 24px;
+        height: 24px;
+
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+    }
+}
+
+.ml-search-button-left {
+    left: 0;
+    margin: 0 5px;
+}
+
+.ml-search-button-right {
+    right: 0;
+    margin: 0 5px;
+}
+
+.ml-search-label {
+    position: absolute;
+    vertical-align: middle;
+    left: 8px;
+    height: 33px;
+    line-height: 33px;
+    font-weight: 400;
+    color: #414141;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: default;
+    white-space: nowrap;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+// start .ml-search-waypoints
+.ml-search-waypoints-wrapper {
+    position: relative;
+    padding: 1rem 0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .1);
+    background: var(--contrast-light);
+
+    .ml-search-center-panel {
+        margin: 0 15px 0 15px;
+    }
+
+    .ml-search-right-panel {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 45px;
+    }
+
+}
+
+.ml-search-center-panel .ml-search-waypoints {
+
+    .ml-waypoint-searchbox {
+        margin: 0;
+        vertical-align: middle;
+        border: none;
+        background-color: transparent;
+        cursor: text;
+
+        input {
+            margin: 0;
+            width: 100%;
+            height: 2.5rem;
+            font-size: 1rem;
+            color: var(--text-color);
+
+            text-overflow: ellipsis;
+            padding: 0 40px 0 10px;
+            box-sizing: border-box;
+            border-radius: 20px;
+            outline: none;
+            background: var(--base-highlight);
+            border: 1px solid var(--border);
+            transition: all .3s;
+
+            &::placeholder {
+                color: var(--text-color-light);
+            }
+
+            &:focus {
+                background: var(--contrast-highlight);
+                border: 1px solid var(--primary-color);
+                color: var(--contrast-color);
+            }
+        }
+    }
+
+    .gsst_a {
+        position: absolute;
+        right: 0.25rem;
+        margin: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon-clearText {
+        cursor: pointer;
+        z-index: 100;
+        background: transparent;
+        border-radius: 50%;
+        color: var(--contrast-color);
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    .gsst_b {
+        padding: 0;
+        position: relative;
+        user-select: none;
+        white-space: nowrap;
+    }
+
+    .sbib_b {
+        box-sizing: border-box;
+        height: 100%;
+        overflow: hidden;
+        border: 0;
+        outline: none;
+        border-radius: 20px;
+    }
+
+    .sbib_c {
+        float: right;
+        line-height: 0;
+        display: table-cell;
+    }
+
+}
+
+.ml-search-right-panel {
+    button {
+        svg {
+            fill: rgba(255, 255, 255, 0.6);
+
+            &:hover {
+                fill: rgba(255, 255, 255, 0.8);
+            }
+
+            &.vbdicons_dele_point {
+                fill: rgba(255, 255, 255, 0.6);
+
+                &:hover {
+                    fill: rgba(255, 255, 255, 0.8);
+                }
+            }
+
+            &.vbdicons_add_point {
+                fill: var(--primary-color);
+
+                &:hover {
+                    fill: var(--prim-high);
+                }
+            }
+        }
+
+        &.ml-search-btn-close {
+            height: 40px;
+            padding: 8px 16px;
+            cursor: pointer;
+        }
+    }
+}
+
+// end.style.div.ml-search-RIGHT-panel
+
+.ml-icon.ml-icon-back.ml-icon-white-variant {
+    background-image: url(//maps.gstatic.com/mapfiles/maps_lite/images/2x/ic_arrow_right_white_24dp.png);
+}
+
+.ml-icon.ml-icon-settings-dots.ml-icon-white-variant {
+    background-image: url(https://maps.gstatic.com/mapfiles/maps_lite/images/2x/ic_menu_white_24dp.png);
+}
+
+.ml-search-searchbox .sbcb_a, .ml-icon {
+    display: inline-block;
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+    margin: auto;
+
+}
+
+.ml-search-searchbox .sbcb_a {
+    color: transparent !important;
+    position: relative;
+}

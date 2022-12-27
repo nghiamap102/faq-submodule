@@ -1,0 +1,58 @@
+.modeColor {
+    .breadcrumb-item {
+        background-color: var(--bg-color-primary2);
+        padding: 0 10px 0 5px;
+        margin-right: 23px;
+        position: relative;
+        line-height: 30px;
+        text-transform: capitalize;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            border: 0 solid var(--bg-color-primary2);
+            border-width: 15px 10px;
+            left: 100%;
+            border-color: transparent;
+            border-left-color: var(--bg-color-primary2);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -20px;
+            border: 0 solid var(--bg-color-primary2);
+            border-width: 15px 10px;
+            border-left-color: transparent;
+        }
+    }
+    .breadcrumb-item:first-child {
+        padding-left: 10px;
+        &::before {
+            display: none;
+        }
+    }
+}
+.noMode {
+    .breadcrumb-item {
+        position: relative;
+        text-transform: capitalize;
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-right: 20px;
+        &::before {
+            content: ">";
+            position: absolute;
+            top: 50%;
+            left: -8%;
+            transform: translateY(-50%);
+            font-size: 12px;
+        }
+    }
+    .breadcrumb-item:first-child {
+        &::before {
+            display: none;
+        }
+    }
+}

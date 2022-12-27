@@ -1,0 +1,17 @@
+.face-config {
+    .list-management {
+        flex: 1;
+
+        .result-table {
+            .column-label {
+                width: 90px !important;
+                height: 30px !important;
+                margin-left: 20px;
+            }
+
+            .column-status {
+                justify-content: center;
+            }
+        }
+    }
+}

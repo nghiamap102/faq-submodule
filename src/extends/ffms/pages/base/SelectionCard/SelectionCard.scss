@@ -1,0 +1,23 @@
+.selection-card {
+    padding: 0 1rem;
+    border-radius: 0.25rem;
+    margin: 0.5rem 0;
+    .selection-item{
+        border-bottom: none;
+        .selection-item-text{
+            padding: 0;
+        }       
+    }
+    &.border{
+        border: 1px solid var(--border);
+        background: white;
+        padding: 0.5rem 1rem;
+    }
+   
+    .sub1{
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: inherit;
+        line-height: 2.2rem;
+    }
+}

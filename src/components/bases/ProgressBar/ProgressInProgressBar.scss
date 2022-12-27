@@ -1,0 +1,30 @@
+.progress-in-progress-bar {
+    background-color: #4b5869;
+    margin: 5px 0;
+    text-align: center;
+    line-height: 12px;
+    font-size: 11px;
+    height: 4px;
+    border-radius: 10px;
+    position: relative;
+
+    .progress-bar-value-estimated, .progress-bar-value-estimated-range, .progress-bar-value-realtime, .progress-bar-value-realtime-range {
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        border-radius: 5px;
+        min-width: 5px !important;
+    }
+
+    .progress-bar-value-realtime, .progress-bar-value-realtime-range {
+        background: rgba(138, 227, 85, 0.8);
+    }
+
+    .progress-bar-value-estimated, .progress-bar-value-estimated-range {
+        background: white;
+    }
+
+    .progress-bar-value-realtime-range {
+        z-index: 10;
+    }
+}

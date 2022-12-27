@@ -1,0 +1,79 @@
+.unassign-grid-form {
+
+    .popup-body {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .data-grid-content {
+        position: relative;
+    }
+
+    .unassign-loading-btn {
+        &:hover {
+            background: transparent !important;
+        }
+    }
+
+    .step-wizard {
+        position: relative;
+
+        .step-block-account-btn {
+            padding: .5rem .5rem;
+            margin-top: .5rem;
+        }
+
+        .step-wizard-process {
+            ul li.step .title {
+                text-transform: uppercase;
+            }
+        }
+
+        .step-wizard-content {
+            
+            .item-margin-md {
+                background: var(--contrast-light);
+
+            }
+
+            .popup-footer-content {
+               .btn-success{
+                    position: relative;
+                    z-index: 1;
+               }
+            }
+            .as-container .as-control-container{
+                width: 7rem;
+            }
+        }
+
+        .popup-footer-content {
+            .item-margin-md {
+                background: transparent;
+            }
+        }
+
+        .step-wizard-footer {
+            position: relative;
+            bottom: 3rem;
+            justify-content: center;
+            right: -3rem;           
+
+            button.btn[disabled] {
+                opacity: 0;
+                position: relative;
+                z-index: -1;
+            }
+
+            &:last-child button {
+                background: var(--success-color);
+                position: relative;
+                z-index: 2;
+            }
+        }
+    }
+
+    .data-grid-content .paging-count {
+        display: none;
+    }
+}

@@ -1,0 +1,61 @@
+.toggle-switch {
+    display: inline-flex;
+    width: 58px;
+    height: 38px;
+    overflow: hidden;
+    padding: 12px;
+    box-sizing: border-box;
+    position: relative;
+    flex-shrink: 0;
+    z-index: 0;
+    vertical-align: middle;
+    cursor: pointer;
+    &-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        background-color: transparent;
+        outline: 0px;
+        border: 0px;
+        margin: 0px;
+        cursor: pointer;
+        user-select: none;
+        vertical-align: middle;
+        appearance: none;
+        text-decoration: none;
+        padding: 9px;
+        border-radius: 50%;
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        left: 0px;
+        right: auto;
+    }
+    &-slide {
+        background-color: currentColor;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        box-shadow: rgba(145, 158, 171, 0.16) 0px 1px 2px 0px;
+    }
+    &-bg {
+        height: 100%;
+        width: 100%;
+        border-radius: 7px;
+        z-index: -1;
+        transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+            background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        opacity: 1;
+        background-color: rgb(145, 158, 171);
+    }
+    .active {
+        color: currentColor;
+        transform: translateX(60%);
+    }
+    .active-bg {
+        opacity: 0.5;
+        background-color: currentColor;
+    }
+}

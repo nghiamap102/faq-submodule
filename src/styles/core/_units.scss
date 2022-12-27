@@ -1,0 +1,15 @@
+@import './vars';
+
+@function rem($px, $base: $font-base) {
+    @return ($px / $base) * 1rem;
+}
+
+@function em($px, $base: $font-base) {
+    @return ($px / $base) * 1em;
+}
+
+@function get-vw($target) {
+    $vw-context: (1440 * 0.01) * 1px;
+
+    @return ($target / $vw-context) * 1vw;
+}

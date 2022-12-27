@@ -1,0 +1,21 @@
+.map-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+
+    .mapboxgl-map {
+        .mapboxgl-ctrl-top-right {
+            top: 10rem;
+        }
+
+        .mapboxgl-ctrl-top-left {
+            left: 50%;
+            transform: translateX(-50%);
+
+            .mapboxgl-ctrl-group {
+                display: flex;
+            }
+        }
+    }
+}

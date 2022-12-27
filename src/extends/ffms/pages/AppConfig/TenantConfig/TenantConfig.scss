@@ -1,0 +1,21 @@
+.panel-footer{
+    background: var(--panel-header-bg);
+    z-index: 1;
+    flex: unset !important;
+
+    .panel-footer-actions{
+        justify-content: center;
+    }
+
+    .process-btn{
+        text-transform: uppercase;
+        background: var(--primary) !important;
+        flex: unset;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    button {
+        flex: unset !important;
+    }
+}

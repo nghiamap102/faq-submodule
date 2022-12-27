@@ -1,0 +1,39 @@
+.video-playlist-container {
+    width: 100%;
+
+    .player {
+        display: block;
+        width: 100%;
+    }
+
+    .list {
+        display: block;
+        .playing {
+            i:before {
+                color: var(--primary-color);
+            }
+        }
+        .videoInfo {
+            display: block;
+            width: 100%;
+            padding: 0.5rem;
+            border-bottom: 1px solid #cfcfcf;
+
+            i {
+                margin-right: 0.5rem;
+                vertical-align: middle;
+            }
+
+            &:hover {
+                cursor: pointer;
+                i:before {
+                    color: var(--primary-color);
+                }
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}

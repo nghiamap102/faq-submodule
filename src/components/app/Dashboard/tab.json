@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Job",
+        "layerName": "JOB"
+    },
+    {
+        "name": "EMPLOYEE",
+        "layerName": "EMPLOYEE"
+    }
+]

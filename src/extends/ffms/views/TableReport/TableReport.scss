@@ -1,0 +1,62 @@
+.grid-panel {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    position: relative;
+    background-color: #8da2bb;
+    
+
+    th {
+        text-align: center;
+        vertical-align: middle;
+        font-weight: 600;
+        height: 2.5rem;
+        color: var(--text-color);
+        background:var(--light-dark);
+        position: relative;
+    }
+
+    &.fixed-header {
+        th {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+            // box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    tbody {
+        z-index: 1;
+        border: 1px solid #ccc;
+        tr {
+            transition: background 0.3s ease;
+            line-height: 2;
+
+            &:hover{
+                background: var(--light);
+            }
+        }
+
+        tr:nth-child(even) {
+            background: rgba(var(--light-rgb),0.5);
+
+            &:hover{
+                background: var(--light);
+            }
+        }
+    }
+
+    td {
+        color: var(--text-color);
+        padding: 5px;
+        text-align: center;
+        display: table-cell;
+        cursor: pointer;
+    }
+
+    .check-btn{
+        font-weight:400;
+        background-color: transparent!important;
+        border-radius: 50%;
+    }
+}

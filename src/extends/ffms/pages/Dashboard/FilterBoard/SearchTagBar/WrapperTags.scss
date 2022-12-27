@@ -1,0 +1,11 @@
+.search-tag-bar{
+    padding: 5px;    
+    max-height: 6rem;
+}
+.detail-tag{
+    color: var(--text-color-dark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}

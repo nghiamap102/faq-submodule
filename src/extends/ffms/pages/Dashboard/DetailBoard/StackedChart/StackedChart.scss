@@ -1,0 +1,201 @@
+.wrapper-detail {
+    // padding: 3rem 0 0 1rem;
+    // padding: 1rem 1rem 0 1rem;
+    .chartjs-size-monitor{
+        position: initial;
+    }
+}
+
+.table-detail-chart {
+    width: calc(100% - 2rem);
+    text-align: center;
+    position: relative;
+    top: 0;
+    margin: 0.5rem 0;
+    border-collapse: collapse;
+    .legend-circle {
+        border-radius: 50%;
+        height: 1rem;
+        width: 1rem;
+        margin: 0 auto;
+        position: relative;
+        margin-right: 16px;
+        margin-top: 0.45rem;
+    }
+
+    tbody {
+        tr:hover {
+            background-color: rgba(29, 28, 28, 0.315);
+        }
+    }
+
+    td {
+        padding: 6px 0;
+        // padding-right: 12px;
+        max-width: 1px;
+        height: 16px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;        
+    }
+
+    td {
+        color: var(--text-color);
+        border: 1px solid var(--border);        
+    }   
+    thead th {
+      position: sticky;
+      top: 0;
+      padding: 6px 0;
+    }
+    
+    thead th:first-child {
+      left: 0;
+      z-index: 1;
+      background-color: var(--background-color);
+      opacity: 0.9;
+    }
+    
+    tbody th {
+      position: sticky;
+      left: 0;
+      background-color: var(--background-color);
+      opacity: 0.9;
+    }
+}
+
+.scale-text {
+    color: red;
+}
+
+#chartjs-tooltip {
+    opacity: 1;
+    position: absolute;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border-radius: 6px;
+    transition: all 0.25s ease-in-out;
+    pointer-events: none;
+    border: 1px solid var(--popup-border);
+    table{
+        td, th{
+            padding: 3px 10px;
+        }
+        th{
+            font-weight: bolder;
+        }
+    }
+    .title{
+        text-align: center;
+    }
+  }
+  
+  #chartjs-tooltip:after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin: auto;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 6px;
+  }
+  
+  /* Top center */
+  #chartjs-tooltip.top.center:after {
+    border-bottom-color:  var(--background-color);
+    top: -11px;
+    left: 0;
+    right: 0;
+  }
+  /* Top left */
+  #chartjs-tooltip.top.left:after {
+    border-bottom-color:  var(--background-color);
+    left: 5px;
+    top: -11px;
+  }
+  /* Top right */
+  #chartjs-tooltip.top.right:after {
+    border-bottom-color:  var(--background-color);
+    right: 5px;
+    top: -11px;
+  }
+  
+  /* Bottom center */
+  #chartjs-tooltip.bottom.center:after {
+    border-top-color:  var(--background-color);
+    bottom: -11px;
+    right: 0;
+    left: 0;
+  }
+  /* Bottom left */
+  #chartjs-tooltip.bottom.left:after {
+    border-top-color:  var(--background-color);
+    bottom: -11px;
+  }
+  /* Bottom right */
+  #chartjs-tooltip.bottom.right:after {
+    border-top-color:  var(--background-color);
+    bottom: -11px;
+    right: 5px;
+  }
+  
+  /* Center left */
+  #chartjs-tooltip.center.left:after {
+    border-right-color:  var(--background-color);
+    margin: auto;
+    left: -11px;
+    bottom: 0;
+    top: 0;
+  }
+  /* Center right */
+  #chartjs-tooltip.center.right:after {
+    border-left-color: var(--background-color);
+    margin: auto;
+    right: -11px;
+    bottom: 0;
+    top: 0;
+  }
+  
+  .chartjs-tooltip-key {
+    display: inline-block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-right: 7px;
+  }
+  .empty-detail-chart{
+    align-self: center;
+    justify-content: center;
+  }
+  .chartWrapper {
+    position: relative;
+    height: calc(100% - 1rem);
+    margin-top: 1rem;
+  }
+  
+  .chartWrapper > canvas {
+    position: absolute;
+    left: 0;
+    top: 0px;
+    pointer-events: none;
+    background-color: var(--background-color);
+    opacity: 0.9;
+  }
+  
+  .chartAreaWrapper {
+    overflow-x: scroll;
+  }
+  .yAxisCustom{
+    position: absolute;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    // z-index: -1;
+    canvas{
+      position: fixed;
+    }
+}
+  
+  

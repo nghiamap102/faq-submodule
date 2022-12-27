@@ -1,0 +1,74 @@
+.cc {
+    h1 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        margin: 0 0 0.5rem;
+        font-weight: 500;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        letter-spacing: 0rem;
+        line-height: 2rem;
+        margin: 2rem 0 0.5rem;
+        font-weight: 500;
+    }
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        letter-spacing: 0rem;
+        line-height: 1.75rem;
+        margin: 1.5rem 0 0.5rem;
+    }
+    iframe {
+        min-height: 250px;
+        width: 100%;
+    }
+    div,
+    p,
+    ol,
+    ul {
+        margin: 0.25rem 0 0.75rem;
+    }
+    ol {
+        display: block;
+        list-style-type: decimal;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 40px;
+    }
+    ol li {
+        margin: 0.25rem 0 0.25rem 1.25rem;
+    }
+    ol,
+    ul {
+        margin: 0;
+        outline: 0;
+        padding: 0;
+        vertical-align: baseline;
+    }
+    ul:not(.no-bullets):not(.no_bullets) > li {
+        list-style-type: none;
+        margin-left: 0;
+        padding-left: 1rem;
+    }
+    ul li {
+        margin: 0.25rem 0 0.25rem 1.625rem;
+    }
+    ul:not(.no-bullets):not(.no_bullets) > li:before {
+        content: "\002022";
+        float: left;
+        font-size: 1rem;
+        margin-left: -0.875rem;
+    }
+    b,
+    strong {
+        font-weight: 600;
+    }
+    a {
+        color: #0b57d0 !important;
+        text-decoration: none;
+    }
+}

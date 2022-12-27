@@ -1,0 +1,37 @@
+{
+  "Data": [
+    {
+      "V": "Vị trí của bạn",
+      "E": "Your location"
+    },
+    {
+      "V": "Nhà riêng",
+      "E": "Home"
+    },
+    {
+      "V": "Cơ quan",
+      "E": "Work"
+    },
+    {
+      "V": "Địa điểm chưa xác định",
+      "E": "Unknown location"
+    },
+    {
+      "V": "Đường",
+      "E": "Street"
+    },
+    {
+      "V": "Số",
+      "E": "Number",
+      "keepPosition": true
+    },
+    {
+      "V": "Hẻm",
+      "E": "Alley"
+    },
+    {
+      "V": "Vòng Xoay",
+      "E": "Roundabout"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+.dashboard-container {
+    width: calc(100vw - 3.5rem);
+    height: 100%;
+    display: flex;
+
+    .dashboard-right {
+        .bar-content {
+            padding: 1rem 1.5rem;
+            position: relative;
+
+            .fa-chevron-down {
+                font-weight: 900;
+
+                &:before {
+                    content: "\f0d7";
+                    color: var(--text-color);
+                }
+
+            }
+        }
+    }
+
+    .tab-bar {
+        background-color: var(--panel-header-bg) !important;
+
+        .tab-header {
+            .tab-item-header {
+                margin: 0 0.5rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .tab-control {
+        .tab-header-wrap {
+            .tab-header {
+                .tab-item-header {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+.counter-position {
+    position: absolute;
+    right: 16px;
+    top: 60px;
+    z-index: 2;
+}

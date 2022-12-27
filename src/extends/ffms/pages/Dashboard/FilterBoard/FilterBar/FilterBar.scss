@@ -1,0 +1,28 @@
+.filter-header-actions{
+
+    padding-right: 0.25rem;
+    border-bottom: 1px solid var(--border);
+    button {
+        height: 2rem;
+        border-radius: 5px;
+        text-align: center;
+        transition: all .3s;
+        color: var(--contrast-color);
+
+        margin: 2px;
+        padding: 5px;
+    
+        &:hover {
+            background-color: rgba(var(--contrast-color-rgb), 0.1);
+        }
+
+        i {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        span {
+            margin-left: 0.625rem;
+        }
+    }
+}

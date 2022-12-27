@@ -1,0 +1,15 @@
+{
+    "name": "dev",
+    "domain": "localhost:3000",
+    "sysId": "YWNMZW",
+    "createdDate": ISODate("2021-06-01T06:32:33.274+07:00"),
+    "modifiedDate": ISODate("2021-06-01T06:32:33.269+07:00"),
+    "createdBy": "vietbando.2",
+    "modifiedBy": "vietbando.2",
+    "application": {
+        "title": "Dev Server",
+        "subtitle": ""
+    },
+    "environment": {},
+    "status": 5
+}

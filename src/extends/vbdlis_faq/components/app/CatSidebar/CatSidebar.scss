@@ -1,0 +1,26 @@
+.catsidebar {
+    .active {
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 2px;
+            top: 0;
+            background-color: black;
+        }
+        // border-left: 2px solid var(--black);
+        font-weight: 600;
+    }
+    .cat-link {
+        position: relative;
+        text-decoration: none;
+        &:hover {
+            color: var(--light-black);
+        }
+        color: var(--black);
+        padding-left: 24px;
+        margin-bottom: 18px;
+        line-height: 24px;
+    }
+}

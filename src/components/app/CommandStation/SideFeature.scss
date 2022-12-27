@@ -1,0 +1,20 @@
+.side-feature {
+    display: flex;
+    flex: 1;
+    position: relative;
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.action-avatar {
+    background: no-repeat url(http://maps.gstatic.com/mapfiles/maps_lite/images/2x/signinphoto_96dp.png);
+    background-size: 2.25rem 2.25rem;
+    height: 2.25rem !important;
+    width: 2.25rem !important;
+    border-radius: 50%;
+}
+
+

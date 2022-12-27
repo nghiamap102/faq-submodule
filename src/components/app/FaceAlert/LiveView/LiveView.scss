@@ -1,0 +1,20 @@
+.live-view-search {
+    .camera-item {
+        display: flex;
+        margin: 0.25rem 0.5rem;
+        background: var(--contrast-light);
+
+        .camera-name {
+            flex: 1;
+        }
+
+        .camera-status {
+            flex: 0 0 4rem;
+            text-align: right;
+
+            i {
+                padding: 1rem;
+            }
+        }
+    }
+}

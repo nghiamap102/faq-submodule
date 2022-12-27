@@ -1,0 +1,32 @@
+[
+    {
+        "activity_log_job_guid" : "Task create by team vbd",
+        "activity_log_status_id" : 0,
+        "activity_log_created_time" : "25/09/2020 16:00",
+        "activity_log_created_by" : "Tom Cruise"
+    },
+    {
+        "activity_log_job_guid" : "Task started",
+        "activity_log_status_id" : 1,
+        "activity_log_created_time" : "25/09/2020 17:00",
+        "activity_log_created_by" : "Tom Cruise"
+    },
+    {
+        "activity_log_job_guid" : "Recipient viewed tracking page",
+        "activity_log_status_id" : 2,
+        "activity_log_created_time" : "25/09/2020 18:00",
+        "activity_log_created_by" : "Tom Cruise"
+    },
+    {
+        "activity_log_job_guid" : "Recipient viewed tracking page",
+        "activity_log_status_id" : 3,
+        "activity_log_created_time" : "25/09/2020 19:00",
+        "activity_log_created_by" : "Tom Cruise"
+    },
+    {
+        "activity_log_job_guid" : "Task completed",
+        "activity_log_status_id" : 4,
+        "activity_log_created_time" : "25/09/2020 20:00",
+        "activity_log_created_by" : "Tom Cruise"
+    }
+]

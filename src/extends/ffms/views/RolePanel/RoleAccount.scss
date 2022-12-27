@@ -1,0 +1,52 @@
+
+.panel-role-account{
+    padding: 1rem;
+
+    .panel-header{
+        background: transparent;
+
+        h3{
+            display: flex;
+            justify-content: space-between;
+            align-items:center;
+        }
+    }
+
+    .panel-body {
+        padding: 1rem 0;
+
+        &.role-container-item .panel-header { //custom role-item
+            border-bottom: 0.05rem solid var(--border);
+            cursor: pointer;
+            &:hover{ 
+                background-color: var(--contrast-light);
+            }
+            h3{
+                text-transform: none;
+            }
+            button{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .btn-add-role-to-employee{
+        width: 7.5rem;
+        height: 2rem;
+    }
+}
+
+.popup-add-role-to-employee{
+    .overlay-main{
+        margin-right: -7.5rem;
+        margin-top: 2rem;
+    }
+    .emp-role-header{
+        background: var(--contrast-highlight);
+        border-bottom: 1px solid var(--border);
+    }
+    .emp-role-container{
+        min-height: 250px;
+        max-height: 400px;
+    }
+}

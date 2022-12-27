@@ -1,0 +1,111 @@
+.general-alert {
+    .general-alert-content {
+
+        .result-table {
+            i {
+                color: var(--primary-color);
+            }
+        }
+
+        .general-detect-number .hd {
+            letter-spacing: 0.5rem;
+            color: white;
+        }
+    }
+
+    .map-view {
+        transition: flex 0.1s;
+
+        &.hidden {
+            flex: unset !important;
+            width: 0 !important;
+        }
+    }
+
+    .general-alert-container {
+        display: flex;
+        height: 100%;
+    }
+
+    .general-alert-tool {
+        display: flex;
+        padding: 1rem;
+        justify-content: space-between;
+
+        .general-alert-view {
+            font-weight: 500;
+            font-size: 0.8125rem;
+            color: var(--text-color);
+
+            display: flex;
+            align-items: center;
+
+            &.alias-right {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            i {
+                color: rgba(var(--text-color-rgb), 0.5) !important;
+                margin: 0 0.5rem;
+
+                &.active {
+                    color: rgba(var(--text-color-rgb), 1) !important;
+                }
+            }
+        }
+
+        .general-alert-actions {
+            button {
+                margin: 0 5px;
+            }
+        }
+    }
+
+    .general-detect-search {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.general-detect-detail {
+    height: calc(min(80vh, 50vw)) !important; // if width too narrow scale height to width
+    width: calc(min(134vh, 87vw)) !important; // vh on purpose to keep the ration
+
+    .left-data {
+        height: auto;
+
+        .detect-container {
+            padding: 0.5rem;
+
+            .detect-info {
+                height: 140px;
+                background: var(--contrast-highlight);
+                padding: 0.5rem;
+                box-sizing: border-box;
+            }
+        }
+
+        .overview-image {
+            background-color: var(--background-color);
+            margin: 0.5rem;
+        }
+    }
+
+    .right-data {
+        min-width: 350px;
+        max-width: 500px;
+    }
+}
+
+.live-update-toggle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.live-update--pause .spinner__line {
+    display: none;
+}

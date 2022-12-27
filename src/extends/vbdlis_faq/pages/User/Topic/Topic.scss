@@ -1,0 +1,28 @@
+.content-wrapper {
+    .question-wrapper {
+        border: thin solid #a9acaa;
+        padding: 4rem;
+        border-radius: 1rem;
+    }
+    .rating-section {
+        border-top: thin solid #a9acaa;
+        margin: 2.25rem -4rem -4rem;
+        padding: 1rem 4rem 2rem;
+    }
+    .items {
+        .hd6 {
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+        }
+        .hd6::first-letter {
+            text-transform: uppercase;
+        }
+        .active {
+            font-weight: 500;
+        }
+        .inactive {
+            font-weight: 400;
+        }
+    }
+}

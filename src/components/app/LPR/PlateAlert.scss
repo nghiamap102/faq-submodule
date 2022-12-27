@@ -1,0 +1,64 @@
+.plate-alert {
+    .plate-alert-content {
+
+        .result-table {
+            i {
+                color: var(--primary-color);
+            }
+        }
+
+        .plate-detect-number .hd {
+            letter-spacing: 0.5rem;
+            color: white;
+        }
+    }
+
+    .map-view {
+        transition: flex 0.1s;
+
+        &.hidden {
+            flex: unset !important;
+            width: 0 !important;
+        }
+    }
+
+    .plate-alert-container {
+        display: flex;
+        height: 100%;
+    }
+
+    .plate-alert-tool {
+        display: flex;
+        padding: 1rem;
+        justify-content: space-between;
+
+        .plate-alert-view {
+            font-weight: 500;
+            font-size: 0.8125rem;
+            color: var(--text-color);
+
+            display: flex;
+            align-items: center;
+
+            &.alias-right {
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            i {
+                color: rgba(var(--text-color-rgb), 0.5) !important;
+                margin: 0 0.5rem;
+
+                &.active {
+                    color: rgba(var(--text-color-rgb), 1) !important;
+                }
+            }
+        }
+
+        .plate-alert-actions {
+            button {
+                margin: 0 5px;
+            }
+        }
+    }
+}

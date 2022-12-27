@@ -1,0 +1,16 @@
+{
+    "employee_guid": "1234456",
+    "description":"",
+    "employee_code": "MS453453",
+    "employee_type_id": 1,
+    "employee_full_name": "jpenddreth",
+    "employee_email": "jpenddreth0@gmail.com",
+    "employee_phone": "1234567890",
+    "employee_dob": "abcd",
+    "employee_team_id": 1,
+    "employee_shift_id": 1,
+    "employee_username": "jpenddreth",
+    "employee_image": "",
+    "employee_vehicle_id": "vehicle",
+    "employee_device_id": "device"
+}

@@ -1,0 +1,18 @@
+.table-widget {
+    display: flex;
+    flex: 1 1 0%;
+    .title {
+        display: block;
+        .hd6 {
+            color: #fff;
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding: 0.5rem;
+            border-bottom: 1px px solid #cfcfcf;
+            box-shadow: 0 1px 5px #cfcfcf;
+            background: linear-gradient(to right, #c02425, #f0cb35);
+            float: right;
+            margin-bottom: 0;
+        }
+    }
+}

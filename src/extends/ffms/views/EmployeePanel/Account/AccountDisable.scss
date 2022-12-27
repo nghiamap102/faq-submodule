@@ -1,0 +1,14 @@
+.disable-emp{
+    max-height: 330px;
+    overflow-y: auto;
+
+    .sub1 {
+        text-transform: capitalize;
+    }
+    .sub2 {
+        color: rgba(var(--text-color-rgb),.4);    
+        font-weight: normal; 
+        line-height: inherit;       
+    }
+    
+}

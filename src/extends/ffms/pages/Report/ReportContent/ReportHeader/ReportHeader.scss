@@ -1,0 +1,18 @@
+.report-header{    
+    display: flex;         
+}
+.report-bar{    
+    display: flex;    
+    justify-content: space-between;
+    width: 100%;
+}
+.report-child-bar{    
+    display: flex;        
+}
+.report-header-item{
+    margin: 0.5rem;
+    .tag-container{
+        background: rgba(var(--contrast-color-rgb), 0.7);
+    }
+  
+}

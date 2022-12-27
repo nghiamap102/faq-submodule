@@ -1,0 +1,225 @@
+$vbd-atomic: (
+    "size": (
+        xs,
+        sm,
+        md,
+        lg,
+        xl,
+        xxl,
+    ),
+    "display": (
+        none,
+        block,
+        inline,
+        inline-block,
+        flex,
+        inline-flex	,
+    ),
+    "text-align": (
+        left,
+        center,
+        right,
+        justify,
+    ),
+    "position": (
+        static,
+        fixed,
+        absolute,
+        relative,
+        sticky,
+    ),
+    "visibility": (
+        visible,
+        hidden,
+    ),
+    "overflow": (
+        auto,
+        hidden,
+        visible,
+        scroll,
+    ),
+    "flex-direction": (
+        "row": row,
+        "row-reverse": row-reverse,
+        "col": column,
+        "col-reverse": column-reverse,
+    ),
+    "flex-wrap": (
+        wrap,
+        wrap-reverse,
+        nowrap,
+    ),
+    "flex-justify-content": (
+        "start": flex-start,
+        "center": center,
+        "end": flex-end,
+        "around": space-around,
+        "between": space-between,
+        "evenly": space-evenly,
+    ),
+    "flex-align-items": (
+        "start": flex-start,
+        "center": center,
+        "end": flex-end,
+        "baseline": baseline,
+        "stretch": stretch,
+    ),
+    "cursor": (
+        auto,
+        default,
+        pointer,
+        wait,
+        text,
+        move,
+        help,
+        not-allowed,
+    ),
+);
+
+@each $item in get("size") {
+    .size-#{$item} {
+        --size: var(--size-#{$item});
+    }
+}
+
+@each $item in get("display") {
+    .#{$item} {
+        display: $item !important;
+    }
+}
+
+@each $item in get("text-align") {
+    .text-#{$item} {
+        text-align: $item !important;
+    }
+}
+
+@each $item in get("position") {
+    .#{$item} {
+        position: $item !important;
+    }
+}
+
+@each $item in get("visibility") {
+    .#{$item} {
+        visibility: $item !important;
+    }
+}
+
+@each $item in get("overflow") {
+    .overflow-#{$item} {
+        overflow: $item !important;
+    }
+}
+
+@each $item in get("overflow") {
+    .overflow-x-#{$item} {
+        overflow-x: $item !important;
+    }
+}
+
+@each $item in get("overflow") {
+    .overflow-y-#{$item} {
+        overflow-y: $item !important;
+    }
+}
+
+@each $class, $property in get("flex-direction") {
+    .flex-#{$class} {
+        flex-direction: $property !important;
+    }
+}
+
+@each $item in get("flex-wrap") {
+    .flex-#{$item} {
+        flex-wrap: $item !important;
+    }
+}
+
+@each $class, $property in get("flex-justify-content") {
+    .justify-#{$class} {
+        justify-content: $property !important;
+    }
+}
+
+@each $class, $property in get("flex-align-items") {
+    .items-#{$class} {
+        align-items: $property !important;
+    }
+}
+
+@each $item in get("cursor") {
+    .cursor-#{$item} {
+        cursor: $item !important;
+    }
+}
+
+.no-select {
+    user-select: none !important;
+}
+
+.show {
+    @extend .block;
+}
+
+.hidden,
+.hide {
+    @extend .none;
+}
+
+// TODO: remove all class '.direction-' when already refactor/enhance Flex.tsx
+.direction-row {
+    @extend .flex-row;
+}
+
+.direction-column {
+    @extend .flex-col;
+}
+
+.direction-row-reverse {
+    @extend .flex-row-reverse;
+}
+
+.direction-column-reverse {
+    @extend .flex-col-reverse;
+}
+
+// Text Overflow
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ellipsis {
+    @extend .truncate;
+}
+
+.first-letter-up {
+    text-transform: lowercase !important;
+
+    &::first-letter {
+        text-transform: uppercase !important;
+    }
+}
+
+@media print {
+    .no-print,
+    .no-print * {
+        display: none !important;
+    }
+}
+
+.full-height {
+    height: 100vh;
+    overflow: hidden;
+}
+
+// TODO: spacing: margin, padding
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.p-0 {
+    padding: 0 !important;
+}

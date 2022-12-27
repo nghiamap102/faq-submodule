@@ -1,0 +1,42 @@
+.face-reg-upload {
+    display: flex;
+    align-items: center;
+    padding: 0.625rem 1rem 0;
+
+    span {
+        flex: 0 0 55px;
+    }
+
+    input.input-file {
+        display: none;
+    }
+}
+
+.date-of-birth {
+    .m-input-moment .options {
+        display: none;
+    }
+}
+
+.face-reg-search-submit {
+    font-size: 1.125rem;
+    color: var(--secondary);
+    box-sizing: border-box;
+    text-align: center;
+
+    padding: 0.5rem;
+    height: 3.5rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &.alert {
+        background-color: var(--secondary-light);
+    }
+
+    &.success {
+        background-color: var(--secondary-light);
+    }
+}

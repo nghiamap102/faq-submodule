@@ -1,0 +1,24 @@
+.toolbar_admin {
+    width: 100%;
+    z-index: 990;
+    padding: 5px 10px;
+    font-size: 14px;
+    background-color: var(--contrast-color);
+    color: var(--base-color);
+    .username {
+        font-weight: 400;
+        font-size: 14px;
+        margin: 0 10px;
+    }
+    .ava-wrapper {
+        max-height: 36px;
+        max-width: 36px;
+        border-radius: 50%;
+    }
+    .admin-route{
+        color: var(--base-color);
+        font-weight: 500;
+        text-decoration: none;
+        margin-right: 15px;
+    }
+}

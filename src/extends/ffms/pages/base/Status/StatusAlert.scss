@@ -1,0 +1,20 @@
+.status-alert{
+
+    .status-alert-icon{
+        width:2rem;
+        height: 2rem;
+        padding: 0.25rem;
+        border-radius: 50%;
+        line-height: 1rem;
+        padding: 0.25rem;
+
+        i { font-size: 1.25rem}
+    }
+
+    .status-alert-with-text{
+        border-radius: 0.25rem;
+        line-height: 1rem;
+
+        i { font-size: 1rem}
+    }
+}

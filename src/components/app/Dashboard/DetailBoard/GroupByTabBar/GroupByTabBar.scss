@@ -1,0 +1,16 @@
+.group-by {
+    flex: 0;
+    min-height: auto;
+
+    background-color: var(--panel-header-bg) !important;
+
+    .tab-header-wrap {
+        background-color: var(--contrast-highlight);
+
+        .tab-header {
+            .tab-item-header {
+                margin: 0 20px;
+            }
+        }
+    }
+}

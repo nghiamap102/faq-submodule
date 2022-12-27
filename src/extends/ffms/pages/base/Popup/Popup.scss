@@ -1,0 +1,109 @@
+.report-popup-placement{
+    left: var(--placement-position) !important;
+}
+.report-popup-container {
+    margin-top: 2px;
+    border: 1px solid var(--popup-border);
+
+    background: var(--popup-bg);
+    border-radius: 0.25rem;
+
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    &.arrow {
+        margin-top: 6px;
+    }
+
+    &.arrow:after {
+        content: "";
+        display: block;
+        position: absolute;
+        margin: auto;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 6px;
+        border-bottom-color: var(--popup-border);
+        top: -6px;
+        left: var(--left-position);
+    }
+
+    .report-popup-header {
+        position: relative;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+
+        border-bottom: 1px solid var(--border);
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: var(--panel-header-bg);
+
+        h3 {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        .report-popup-header-actions {
+            button {
+                width: 2rem;
+                height: 2rem;
+                border-radius: 1rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
+                transition: background-color .3s;
+
+                color: var(--text-color);
+
+                &:hover {
+                    background-color: var(--contrast-highlight);
+                }
+            }
+        }
+    }
+
+    .report-popup-body {
+        box-sizing: border-box;
+        //height: calc(100% - 35px);
+        //padding: 1rem;
+
+        //background: var(--background-color);
+        input{
+            box-sizing: border-box;
+        }
+        label{
+            line-height: 2.5;
+            &[required-label]::after{
+                content: ' ' attr(required-label);
+                color: red;
+            }
+        }
+    }
+
+    .report-popup-footer {
+        padding: 1rem;
+        text-align: right;
+
+        border-top: 1px solid var(--border);
+        // background: var(--panel-footer-bg);
+
+        button {
+            margin: 0 .25rem;
+        }
+    }
+
+    .empty-popup-footer {
+        height: var(--popup-border-radius);
+    }
+}
+

@@ -1,0 +1,94 @@
+{
+    "Data": [
+        {
+            "code": 0,
+            "vi": "Đi tiếp",
+            "en": "Continue onto"
+        },
+        {
+            "code": 1,
+            "vi": "Đi thẳng",
+            "en": "Go straight"
+        },
+        {
+            "code": 2,
+            "vi": "Rẽ lệch phải tại",
+            "en": "Turns slight right at"
+        },
+        {
+            "code": 3,
+            "vi": "Rẽ phải tại",
+            "en": "Turn right at"
+        },
+        {
+            "code": 4,
+            "vi": "Rẻ vòng sang phải tại",
+            "en": "Turn sharp right at"
+        },
+        {
+            "code": 5,
+            "vi": "Quay đầu tại",
+            "en": "Uturn at"
+        },
+        {
+            "code": 6,
+            "vi": "Rẽ vòng sang trái tại",
+            "en": "Turns sharp left at"
+        },
+        {
+            "code": 7,
+            "vi": "Rẽ trái tại",
+            "en": "Turn left at"
+        },
+        {
+            "code": 8,
+            "vi": "Rẽ lệch trái tại",
+            "en": "Turns slight left at"
+        },
+        {
+            "code": 9,
+            "vi": "Đến",
+            "en": "Reach"
+        },
+        {
+            "code": 10,
+            "vi": "Đi thẳng",
+            "en": "Head on"
+        },
+        {
+            "code": 11,
+            "vi": "Vào",
+            "en": "Enter"
+        },
+        {
+            "code": 12,
+            "vi": "Rời vòng xoay vào",
+            "en": "Leave roundabout to"
+        },
+        {
+            "code": 13,
+            "vi": "Chuyển làn tại",
+            "en": "Change lane at"
+        },
+        {
+            "code": 14,
+            "vi": "Đi từ",
+            "en": "Start at"
+        },
+        {
+            "code": 15,
+            "vi": "Đến nơi",
+            "en": "Reached your destination"
+        },
+        {
+            "code": 16,
+            "vi": "Chuyển làn sang phải tại",
+            "en": "Change to right lane at"
+        },
+        {
+            "code": 15,
+            "vi": "Chuyển làn sang phải tại",
+            "en": "Change to left lane at"
+        }
+    ]
+}

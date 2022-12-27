@@ -1,0 +1,17 @@
+.paging-detail{
+    align-self: flex-end;
+    i {
+        cursor: pointer;
+        align-self: center;
+    }
+    .item{
+        padding: 5px;
+        cursor: pointer;
+        align-self: center;
+
+    }
+    .active{
+        color: var(--button-color);
+        background-color: var(--primary-color);
+    }
+}

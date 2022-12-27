@@ -1,0 +1,154 @@
+
+.admin-boundaries-popup-container {
+    color: var(--text-color);
+    border-radius: 0.5rem;
+    background: var(--background-color);
+    .panel-header{
+        border-bottom: none;
+    }
+    .action-menu-widget{
+        border-radius: 0rem;
+        padding: 0px;
+        border: unset;
+        border-right: 1px solid rgba(var(--border-rgb),0.8);
+        box-shadow: none;
+        .list-item-container .list-item-content .list-item-title{
+            font-weight: 400;
+            color: var(--text-color-light);
+        }
+    }
+    .panel-header-switch{
+        text-transform: uppercase;
+        h3{
+            font-weight: 400;
+        }
+    }
+
+    .admin-boundaries-breadcrumb{
+        background-color: var(--panel-header-bg);
+        padding: 4px 10px;
+        font-weight: 700;
+        border: 0;
+        text-transform: uppercase;
+        border-top: 1px solid rgba(var(--border-rgb),0.5);        
+    }
+
+
+    .action-menu-entry {
+        display: flex;
+        align-items: center;
+        color: var(--text-color);
+        cursor: pointer;
+        position: relative;
+        white-space: nowrap;
+        font-weight: normal;
+        margin: 0;
+        padding: 0.5rem 1.5rem;
+
+        &.disabled {
+            cursor: unset;
+        }
+    }
+
+    .action-menu-header {
+        color: var(--text-color);
+        display: block;
+        font-weight: 500;
+        margin-bottom: 0.5em;
+        padding: 0.25rem 2.75rem 0.25rem 1rem;
+        position: relative;
+    }
+
+    .badge {
+        background-color: var(--primary-color);
+        position: absolute;
+        right: -6px;
+        bottom: -5px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid var(--contrast-color);
+    }
+
+    .badge-icon {
+        margin: 1px;
+    }
+    
+    .action-menu-entry:focus, .action-menu-entry:hover, .action-menu-entry.selected {
+        background-color: #dadada; // fix opacity transparent backgroundColor when fill --contrast-highlight
+        transition: background-color .2s;
+    }
+
+    .action-menu-entry {
+
+        z-index: 1;
+        font-weight: 500;
+        background-color: white;
+        padding: 0.4rem 1.5rem !important;
+
+        .action-menu-entry-text {
+            line-height: 1.2rem !important;
+        }
+
+        &:nth-child(1) {
+            position: sticky;
+            top: 0 !important;
+
+            & + .action-menu-horizontal-line {
+                z-index: 2;
+                position: sticky;
+                top: 2.01rem !important;
+            }
+        }
+
+        &:nth-child(2) {
+            position: sticky;
+            top: 2rem !important; // top += height_action-menu-entry
+            & + .action-menu-horizontal-line {
+                z-index: 2;
+                position: sticky;
+                top: 4.01rem !important;
+            }
+        }
+
+        &:nth-child(3) {
+            position: sticky;
+            top: 4rem !important;
+
+            & + .action-menu-horizontal-line {
+                z-index: 2;
+                position: sticky;
+                top: 6.01rem !important;
+            }
+        }
+
+        &:nth-child(4) {
+            position: sticky;
+            top: 6rem !important;
+
+            & + .action-menu-horizontal-line {
+                z-index: 2;
+                position: sticky;
+                top: 8.01rem !important;
+            }
+        }
+
+        &:nth-child(5) {
+            position: sticky;
+            top: 8rem !important;
+
+            & + .action-menu-horizontal-line {
+                z-index: 2;
+                position: sticky;
+                top: 10.01rem !important;
+            }
+        }
+    }
+
+    .action-menu-horizontal-line ~ .action-menu-entry {
+        z-index: 0;
+        position: relative !important;
+        top: auto !important;
+        font-weight: normal !important;
+    }
+}

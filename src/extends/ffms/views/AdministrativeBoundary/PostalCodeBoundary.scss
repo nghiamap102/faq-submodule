@@ -1,0 +1,47 @@
+.postal-code-container{
+    .panel-header-switch{
+        background: none;
+        border-bottom: 1px solid rgba(var(--border-rgb),0.8);
+        h3{
+            color: var(--text-color-light);
+        }
+    }
+    .expand-icon{
+        width: 2rem;
+        height: 2rem;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    
+        color: var(--text-color) !important;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, .35);
+    }
+
+    .postal-code-content{
+        padding: 8px 0 ;
+        flex: unset;
+
+        .postal-code-search {
+            padding: 0 8px ;
+        }
+
+        .postal-item {
+            padding:2px 8px;    
+            color:var(--text-color-light);        
+            &:hover{
+                background-color: var(--contrast-light);
+            }
+        }
+
+        .postal-icon{
+            cursor: pointer;
+            width: 1.3rem;
+            &:hover{
+                opacity:  0.6;
+            }
+        }
+    }
+
+}

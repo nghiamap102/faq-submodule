@@ -1,0 +1,14 @@
+.lock-draw-tool-button-container {
+    height: 29px;
+    width: 30px;
+    background: #fff;
+    border-radius: 3px;
+    line-height: 29px;
+    padding: 0 5px 0 5px;
+    text-align: center;
+    cursor: pointer;
+
+    .fal {
+        font-weight: bold;
+    }
+}

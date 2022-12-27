@@ -1,0 +1,9 @@
+{
+    "firstLevelGroups": [
+        "origin",
+        "destination"
+    ],
+    "secondLevelGroups": [
+        "address"
+    ]
+}

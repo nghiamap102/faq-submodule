@@ -1,0 +1,19 @@
+.report-list-board {
+    height: 100%;
+    background: var(--panel-header-bg);
+
+    .search-box-container {
+        width: 97%;
+        margin: 5px auto;
+
+        &:active,
+        &:focus,
+        &::selection {
+            border: 1px solid var(--tertiary);
+        }
+    }
+
+    > .searchbox {
+        border-bottom: 1px solid var(--border);
+    }
+}

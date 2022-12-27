@@ -1,0 +1,63 @@
+@import '../FaceAlert/FaceAlert.scss';
+
+.admin {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+
+    .admin-left-menu {
+        .admin-info {
+            background-color: var(--panel-header-bg);
+            border-bottom: 1px solid var(--contrast-highlight);
+            cursor: pointer;
+        }
+
+        .menu {
+            .form-group {
+                input {
+                    border-radius: 20px;
+                }
+            }
+
+            .menu-item {
+                cursor: pointer;
+                text-decoration: inherit;
+                font-size: 1rem;
+                font-weight: bold;
+                user-select: none;
+
+                i {
+                    width: 2rem;
+                    margin-right: 0.5rem;
+                }
+
+                &.menu-activate {
+                    background-color: var(--contrast-light);
+                }
+            }
+
+            .menu-item-parent {
+                background-color: var(--panel-header-bg);
+                border-top: 1px solid var(--contrast-highlight);
+                border-bottom: 1px solid var(--contrast-highlight);
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .menu-item-children {
+                box-sizing: border-box;
+                font-size: 1rem;
+                display: flex;
+                align-self: center;
+                padding: 0.5rem;
+                color: var(--text-color);
+
+                &:hover {
+                    background: var(--contrast-light);
+                }
+            }
+        }
+    }
+}

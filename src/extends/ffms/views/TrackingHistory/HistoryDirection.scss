@@ -1,0 +1,71 @@
+.marker {
+    width: 28px;
+    height: 38px;
+    font-size: 12px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.marker i {
+    line-height: 14px;
+    width: 16px;
+    height: 16px;
+    padding: 6px;
+    border-radius: 100%;
+    color: #fff;
+    text-align: center;
+    display: block;
+    vertical-align: middle;
+}
+
+.marker {
+    background-image: url('../../../../images/poi.svg');
+}
+
+.marker-start {
+    background-image: url('../../../../images/poi-green.svg');
+}
+
+.marker-middle {
+    background-image: url('../../../../images/poi-cyan.svg');
+}
+
+.popup-route.history-popup  {
+    cursor: pointer;
+    position: relative;
+    color: var(--text-color);
+    text-align: center;
+
+    .popup-route-header{
+        display: flex;
+        height: 6rem;
+        padding: 0.25rem 0;
+        align-items: center;      
+        .image-container{
+            margin: 0 auto;
+        }
+        
+    }
+
+    .popup-route-detail {
+        color: var(--text-color-dark);
+        
+        p{          
+            &:first-child{
+                font-size: 1.5rem;
+                color: black;
+                margin-bottom: 1rem;
+                line-height: initial;
+            }
+        }
+        .popup-marker-duration {            
+            font-weight: 500;
+            padding: 0.25rem;
+            color: var(--text-color);    
+            border: 1px solid var(--border);     
+            border-radius: 0.2rem;             
+        }
+        
+    }
+}
+

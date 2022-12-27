@@ -1,0 +1,9 @@
+.spatial-search-map {
+    .mapboxgl-ctrl-group {
+        &.mapboxgl-ctrl {
+            display: flex;
+            flex-direction: row;
+            background-color: #fff;
+        }
+    }
+}

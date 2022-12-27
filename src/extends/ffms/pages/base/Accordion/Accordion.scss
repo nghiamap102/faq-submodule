@@ -1,0 +1,88 @@
+.accordion{
+    .accordion-item{
+        color: var(--text-color);
+        border: 0.1rem solid var(--border);
+        background: var(--panel-header-bg);
+        margin-bottom: 0.5rem;
+
+        &.open{
+            border: 1px solid var(--border-light);
+        }
+
+        .accordion-header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 2.5rem;
+            color: var(--text-color);
+            box-sizing: border-box;
+            background: var(--panel-header-bg);
+
+            &:hover{
+                cursor: pointer;
+            }
+            
+            h3{
+                padding: 0 1rem;
+                text-overflow: ellipsis;
+                text-transform: uppercase;
+                white-space: nowrap;
+                overflow: hidden;
+                font-weight: 600;
+                font-size: 0.9rem;
+                flex: 1 1;
+                line-height: 2rem;
+            }
+            .accordion-header-actions {
+                padding-right: 0.25rem;
+                display: flex;
+        
+                button {
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 50%;
+                    text-align: center;
+                    transition: all .3s;
+                    color: var(--contrast-color);
+        
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+        
+                    &:hover {
+                        cursor: pointer;
+                        background-color: rgba(var(--contrast-color-rgb), 0.1);
+                    }
+        
+                    span {
+                        margin-left: 0.625rem;
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .accordion-content{
+            overflow: hidden;
+            will-change: height;
+            transition: height 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+            .accordion-content-inner{
+                transition: all 0.3s linear 0.18s;
+            }
+        }
+
+        &.open .accordion-content .accordion-content-inner{
+            opacity: 1;
+        }
+
+        .accordion-header .accordion-header-actions button .fa-chevron-down{
+            transition: all 0.3s;
+            transform: rotate(0deg);
+        }
+        &.open .accordion-header .accordion-header-actions button .fa-chevron-down{
+            transition: all 0.3s;
+            transform: rotate(180deg);
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.ep-container {
+    // height: 100%;
+    .ep-left-side {
+        text-align: center;
+        background-color: white;
+        flex: 0 0 20rem;
+        border-right: 1px solid var(--border);
+        position: relative;
+        .sub1
+        {
+            font-size: 1.5rem;
+        }        
+    }
+
+    .btn.active {
+        background-color: #E1E1E1;
+        font-weight: 600;
+    }
+
+    .delete-container{
+        position: absolute;
+        bottom: 8px;
+        flex:1;
+        width: 100%;
+
+        .link {
+            color: var(--danger-color);
+        }
+    }
+}

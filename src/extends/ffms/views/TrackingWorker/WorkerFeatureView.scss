@@ -1,0 +1,34 @@
+.tracking-worker-content {
+    .twc-toolbar {
+        border-bottom: 1px solid var(--border);
+    }
+}
+.pin-config {
+    .panel-body {
+        padding: 1rem 0 0.5rem 0.25rem;        
+    }
+    span{
+        padding:0 0.5rem;
+        min-width: 7rem;
+    }
+    .wfv-menu-config{        
+        text-align: left;
+        outline: none;        
+        max-height: 8rem;
+        font-size: inherit;
+        padding-right: 2.5em;         
+        margin: 0;
+        border-radius: 3px;
+        text-indent: 0.01px;
+        border: 1px solid var(--border);      
+        height: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+}
+
+.worker-tracking-filter { 
+    .panel-switch-items {
+        height: 100vh;
+    }
+}

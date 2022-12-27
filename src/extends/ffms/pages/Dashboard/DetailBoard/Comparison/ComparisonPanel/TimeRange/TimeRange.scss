@@ -1,0 +1,24 @@
+.time-range{
+    padding: 10px;
+}
+.time-bar{
+    display: flex;    
+}
+.time-button{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--base-color);
+    transition: background-color .3s;
+    color: var(--text-color);
+    cursor: pointer;
+    margin: .25rem;
+    i{
+        font-size: 18px !important;        
+    }
+}

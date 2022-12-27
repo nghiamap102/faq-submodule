@@ -1,0 +1,95 @@
+{
+    "home" : "/ffms/jobs",
+    "theme" : "Xám tối",
+    "product" : "ffms",
+    "domain" : "localhost:3000",
+    "mapStyleList" : [ 
+        {
+            "id" : "light",
+            "label" : "Tiêu chuẩn"
+        }, 
+        {
+            "id" : "dark",
+            "label" : "Màu Tối"
+        }, 
+        {
+            "id" : "terrain",
+            "label" : "Địa hình"
+        }, 
+        {
+            "id" : "boundary",
+            "label" : "Ranh giới"
+        }
+    ],
+    "themeList" : [ 
+        {
+            "name" : "Xám tối",
+            "base" : "dark",
+            "className" : "theme-gray"
+        }, 
+        {
+            "name" : "Đỏ sáng",
+            "base" : "light",
+            "className" : "theme-red"
+        }, 
+        {
+            "name" : "Xanh tối",
+            "base" : "dark",
+            "className" : "theme-dark"
+        }, 
+        {
+            "name" : "Xanh sáng",
+            "base" : "light",
+            "className" : "theme-dark"
+        }
+    ],
+    "language" : "en",
+    "locale" : "en-in",
+    "favicon" : "/ffms.ico",
+    "logo" : "/ffms.png",
+    "place" : {
+        "vietbando" : {
+            "url" : "http://10.222.6.13:8987/solr",
+            "user" : "solr",
+            "pass" : "Vbd@2020",
+            "provider" : "Vietbando"
+        },
+        "here" : {}
+    },
+    "street" : {
+        "barrier" : "http://10.222.6.13:8008",
+        "viaroute" : "http://10.222.6.13:8008",
+        "flagpole" : "http://10.222.6.13:8008",
+        "match" : "http://10.222.6.13:8008"
+    },
+    "mapink" : {
+        "url" : "https://render.sovereignsolutions.com"
+    },
+    "vdms" : {
+        "authUrl" : "https://accounts.sovereignsolutions.com",
+        "url" : "https://dev.sovereignsolutions.com/ffms-backend-dev"
+    },
+    "ffms" : {
+        "url" : "http://localhost:3002"
+    },
+    "matterMost" : {
+        "url" : ""
+    },
+    "rabbitMQ" : {
+        "host" : ""
+    },
+    "t4Queue" : {
+        "host" : ""
+    },
+    "lprQueue" : {
+        "host" : ""
+    },
+    "clickhouse" : {
+        "spacerain" : {
+            "host" : ""
+        },
+        "fs" : {
+            "host" : ""
+        }
+    }
+}

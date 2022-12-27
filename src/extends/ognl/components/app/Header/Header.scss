@@ -1,0 +1,63 @@
+@import "../../../pages/Home/OGNLHome.scss";
+.header-container {
+    margin: auto;
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(121, 9, 103, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    box-shadow: 0rem 1rem 1rem #bebbbb;
+    display: block;
+    &.fullwidth {
+        @include fullwidth();
+    }
+    &.fixedwidth {
+        @include fixedwidth();
+    }
+}
+.header {
+    margin: auto;
+    display: block;
+    &.fullwidth {
+        @include fullwidth();
+    }
+    &.fixedwidth {
+        @include fixedwidth();
+    }
+}
+.banner {
+    display: inline-block;
+    color: white;
+    margin: auto;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.menu {
+    display: inline-block;
+    color: white;
+    margin: auto;
+    text-align: center;
+    padding: 1rem 0;
+    justify-items: right;
+    float: right;
+
+    .nav-container {
+        justify-items: right;
+        float: right;
+    }
+    .nav-container .nav-menu li.active {
+        color: white;
+        background-color: #2b333f57;
+        border-radius: 1rem;
+    }
+    .nav-container .nav-menu li:hover {
+        color: rgb(5, 5, 5);
+        background-color: #fff;
+        border-radius: 1rem;
+        transition: 0.5s;
+    }
+}
+
+.thong-bao {
+    display: inline-block;
+    width: 100%;
+    color: white;
+    font-weight: 600;
+}

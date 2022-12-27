@@ -1,0 +1,313 @@
+html {
+    @include media(">=tablet") {
+        font-size: #{$font-base-sm}px;
+    }
+
+    @include media (">=width-1280") {
+        font-size: #{$font-base-md}px;
+    }
+
+    @include media (">=width-hd") {
+        font-size: #{$font-base-md}px;
+    }
+
+    @include media (">=width-1800") {
+        font-size: #{$font-base-lg}px;
+    }
+
+    @include media (">=width-wqhd") {
+        font-size: #{$font-base-xl}px;
+    }
+}
+
+body,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+p,
+input,
+textarea,
+th,
+ul,
+div,
+span,
+i,
+pre {
+    font-size: 0.875rem;
+}
+
+:root {
+    // ======================================================================
+    // based variables
+    // ======================================================================
+    --size-xs: 0.25rem;
+    --size-sm: 0.5rem;
+    --size-md: 1rem;
+    --size-lg: 1.5rem;
+    --size-xl: 2rem;
+    --size-xxl: 2.5rem;
+    //
+    --color-black-o: #000;
+    --color-black-a1: rgba(0, 0, 0, .84);
+    --color-black-a2: rgba(0, 0, 0, .54);
+    --color-black-a3: rgba(0, 0, 0, .34);
+    --color-black-xa1: rgba(0, 0, 0, .15);
+    --color-black-xa2: rgba(0, 0, 0, .1);
+    --color-black-xa3: rgba(0, 0, 0, .05);
+    --color-white-o: #fff;
+    --color-white-a1: rgba(255, 255, 255, .84);
+    --color-white-a2: rgba(255, 255, 255, .54);
+    --color-white-a3: rgba(255, 255, 255, .34);
+    --color-white-xa1: rgba(255, 255, 255, .15);
+    --color-white-xa2: rgba(255, 255, 255, .1);
+    --color-white-xa3: rgba(255, 255, 255, .05);
+    //
+    --feature-item-width: 2.5rem;
+    --feature-item-height: 2.5rem;
+
+    .theme-base {
+        --primary-highlight: rgba(var(--prim-rgb), 0.3);
+        --default-color: #636363;
+        --default-color-rgb: 99, 99, 99;
+        --success-color: #28a745;
+        --success-color-rgb: 40, 167, 69;
+        --info-color: #17a2b8;
+        --info-color-rgb: 23, 162, 184;
+        --warning-color: #ffc107;
+        --warning-color-rgb: 255, 193, 7;
+        --danger-color: #dc3545;
+        --danger-color-rgb: 220, 53, 69;
+        --color-0: #6dccb1;
+        --color-1: #79aad9;
+        --color-2: #ee789d;
+        --color-3: #a987d1;
+        --color-4: #e4a6c7;
+        --color-5: #f1d86f;
+        --color-6: #d2c0a0;
+        --color-7: #f5a35c;
+        --color-8: #c47c6c;
+        --color-9: #ff7e62;
+        //
+        --tag-green-bg-light: #d1fae5;
+        --tag-green-fg-light: #065f46;
+        --tag-lime-bg-light: #e8fad1;
+        --tag-lime-fg-light: #415f06;
+        --tag-yellow-bg-light: #fcf3c3;
+        --tag-yellow-fg-light: #85460b;
+        --tag-orange-bg-light: #fee3c7;
+        --tag-orange-fg-light: #92380e;
+        --tag-red-bg-light: #fee2e2;
+        --tag-red-fg-light: #991c1c;
+        //
+        --tag-green-bg-dark: rgba(12, 185, 121, .18);
+        --tag-green-fg-dark: rgba(48, 225, 118, 0.94);
+        --tag-lime-bg-dark: rgba(133, 185, 12, 0.18);
+        --tag-lime-fg-dark: rgba(172, 225, 48, 0.94);
+        --tag-yellow-bg-dark: rgba(232, 184, 25, 0.18);
+        --tag-yellow-fg-dark: rgba(255, 207, 48, 0.94);
+        --tag-orange-bg-dark: rgba(232, 135, 25, 0.18);
+        --tag-orange-fg-dark: rgba(255, 131, 48, 0.94);
+        --tag-red-bg-dark: rgba(183, 26, 39, .18);
+        --tag-red-fg-dark: rgba(225, 143, 163, 0.94);
+        //
+        --overlay-bg: #505050;
+
+        // text
+        --text-color: rgba(var(--contrast), 0.84);
+        --text-contrast-color: rgba(var(--base-rgb), 0.84);
+        --text-rgb: var(--contrast);
+        --text-light: rgba(var(--contrast), 0.9);
+        --text-dark: rgba(var(--contrast), 0.54);
+        --sub-text-color: var(--text-dark);
+
+        //button
+        --button-color: var(--text-contrast-color);
+    }
+
+    .theme-mobile {
+        // ! Must disable the scrolling on the mobile if the page use fullscreen map
+        html,
+        body {
+            overflow: hidden;
+            touch-action: none;
+        }
+
+        @media (min-width: 576px) {
+            --feature-item-width: #{rem(44px)};
+            --feature-item-height: #{rem(44px)};
+        }
+    }
+
+    .theme-dark {
+        --base-color: rgb(0, 0, 0);
+        --base-rgb: 0, 0, 0;
+        --base-light: rgba(var(--base-rgb), 0.05);
+        --base-lighter: rgba(var(--base-rgb), 0.1);
+        --base-highlight: rgba(var(--base-rgb), 0.15);
+        --contrast-color: rgb(255, 255, 255);
+        --contrast: 255, 255, 255;
+        --contrast-highlight-rgb: 186, 203, 214;
+        --contrast-light: rgba(var(--contrast), 0.05);
+        --contrast-lighter: rgba(var(--contrast), 0.1);
+        --contrast-highlight: rgba(var(--contrast), 0.15);
+        --contrast-highlight-fade: rgba(186, 203, 214, 0.04);
+        --bg-color: hsl(0, 0%, 19%);
+        --bg-dark: hsl(0, 0%, 13%);
+        --bg-light: hsl(0, 0%, 37%);
+        //
+        --overlay-bg: var(--base-color);
+
+        // control
+        --sidebar-bg: var(--bg-color);
+        --tab-bg: hsl(0, 0%, 31%);
+        --panel-footer-bg: hsl(0, 0%, 26%);
+        --panel-header-bg: hsl(0, 0%, 13%);
+        --panel-bg: hsl(0, 0%, 19%);
+        --panel-split: inset 2px 0 2px 0 rgba(110, 110, 110, 0.4), -2px 0 2px 0 rgb(24, 24, 24);
+        --button-color: var(--contrast-color);
+        --form-control-bg: rgba(var(--base-rgb), 0.2);
+        --popup-border: hsl(0, 0%, 48%);
+        --popup-bg: hsl(0, 0%, 23%);
+        --popup-border-radius: 0.5rem;
+        --marker-popup-border-radius: 0.25rem;
+        --border-color: var(--contrast-highlight);
+        --border-light: rgb(172, 172, 172);
+        --border-color: 219, 221, 225;
+
+        //.app-overlay,
+        .action-menu,
+        .mapboxgl-popup,
+        .map-control,
+        .map-control-button,
+        .map-rotation-control,
+        .mapboxgl-ctrl {
+            //.mapboxgl-popup,
+            //.tooltip,
+            //.mapboxgl-marker, {
+            --base-color: rgb(255, 255, 255);
+            --base-rgb: 255, 255, 255;
+            --base-light: rgba(var(--base-rgb), 0.05);
+            --base-lighter: rgba(var(--base-rgb), 0.1);
+            --base-highlight: rgba(var(--base-rgb), 0.15);
+            --contrast-color: rgb(0, 0, 0);
+            --contrast: 0, 0, 0;
+            --contrast-highlight-rgb: 186, 203, 214;
+            --contrast-light: rgba(var(--contrast), 0.05);
+            --contrast-lighter: rgba(var(--contrast), 0.1);
+            --contrast-highlight: rgba(var(--contrast), 0.15);
+            --contrast-highlight-fade: rgba(186, 203, 214, 0.04);
+            --bg-color: hsl(200, 37%, 97%);
+            --bg-dark: hsl(200, 37%, 94%);
+            --bg-light: hsl(200, 37%, 98%);
+
+            // control
+            --form-control-bg: var(--base-color);
+            --panel-header-bg: var(--base-color);
+            --panel-footer-bg: var(--base-color);
+            --panel-split: none;
+            --popup-border: hsl(0, 0%, 48%);
+            --popup-bg: rgb(244, 248, 250);
+            --popup-border-radius: 0.5rem;
+            --marker-popup-border-radius: 0.625rem;
+            --border-color: var(--contrast-highlight);
+            --border-light: rgb(172, 172, 172);
+            --border: 219, 221, 225;
+
+            // text
+            --text-color: rgba(var(--contrast), 0.6);
+            --text-rgb: var(--contrast);
+            --text-light: rgba(var(--contrast), 0.8);
+            --text-dark: rgb(119, 119, 119);
+            --default-color: var(--text-color);
+        }
+
+        //
+        --tag-green-bg: var(--tag-green-bg-dark);
+        --tag-green-fg: var(--tag-green-fg-dark);
+        --tag-lime-bg: var(--tag-lime-bg-dark);
+        --tag-lime-fg: var(--tag-lime-fg-dark);
+        --tag-yellow-bg: var(--tag-yellow-bg-dark);
+        --tag-yellow-fg: var(--tag-yellow-fg-dark);
+        --tag-orange-bg: var(--tag-orange-bg-dark);
+        --tag-orange-fg: var(--tag-orange-fg-dark);
+        --tag-red-bg: var(--tag-red-bg-dark);
+        --tag-red-fg: var(--tag-red-fg-dark);
+
+        // Bu
+        --default-color: var(--bg-light);
+        --default-text-color: var(--button-color);
+    }
+
+    .theme-light {
+        --base-color: rgb(255, 255, 255);
+        --base-rgb: 255, 255, 255;
+        --base-light: rgba(var(--base-rgb), 0.05);
+        --base-lighter: rgba(var(--base-rgb), 0.1);
+        --base-highlight: rgba(var(--base-rgb), 0.15);
+        --contrast-color: rgb(0, 0, 0);
+        --contrast: 0, 0, 0;
+        --contrast-highlight-rgb: 21, 81, 105;
+        --contrast-light: rgba(var(--contrast), 0.05);
+        --contrast-lighter: rgba(var(--contrast), 0.1);
+        --contrast-highlight: rgba(var(--contrast), 0.15);
+        --contrast-highlight-fade: rgba(21, 81, 105, 0.04);
+        --bg-color: hsl(0, 0%, 100%);
+        --bg-dark: hsl(0, 0%, 90%);
+        --bg-light: hsl(210, 43%, 100%);
+
+        // control
+        --sidebar-bg: hsl(210, 43%, 97%);
+        --tab-bg: hsl(0, 0%, 90%);
+        --panel-footer-bg: hsl(0, 0%, 90%);
+        --panel-header-bg: hsl(0, 0%, 98%);
+        --panel-bg: hsl(0, 0%, 100%);
+        --panel-split: inset 1px 0 1px 0 rgba(110, 110, 110, 0.4);
+        --form-control-bg: rgba(var(--base-rgb), 0.2);
+        --popup-border: hsl(0, 0%, 48%);
+        --popup-bg: hsl(0, 0%, 100%);
+        --popup-border-radius: 0.5rem;
+        --marker-popup-border-radius: 0.25rem;
+        --border-color: var(--contrast-highlight);
+        --border-light: rgb(172, 172, 172);
+        --border: 219, 221, 225;
+        //
+        --tag-green-bg: var(--tag-green-bg-light);
+        --tag-green-fg: var(--tag-green-fg-light);
+        --tag-lime-bg: var(--tag-lime-bg-light);
+        --tag-lime-fg: var(--tag-lime-fg-light);
+        --tag-yellow-bg: var(--tag-yellow-bg-light);
+        --tag-yellow-fg: var(--tag-yellow-fg-light);
+        --tag-orange-bg: var(--tag-orange-bg-light);
+        --tag-orange-fg: var(--tag-orange-fg-light);
+        --tag-red-bg: var(--tag-red-bg-light);
+        --tag-red-fg: var(--tag-red-fg-light);
+
+        // text
+        --text-color: rgba(var(--contrast), 0.8);
+        --text-rgb: var(--contrast);
+        --text-light: rgba(var(--contrast), 0.9);
+        --text-dark: rgba(var(--contrast), 0.6);
+
+        // Bu
+        --default-color: var(--bg-dark);
+        --default-text-color: var(--text-color);
+    }
+
+    // please don't use, just for color reference
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* stylelint-disable-line value-keyword-case */
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* stylelint-disable-line value-keyword-case */
+}

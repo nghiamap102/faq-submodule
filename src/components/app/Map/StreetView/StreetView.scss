@@ -1,0 +1,96 @@
+.street-view-container {
+    cursor: pointer;
+    height: 100%;
+
+    &.mouse-down {
+        cursor: move;
+    }
+
+    &.mouse-up {
+        cursor: pointer;
+    }
+}
+
+#compassContainer {
+    position: absolute;
+    padding: 10px;
+    bottom: 0;
+    right: 10px;
+}
+
+.minimap {
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    bottom: 20px;
+    transition: left 200ms cubic-bezier(0.0, 0.0, 0.2, 1);
+    width: 240px;
+    height: 160px;
+
+    .mapboxgl-canvas {
+        border-radius: 0.5rem;
+    }
+}
+
+.street-view-info {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    z-index: 1;
+    background: var(--popup-bg);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    opacity: 0.8;
+
+    .list-item-container {
+        border: none;
+    }
+}
+
+.ctrl-zoom {
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    top: calc(50% - 40px);
+}
+
+.ctrl-zoom-button {
+    cursor: pointer;
+    width: 36px;
+    height: 38px;
+    border: 2px solid rgba(0, 0, 0, .1);
+    background-clip: padding-box;
+    background-color: #fff;
+}
+
+.ctrl-zoom-button:hover {
+    background-color: #f1f1f1;
+}
+
+.ctrl-zoom-in {
+    border-radius: 20px 20px 0 0;
+    border-bottom: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path style='fill:black;' d='M12 5l0 0c0.55,0 1,0.45 1,1l0 5 5 0c0.55,0 1,0.45 1,1l0 0c0,0.55 -0.45,1 -1,1l-5 0 0 5c0,0.55 -0.45,1 -1,1l0 0c-0.55,0 -1,-0.45 -1,-1l0 -5 -5 0c-0.55,0 -1,-0.45 -1,-1l0 0c0,-0.55 0.45,-1 1,-1l5 0 0 -5c0,-0.55 0.45,-1 1,-1z'/></svg>");
+}
+
+.ctrl-zoom-in:before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 1px;
+    background: #e0e0e0;
+    left: 8px;
+    top: 40px;
+}
+
+.ctrl-zoom-out {
+    border-radius: 0 0 20px 20px;
+    border-top: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><rect style='fill:black;' transform='matrix(2.7166E-14 1.02573 -0.995545 2.63666E-14 18.9999 10.9999)' width='1.95' height='14.062' rx='0.975' ry='0.975' /></svg>");
+}
+
+

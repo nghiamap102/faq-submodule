@@ -1,0 +1,12 @@
+.map-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.mapboxgl-ctrl {
+    &.mapboxgl-ctrl-group {
+        background-color: var(--background-color) !important;
+    }
+}

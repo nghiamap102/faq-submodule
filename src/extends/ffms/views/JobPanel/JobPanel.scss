@@ -1,0 +1,19 @@
+
+.job-manager {
+  .as-dropdown-item .advance-select-button {
+    color: var(--success-color);
+
+    &.list-item-reader {
+      padding: 0;
+
+    }
+
+    .list-item-title {
+      color: var(--success-color);
+    }
+  }
+
+  .btn-add {
+    text-transform: uppercase;
+  }
+}

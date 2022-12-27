@@ -1,0 +1,94 @@
+/* stylelint-disable */
+.post-content {
+    .content {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .media-list {
+        width: 100%;
+        border: 1px solid #cfcfcf;
+        border-radius: 0rem 0rem 1rem 1rem;
+        overflow: hidden;
+
+        .list-view,
+        .grid-view {
+            width: 100%;
+        }
+
+        .toolbar {
+            border-bottom: 1px solid #cfcfcf;
+            width: 100%;
+            text-align: right;
+            button {
+                margin: 0.5rem 0.5rem;
+                &:last-child {
+                    margin-left: 0;
+                }
+            }
+        }
+        .list-view {
+            .item {
+                cursor: pointer;
+                width: 100%;
+                padding: 1rem;
+                border: 1px solid var(--secondary-light);
+                transition: 1s;
+                .image-container {
+                    width: 10rem;
+                    margin-right: 1rem;
+                    vertical-align: middle;
+                }
+
+                &:hover {
+                    border-bottom: 1px solid var(--primary-color);
+                }
+            }
+        }
+        .grid-view {
+            display: inline-block;
+            padding-bottom: 1rem;
+
+            .item {
+                cursor: pointer;
+                width: 25%;
+                float: left;
+                display: block;
+                padding: 1rem 0 0 1rem;
+                transition: 1s;
+
+                &:nth-child(4n) {
+                    padding-right: 1rem;
+                }
+
+                .media-content {
+                    width: 100%;
+                    height: 20rem;
+                    overflow: hidden;
+                    border: 1px solid #cfcfcf;
+                    border-radius: 1rem;
+
+                    &:hover {
+                        border-bottom: 5px solid var(--primary-color);
+                        transition: 0.5s;
+                    }
+
+                    span {
+                        padding: 1rem;
+                        position: relative;
+                        display: block;
+                        height: 20%;
+                        background: var(--secondary-light);
+                        font-weight: 600;
+                        color: #333;
+                    }
+                }
+
+                .image-container {
+                    width: 100%;
+                    height: 80%;
+                }
+            }
+        }
+    }
+}

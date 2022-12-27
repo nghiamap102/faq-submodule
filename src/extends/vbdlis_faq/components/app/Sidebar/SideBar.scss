@@ -1,0 +1,63 @@
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: var(--base-color);
+    transition: max-width 0.3s ease;
+    overflow: hidden;
+    z-index: 998;
+    box-shadow: 0px 2px 8px -5px black;
+    &-group {
+        padding: 0px 16px;
+    }
+    max-width: 87px;
+    width: 100%;
+    a {
+        text-decoration: none !important;
+        color: black;
+    }
+    &-top {
+        .logo {
+            padding: 24px 23px 16px 24px;
+            &-wrapper {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+            &-inner {
+                margin-right: 25px;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+.mode {
+    position: relative;
+    display: block !important;
+    max-width: 279px;
+    width: 100%;
+}
+.mode-icon {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    &:hover {
+        background-color: var(--gray);
+        border-radius: 50%;
+    }
+}
+.active-bg {
+    background-color: rgba(118, 53, 220, 0.08);
+    color: rgb(118, 53, 220);
+    .hd6 {
+        font-weight: 600 !important;
+    }
+}
+.sidebar.active {
+    max-width: 279px;
+    width: 100%;
+}

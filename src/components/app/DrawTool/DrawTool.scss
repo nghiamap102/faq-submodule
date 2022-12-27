@@ -1,0 +1,18 @@
+.marker-circle {
+    width: 12px !important;
+    height: 12px !important;
+    border-radius: 100%;
+    background: #d6d6d600;
+    border: 2px solid #fefefe00;
+    top: 15px;
+}
+
+.marker-circle.editable, .marker-circle:hover, .marker-circle:active, .marker-circle.drawing {
+    background: #fff;
+    border: 2px solid #0a0a0a;
+}
+
+.marker-circle:hover, .marker-circle:active {
+    width: 18px;
+    height: 18px;
+}

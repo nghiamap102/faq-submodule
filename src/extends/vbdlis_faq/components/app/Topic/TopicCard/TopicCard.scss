@@ -1,0 +1,10 @@
+.topic-card {
+    .heading{
+        color: var(--black);
+        font-size: 22px;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

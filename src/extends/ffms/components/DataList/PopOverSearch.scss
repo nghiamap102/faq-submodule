@@ -1,0 +1,120 @@
+.pos-panel {
+        
+    .pos-section-top{
+        border-bottom: 1px solid var(--border); 
+        .search-box {
+        .search-box-input{
+            input {
+            padding: 3px 34px 3px 10px;
+            border: 1px solid var(--border);
+            }
+        } 
+        }
+    }
+    .pos-section-bottom{
+
+        .panel{
+        background-color: transparent;       
+        }
+        .empty-data{
+        margin: 50% 0;
+        }
+
+        .import-left{
+        position: relative;   
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .toolbar-button{
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            z-index: 1;
+            .btn.btn-empty{
+            padding: 0.5rem 0.4rem;
+            margin-left: .5rem;
+            }
+        }
+        .list-item-container{
+            border-bottom: 1px dashed var(--border);
+
+            &.active{
+                background-color: var(--prim-highlight);
+                color: var(--text-color);
+            }
+            
+            .list-item-title{
+                word-wrap: break-word;
+                padding-right: 30px;
+            }
+        }
+        .list-item-subtitle{
+            p{
+            
+            i{
+                margin-right: 0.5rem;
+            }
+            }
+        }
+        .total-row
+        {
+                
+            
+            span{
+            background-color: var(--contrast-lighter); 
+            border-right: 1px solid var(--border);               
+            padding: 0.15rem;   
+            text-align: center;                             
+            }
+            div:nth-child(2)      {
+            span{        
+                &:nth-child(2)
+                {
+                border-bottom-right-radius: 0.25rem;                                
+                }
+            }
+            }
+            div:nth-child(1)      {
+            span{                                           
+                &:nth-child(2)
+                {
+                border-bottom-left-radius: 0.25rem;                 
+                }
+            }
+            }
+        div:last-child{
+            span{
+                border-right: none;
+            }
+            } 
+
+        }
+        
+        } 
+
+        .account-item-container {
+            padding: 12px 8px;
+            border-bottom: 1px dotted var(--border);
+            cursor: pointer;
+
+            .account-item-label {
+                font-weight: 500;
+                font-size: 1rem;
+                color: var(--text-color-light);
+            }
+
+            &:hover {
+                background-color: var(--contrast-highlight)
+            }
+        }
+        
+        height: 350px !important;
+        
+    }
+
+.pos-section-top {
+    background: var(--contrast-highlight);
+    border-bottom: 1px solid var(--border);
+}
+}

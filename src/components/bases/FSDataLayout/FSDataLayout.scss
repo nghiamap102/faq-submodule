@@ -1,0 +1,21 @@
+.fs-data-container {
+    margin-bottom: 0.5rem;
+}
+
+.fs-data-body {
+    &.flex {
+        display: flex;
+        flex-direction: row;
+
+        .fs-data-content {
+            flex: 1;
+        }
+    }
+
+    .vertical-line {
+        border-left: 1px solid;
+        color: var(--contrast-highlight);
+        margin: 0 1rem;
+    }
+}
+

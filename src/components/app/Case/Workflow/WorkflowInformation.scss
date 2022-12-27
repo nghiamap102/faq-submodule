@@ -1,0 +1,74 @@
+.id-info {
+    padding: 1rem;
+    background: var(--contrast-light);
+
+    &.id-info-console {
+        display: flex;
+
+        .id-info-sector {
+            width: 50%;
+            padding: 0 10px;
+
+            &.border-right {
+                border-right: 2px solid #505050;
+            }
+        }
+    }
+
+    .form-field-left {
+        flex: 0 0 24px !important
+    }
+
+    .id-info-content {
+        min-height: 65px;
+
+        .form-field-right {
+            background-color: rgba(0, 0, 0, 0.25);
+            padding: 8px;
+        }
+    }
+
+    .id-info-people {
+
+        .form-field-left {
+            margin-top: 4px;
+        }
+
+        .id-info-people-content {
+            display: flex;
+
+            .id-info-people-name {
+                flex: 1;
+                padding: 7px;
+                background-color: rgba(0, 0, 0, 0.25);
+            }
+
+            .id-info-people-tool {
+                margin: 0 2px;
+                background-color: #505050;
+                color: white;
+
+                &.tool-last {
+                    margin-right: 0;
+                    background-color: var(--primary);
+                }
+            }
+        }
+    }
+
+    .id-info-location {
+        .form-field-right {
+            position: relative;
+
+            span {
+                color: var(--primary);
+            }
+
+            i {
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
+        }
+    }
+}

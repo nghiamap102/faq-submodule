@@ -1,0 +1,52 @@
+.sf-danger {
+    background-color: var(--danger-color) !important;
+
+    .flex-panel {
+        background-color: var(--danger-color) !important;
+    }
+}
+.side-feature {
+    display: flex;
+    flex: 1;
+    position: relative;
+
+    .border-panel:last-child:after {
+        position: absolute;
+        display: block;
+        content: '';
+        width: 3px;
+        height: 100%;
+        box-shadow: var(--panel-split);
+        right: -3px;
+        top: 0;
+        z-index: 1;
+    }
+}
+
+.right-panel {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.action-avatar {
+    background: no-repeat url(http://maps.gstatic.com/mapfiles/maps_lite/images/2x/signinphoto_96dp.png);
+    background-size: 2.25rem 2.25rem;
+    height: 2.25rem !important;
+    width: 2.25rem !important;
+    border-radius: 50%;
+}
+.feature-image.logo{
+    background-color: var(--button-color);
+    border-radius: 50%;
+    .image-container{
+        background-color: transparent;
+    }
+}
+
+.sf-liner {
+    // border-bottom: 1px dotted var(--border);
+    border: 0;
+    background-color: transparent !important;
+}
+
+

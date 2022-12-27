@@ -1,0 +1,12 @@
+.progress-in-progress-bar {
+    background-color: var(--border);
+    
+    .progress-bar-value-realtime, .progress-bar-value-realtime-range {
+        background: rgba(138, 227, 85, 0.8);
+    }
+
+    .progress-bar-value-estimated, .progress-bar-value-estimated-range {
+        background: var(--border-light);
+    }
+
+}

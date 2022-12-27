@@ -1,0 +1,44 @@
+.ml-can-transform .ml-directions-suggestion-container {
+    transition: transform 0.3s;
+}
+
+.ml-directions-suggestion-container {
+    display: none;
+    width: 100%;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    box-sizing: border-box;
+    margin-top: 0px;
+    position: relative;
+    z-index: 36;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+    .suggestions {
+        border: none;
+        top: -1px;
+        position: relative;
+
+        .suggestion-divider {
+            border-top: 1px solid var(--border);
+            margin-left: 56px;
+        }
+
+    }
+}
+
+.suggestions {
+    background-color: transparent;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+.ml-directions-suggestions-shown.ml-directions-suggestion-container {
+    display: block;
+    // on mobile must use 100%, do not use 100vh, because of the address bar
+    max-height: calc(100% - 116px);
+}
+
+

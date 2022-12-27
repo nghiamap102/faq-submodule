@@ -1,0 +1,40 @@
+.incident-panel {
+    height: calc(100vh - 34px);
+}
+
+.incident-console-list {
+
+    height: calc(100% - 50px);
+    display: flex;
+    color: #A1A1A1;
+    background-color: #2F2F2F;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: none;
+        border-bottom: 1px solid #3C3C3C;
+
+        th {
+            background-color: #3F3F3F;
+            padding: 15px 5px;
+            border-bottom: 3px solid #373737;
+            color: white;
+        }
+
+        tbody {
+            tr {
+                border-bottom: 3px solid #373737;
+                cursor: pointer;
+
+                td {
+                    padding: 4px;
+                }
+            }
+        }
+    }
+
+    .active {
+        background-color: #202020;
+    }
+}

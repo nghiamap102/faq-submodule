@@ -1,0 +1,46 @@
+.preview-container {
+    zoom: 0.5;
+    padding: 1rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.build-config-form {
+    padding: 1rem;
+    margin: 0.5rem;
+    border: 1px solid #cfcfcf;
+    border-radius: 1rem;
+    .sidebar-component {
+        margin-right: 0.5rem;
+        padding: 0.5rem;
+        border: 1px solid #cfcfcf;
+        border-radius: 1rem;
+        overflow: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        .sidebar-component-item {
+            margin-top: 0.5rem;
+            border: 1px solid #cfcfcf;
+            padding-bottom: 1rem;
+            border-radius: 0 0 1rem 1rem;
+
+            .sidebar-component-item-content {
+                padding: 1rem;
+            }
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.add-other-widget {
+    width: 100%;
+    background: transparent;
+    color: #cfcfcf;
+}
+.custom-html-container {
+    height: 20rem;
+}

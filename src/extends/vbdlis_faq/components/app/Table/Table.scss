@@ -1,0 +1,34 @@
+.table-container {
+    margin: 0 auto;
+    border-radius: 1rem;
+    padding: 20px;
+    .input {
+        color: var(--contrast-color);
+        &::placeholder {
+            color: var(--contrast-color);
+        }
+    }
+    .dg-row-item{
+        align-items: center;
+        .dg-cell{
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        .text{
+            height: auto;
+        }
+    }
+    .table-wrapper{
+        overflow: hidden;
+        border-radius: 15px;
+        padding: 10px 5px;
+        background-color: var(--base-color);
+    }
+    .responsive-grid-item{
+        max-width: 25% !important;
+    }
+}
+.dg-row .dg-cell > *:not(.tag-container) {
+    height: auto;
+}

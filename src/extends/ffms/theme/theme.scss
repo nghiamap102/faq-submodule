@@ -1,0 +1,141 @@
+@import "extends/ffms/theme/mode-theme";
+
+.theme-light {
+    @import './theme-light/PanelHeaderWithSwitch.scss';
+    @import './theme-light/ProgressInProgressBar.scss';
+    @import './theme-light/DirectionTravelMode.scss';
+    @import './theme-light/SearchBox.scss';
+    @import './theme-light/Section.scss';
+    @import './theme-light/DirectionSearchBoxContainer.scss';
+    @import './theme-light/SearchBoxContainer.scss';
+
+    .panel-footer {
+        border-top: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+        background-color: var(--panel-bg);
+    }
+}
+
+.theme-dark {
+    @import './theme-dark/PanelHeaderWithSwitch.scss';
+    @import './theme-dark/DirectionTravelMode.scss';
+    @import './theme-dark/SearchBox.scss';
+    @import './theme-dark/Section.scss';
+    @import './theme-dark/DirectionSearchBoxContainer.scss';
+    @import './theme-dark/SearchBoxContainer.scss';
+
+    
+    .popper-tooltip-container {
+        --background-color: hsl(200, 18%, 98%);
+    }
+
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-sans-serif);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    line-height: 1.25; // for vietnamese font display sign
+}
+
+code, pre {
+    font-family: var(--font-family-monospace);
+}
+
+button, h1, h2, h3, h4, h5, h6, ol, p, input, textarea, th, ul, div, span, i, canvas {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    list-style: none;
+    margin: 0;
+    outline: 0;
+    overflow: visible;
+    padding: 0;
+    text-align: inherit;
+    vertical-align: baseline;
+    font-family: var(--font-family-sans-serif);
+}
+
+table {
+    border-spacing: 0;
+}
+
+.visible {
+    visibility: visible;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.no-select {
+    user-select: none;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media print {
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+
+.none {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.full-height {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.upper-case {
+    text-transform: uppercase;
+}
+
+// Temp fix
+.nav-container .nav-menu li.active {
+    color: var(--default-text-color);
+}
+
+.toast-items .toast-container {
+    color: var(--color-white-o);
+    
+    .toast-message {
+        color: var(--color-white-o) !important;
+    }
+}
+
+.tracking-marker-label {
+    font-size: 0.975rem;
+    padding: 2px 5px !important;
+    position: absolute;
+    bottom: -3rem;
+}
+.btn-filter, .btn-toggle {
+    &.active{
+        background-color: var(--contrast-highlight) !important;
+    }
+}
+
+.nav-container .nav-menu li.active {
+    color: var(--default-text-color);
+}

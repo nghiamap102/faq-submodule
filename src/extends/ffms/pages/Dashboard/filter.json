@@ -1,0 +1,418 @@
+[
+    {
+      "name": "Job",
+      "layerName": "JOB",
+      "masterChart": [
+        {
+          "label": "Completed Job",
+          "color": [
+            "#3dcad4",
+            "#bb99f7",
+            "#37a6ff",
+            "#8ae355",
+            "#d4e3f6"
+          ],
+          "facetType": "term-facet",
+          "statValueType": "field",
+          "field": "job_status_id",
+          "overviewRatio": {
+            "label": "Complete per Cancel",
+            "formula": true,
+            "operator": "divide",
+            "number1": {
+              "type": "query",
+              "query": {
+                "filter": "job_status_id:4",
+                "return": "count"
+              }
+            },
+            "number2": {
+              "type": "query",
+              "query": {
+                "filter": "job_status_id:5",
+                "return": "count"
+              }
+            }
+          }
+        },
+        {
+          "label": "Delay Time",
+          "color": [
+            "#3dcad4",
+            "#bb99f7",
+            "#37a6ff",
+            "#8ae355",
+            "#d4e3f6"
+          ],
+          "facetType": "query-facet",
+          "queries": [
+            {
+              "order": 1,
+              "label": "On time",
+              "query": {
+                "filter": "lt(ms(job_duration,job_estimate_duration),3600000)",
+                "return": "count"
+              }
+            },
+            {
+              "order": 2,
+              "label": "Delay time",
+              "query": {
+                "filter": "gt(ms(job_duration,job_estimate_duration),3600000)",
+                "return": "count"
+              }
+            }
+          ],
+          "overviewRatio": {
+            "label": "Minute per job",
+            "formula": true,
+            "operator": "divide",
+            "number1": {
+              "type": "query",
+              "query": {
+                "filter": "gt(ms(job_duration,job_estimate_duration),3600000)",
+                "return": "sum(job_duration)"
+              }
+            },
+            "number2": {
+              "type": "element",
+              "query": {
+                "filter": "gt(ms(job_duration,job_estimate_duration),3600000)",
+                "return": "count"
+              }
+            }
+          }
+        }
+      ],
+      "filter": [
+        {
+            "key": "key1",
+          "type": "time-filter",
+          "field": "job_created",
+          "label": "Period",
+          "default": {"type": "Last24h"},
+          "placeholder": "--Choose time--"
+        },
+        {
+            "key": "key2",
+          "type": "list-filter",
+          "field": "job_type_id",
+          "label": "Job Type",
+          "placeholder": "All job type",
+          "options": [
+            {
+              "id": 1,
+              "label": "New"
+            },
+            {
+              "id": 2,
+              "label": "Pickup"
+            }
+          ],
+          "multi": true
+        },
+        {
+            "key": "key3",
+          "type": "ref-filter",
+          "field": "job_assignee_guid",
+          "refLayer": "EMPLOYEE",
+          "refValue": "employee_guid",
+          "refDisplay": "employee_username",
+          "label": "Worker",
+          "placeholder": "All worker",
+          "options": [
+            {
+              "id": 1,
+              "label": "Bùi Bá Đỉnh",
+              "employee_organization_id": 1,
+              "employee_team_id": 1,
+              "employee_type": 3
+            },
+            {
+              "id": 2,
+              "label": "Nguyễn Khắc Duy",
+              "employee_organization_id": 1,
+              "employee_team_id": 2,
+              "employee_type": 2
+            },
+            {
+              "id": 3,
+              "label": "Nguyễn Thế Trung",
+              "employee_organization_id": 2,
+              "employee_team_id": 2,
+              "employee_type": 3
+            }
+          ],
+          "multi": true
+        },
+        {
+            "key": "key4",
+          "type": "ref-list-filter",
+          "field": "job_assignee_guid",
+          "refLayer": "EMPLOYEE",
+          "refValue": "employee_guid",
+          "refDisplay": "employee_team_id",
+          "label": "Team",
+          "placeholder": "All team",
+          "bindings": [
+            {
+              "layer": "EMPLOYEE",
+              "field": "employee_team_id"
+            }
+          ],
+          "options": [
+            {
+              "id": 1,
+              "label": "Team 1",
+              "team_organization_id": 1
+            },
+            {
+              "id": 2,
+              "label": "Team 2",
+              "team_organization_id": 1
+            },
+            {
+              "id": 3,
+              "label": "Team 3",
+              "team_organization_id": 2
+            }
+          ],
+          "multi": true
+        },
+        {
+            "key": "key5",
+          "type": "ref-list-filter",
+          "field": "job_assignee_guid",
+          "refLayer": "EMPLOYEE",
+          "refValue": "employee_guid",
+          "refDisplay": "employee_type_id",
+          "label": "Worker Type",
+          "placeholder": "All Worker Type",
+          "bindings": [
+            {
+              "layer": "EMPLOYEE",
+              "field": "employee_type"
+            }
+          ],
+          "options": [
+            {
+              "id": 1,
+              "label": "Technician"
+            },
+            {
+              "id": 2,
+              "label": "Senior Technician"
+            },
+            {
+              "id": 3,
+              "label": "Driver"
+            }
+          ],
+          "multi": true
+        },
+        {
+            "key": "key6",
+          "type": "ref-list-filter",
+          "field": "job_organization_id",
+          "refLayer": "EMPLOYEE",
+          "refValue": "employee_guid",
+          "refDisplay": "employee_type_id",
+          "label": "Organization",
+          "placeholder": "All Organizations",
+          "filters": [
+            {
+              "layer": "TEAM",
+              "field": "team_organization_id"
+            },
+            {
+              "layer": "EMPLOYEE",
+              "field": "employee_organization_id"
+            }
+          ],
+          "options": [
+            {
+              "id": 1,
+              "label": "VBD"
+            },
+            {
+              "id": 2,
+              "label": "ABC"
+            }
+          ],
+          "multi": true
+        }
+      ],
+      "DetailChart": [
+        {
+          "label": "Day",
+          "field": "job_created",
+          "detailtype": "time",
+          "timeRange": "day"
+        },
+        {
+          "label": "Type of Worker",
+          "field": "job_assignee_guid",
+          "detailtype": "ref-list",
+          "refLayer": "EMPLOYEE",
+          "refValue": "employee_guid",
+          "refDisplay": "employee_type_id"
+        },
+        {
+          "label": "Type of Job",
+          "field": "job_type_id",
+          "detailtype": "list"
+        },
+        {
+          "label": "Worker",
+          "field": "job_assignee_guid",
+          "detailtype": "ref",
+          "refLayer": "EMPLOYEE",
+          "refValue": "employee_guid",
+          "refDisplay": "employee_username"
+        }
+      ]
+    },
+    {
+        "name": "Employee",
+        "layerName": "EMPLOYEE",
+        "masterChart": [
+          {
+            "label": "Completed Job",
+            "color": [
+              "#3dcad4",
+              "#bb99f7",
+              "#37a6ff",
+              "#8ae355",
+              "#d4e3f6"
+            ],
+            "facetType": "term-facet",
+            "statValueType": "field",
+            "field": "job_status_id",
+            "overviewRatio": {
+              "label": "Complete per Cancel",
+              "formula": true,
+              "operator": "divide",
+              "number1": {
+                "type": "query",
+                "query": {
+                  "filter": "job_status_id:4",
+                  "return": "count"
+                }
+              },
+              "number2": {
+                "type": "query",
+                "query": {
+                  "filter": "job_status_id:5",
+                  "return": "count"
+                }
+              }
+            }
+          },
+          {
+            "label": "Delay Time",
+            "color": [
+              "#3dcad4",
+              "#bb99f7",
+              "#37a6ff",
+              "#8ae355",
+              "#d4e3f6"
+            ],
+            "facetType": "query-facet",
+            "queries": [
+              {
+                "order": 1,
+                "label": "On time",
+                "query": {
+                  "filter": "lt(ms(job_duration,job_estimate_duration),3600000)",
+                  "return": "count"
+                }
+              },
+              {
+                "order": 2,
+                "label": "Delay time",
+                "query": {
+                  "filter": "gt(ms(job_duration,job_estimate_duration),3600000)",
+                  "return": "count"
+                }
+              }
+            ],
+            "overviewRatio": {
+              "label": "Minute per job",
+              "formula": true,
+              "operator": "divide",
+              "number1": {
+                "type": "query",
+                "query": {
+                  "filter": "gt(ms(job_duration,job_estimate_duration),3600000)",
+                  "return": "sum(job_duration)"
+                }
+              },
+              "number2": {
+                "type": "element",
+                "query": {
+                  "filter": "gt(ms(job_duration,job_estimate_duration),3600000)",
+                  "return": "count"
+                }
+              }
+            }
+          }
+        ],
+        "filter": [
+          {
+            "key": "key1",
+            "type": "time-filter",
+            "field": "job_created",
+            "label": "Period",
+            "default": {"type": "Last24h"},
+            "placeholder": "--Choose time--"
+          },
+          {
+            "key": "key2",
+            "type": "list-filter",
+            "field": "job_type_id",
+            "label": "Job Type",
+            "placeholder": "All job type",
+            "options": [
+              {
+                "id": 1,
+                "label": "New"
+              },
+              {
+                "id": 2,
+                "label": "Pickup"
+              }
+            ],
+            "multi": true
+          }
+        ],
+        "DetailChart": [
+          {
+            "label": "Day",
+            "field": "job_created",
+            "detailtype": "time",
+            "timeRange": "day"
+          },
+          {
+            "label": "Type of Worker",
+            "field": "job_assignee_guid",
+            "detailtype": "ref-list",
+            "refLayer": "EMPLOYEE",
+            "refValue": "employee_guid",
+            "refDisplay": "employee_type_id"
+          },
+          {
+            "label": "Type of Job",
+            "field": "job_type_id",
+            "detailtype": "list"
+          },
+          {
+            "label": "Worker",
+            "field": "job_assignee_guid",
+            "detailtype": "ref",
+            "refLayer": "EMPLOYEE",
+            "refValue": "employee_guid",
+            "refDisplay": "employee_username"
+          }
+        ]
+      }
+  ]

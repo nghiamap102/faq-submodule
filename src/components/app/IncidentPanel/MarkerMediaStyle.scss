@@ -1,0 +1,24 @@
+.media-upload {
+    .invalid-input {
+        box-shadow: 0 0 0 0.7px var(--danger-color);
+
+        input {
+            color: var(--warning-color);
+        }
+    }
+
+    input.input-file {
+        display: none;
+    }
+}
+
+.media-upload-review {
+    height: auto;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+
+    .video-review-container{
+        width: inherit;
+    }
+}

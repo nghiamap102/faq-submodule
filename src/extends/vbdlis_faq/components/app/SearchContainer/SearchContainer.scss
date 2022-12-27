@@ -1,0 +1,28 @@
+.search-container {
+    background-image: url(https://ssl.gstatic.com/support/content/images/static/homepage_header_background_v2.svg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    height: 25rem;
+    .logo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .logo-inner {
+            margin: 0 auto 1.125rem auto;
+            padding: 0.5rem;
+            border-radius: 1.5rem;
+            // box-shadow: 0 1px 2px 0 #807f7f, 0 1px 3px 1px #a9a9a9;
+            box-sizing: border-box;
+        }
+    }
+    .search-bar {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .hd4 {
+            margin: 0.5rem 0 2rem 0;
+            font-size: 1.8rem;
+            color: var(--heading-color);
+        }
+    }
+}
