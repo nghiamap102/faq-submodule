@@ -13,7 +13,7 @@ class VBDLISFAQStore {
     questionStore;
     feedbackStore;
     keywordStore;
-    
+
     constructor(appStore: AppStore) {
         this.appStore = appStore;
         this.projectStore = new ProjectStore(appStore);
