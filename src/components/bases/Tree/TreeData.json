@@ -1,0 +1,98 @@
+[
+    {
+        "label": "Cars",
+        "id": "Cars",
+        "checkingType": 0,
+        "canCheck": true,
+        "child": [
+            {
+                "label": "SUV",
+                "id": "SUV",
+                "checkingType": 0,
+                "canCheck": true,
+                "child": [
+                    {
+                        "label": "Honda",
+                        "id": "Honda",
+                        "checkingType": 0,
+                        "canCheck": true,
+                        "child": []
+                    },
+                    {
+                        "label": "Ferrari",
+                        "id": "Ferrari",
+                        "checkingType": 0,
+                        "canCheck": true,
+                        "child": []
+                    }
+                ]
+            },
+            {
+                "label": "Sedan",
+                "id": "Sedan",
+                "checkingType": 0,
+                "canCheck": true,
+                "child": []
+            },
+            {
+                "label": "Sports",
+                "id": "Sports",
+                "checkingType": 0,
+                "canCheck": true,
+                "child": []
+            }
+        ]
+    },
+    {
+        "label": "Electronics",
+        "id": "Electronics",
+        "checkingType": 0,
+        "canCheck": true,
+        "child": [
+            {
+                "label": "Laptop",
+                "id": "Laptop",
+                "checkingType": 0,
+                "canCheck": true,
+                "child": [
+                    {
+                        "label": "Thinkpad",
+                        "id": "Thinkpad",
+                        "checkingType": 0,
+                        "canCheck": true,
+                        "child": []
+                    }
+                ]
+            },
+            {
+                "label": "Headphones",
+                "id": "Headphones",
+                "checkingType": 0,
+                "canCheck": true,
+                "child": [
+                    {
+                        "label": "Shure",
+                        "id": "Shure",
+                        "checkingType": 0,
+                        "canCheck": true,
+                        "child": []
+                    },
+                    {
+                        "label": "Bose",
+                        "id": "Bose",
+                        "checkingType": 0,
+                        "canCheck": true,
+                        "child": []
+                    },
+                    {
+                        "label": "JLB",
+                        "id": "JLB",
+                        "checkingType": 0,
+                        "canCheck": true,
+                        "child": []
+                    }
+                ]
+            }
+        ]
+    }
+]

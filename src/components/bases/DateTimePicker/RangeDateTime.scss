@@ -1,0 +1,16 @@
+.range-date-time-container{
+    margin-top: 24px;
+
+
+}
+
+.range-date-time-display {
+    padding-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div + div {
+        margin-left: 0.5rem;
+    }
+}

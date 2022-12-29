@@ -1,0 +1,268 @@
+$max-list: '' 'max-';
+$direction-list: '' '-x' '-y';
+$gap-list: '' 'column-' 'row-';
+$box-position-keys: '', 't', 'r', 'b', 'l';
+$box-position-keys-kebab: '', '-t', '-r', '-b', '-l';
+$box-position-axis: 'x', 'y';
+$box-positions: '', '-top', '-right', '-bottom', '-left';
+$common-atomic: (
+    "size": (
+        xs,
+        sm,
+        md,
+        lg,
+        xl,
+        xxl,
+    ),
+    "display": (
+        none,
+        block,
+        inline,
+        inline-block,
+        flex,
+        inline-flex	,
+    ),
+    "visibility": (
+        visible,
+        hidden,
+    ),
+    "overflow": (
+        auto,
+        hidden,
+        visible,
+        scroll,
+    ),
+    "flex-direction": (
+        "row": row,
+        "row-reverse": row-reverse,
+        "col": column,
+        "col-reverse": column-reverse,
+    ),
+    "flex-wrap": (
+        wrap,
+        wrap-reverse,
+        nowrap,
+    ),
+    "flex-justify-content": (
+        "start": flex-start,
+        "center": center,
+        "end": flex-end,
+        "around": space-around,
+        "between": space-between,
+        "evenly": space-evenly,
+    ),
+    "flex-align-items": (
+        "start": flex-start,
+        "center": center,
+        "end": flex-end,
+        "baseline": baseline,
+        "stretch": stretch,
+    ),
+    "flex-order": (
+        "first": -9999,
+        "last": 9999,
+    ),
+    "align-self": (
+        auto,
+        flex-start,
+        flex-end,
+        center,
+        stretch,
+        baseline,
+    ),
+    "gap": (
+        0,
+        "0\\.5",
+        1,
+        2,
+        3,
+        4,
+        8,
+        12,
+    ),
+    "cursor": (
+        auto,
+        default,
+        pointer,
+        wait,
+        text,
+        move,
+        help,
+        not-allowed,
+    ),
+);
+
+@function get-class($prefix, $dimension, $step, $negative) {
+    $stepper: -#{$step};
+    $neg: '';
+
+    @if ($negative == true) {
+        $neg: '-';
+    }
+
+    @if ($step == '') {
+        $stepper: $step;
+    }
+
+    @if ($prefix == 'space' or $prefix == 'divide') {
+        @return "#{$neg}#{$prefix}-#{$dimension}#{$stepper} > * + *";
+    }
+
+    @return #{$neg}#{$prefix}#{$dimension}#{$stepper};
+}
+
+@each $item in get("size") {
+    .size-#{$item} {
+        --size: var(--size-#{$item});
+    }
+}
+
+@each $item in get("display") {
+    .#{$item} {
+        display: $item !important;
+    }
+}
+
+@each $item in get("visibility") {
+    .#{$item} {
+        visibility: $item !important;
+    }
+}
+
+@each $item in get("overflow") {
+    .overflow-#{$item} {
+        overflow: $item !important;
+    }
+}
+
+@each $item in get("overflow") {
+    .overflow-x-#{$item} {
+        overflow-x: $item !important;
+    }
+}
+
+@each $item in get("overflow") {
+    .overflow-y-#{$item} {
+        overflow-y: $item !important;
+    }
+}
+
+@each $class, $property in get("flex-direction") {
+    .flex-#{$class} {
+        flex-direction: $property !important;
+    }
+}
+
+@each $item in get("flex-wrap") {
+    .flex-#{$item} {
+        flex-wrap: $item !important;
+    }
+}
+
+.flex-grow-0 {
+    flex-grow: 0;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.flex-shrink {
+    flex-shrink: 1;
+}
+
+.flex-basis-0 {
+    flex-basis: 0%;
+}
+
+.flex-basis-auto {
+    flex-basis: auto;
+}
+
+@each $class, $property in get("flex-justify-content") {
+    .justify-#{$class} {
+        justify-content: $property !important;
+    }
+}
+
+@each $class, $property in get("flex-align-items") {
+    .items-#{$class} {
+        align-items: $property !important;
+    }
+}
+
+@each $class, $property in get("flex-justify-content") {
+    .content-#{$class} {
+        align-content: $property !important;
+    }
+}
+
+@for $i from 0 through 12 {
+    .order-#{$i} {
+        order: $i !important;
+    }
+}
+
+@each $class, $property in get("flex-order") {
+    .order-#{$class} {
+        order: $property !important;
+    }
+}
+
+@for $i from 0 through 1 {
+    .flex-shrink-#{$i} {
+        flex-shrink: $i !important;
+    }
+}
+
+@for $i from 0 through 10 {
+    @if $i == 0 {
+        .flex-grow-#{$i} {
+            flex-grow: $i !important;
+            flex-basis: auto !important;
+        }
+    }
+
+    @else {
+        .flex-grow-#{$i} {
+            flex-grow: $i !important;
+        }
+    }
+}
+
+@each $item in get("align-self") {
+    .self-#{$item} {
+        align-self: $item !important;
+    }
+}
+
+@each $item in get("gap") {
+    @for $i from 1 through length($direction-list) {
+        .gap#{nth($direction-list, $i)}-#{$item} {
+            #{nth($gap-list, $i)}gap: var(--spacing-#{$item}) !important;
+        }
+    }
+}
+
+@each $item in get("cursor") {
+    .cursor-#{$item} {
+        cursor: $item !important;
+    }
+}
+
+.no-select {
+    user-select: none !important;
+}
+
+.show {
+    @extend .visible;
+}
+
+.hidden,
+.hide {
+    @extend .none;
+}

@@ -1,0 +1,53 @@
+.im-btn {
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    line-height: 1;
+
+    &::before {
+        margin-right: 6px;
+    }
+}
+
+.m-input-moment {
+    padding: 1rem;
+
+    .options {
+        width: 100%;
+        display: inline-block;
+        margin-bottom: 10px;
+
+        button {
+            float: left;
+            width: 50%;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+            height: 32px;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            border-radius: 6px;
+            box-sizing: border-box;
+
+            &:first-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            &:last-child {
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+
+            &.active {
+                color: white;
+                background-color: var(--primary-color);
+            }
+        }
+    }
+
+    .footer {
+        margin-top: 10px;
+    }
+}

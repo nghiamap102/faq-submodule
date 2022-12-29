@@ -1,0 +1,39 @@
+.group-list {
+    height: 100%;
+
+    .group-add-button {
+        height: 1.5rem;
+        width: 1.5rem;
+        margin: 0.5rem 1.25rem 0.5rem 1rem;
+        cursor: pointer;
+    }
+
+    .group-item {
+        height: 2.5rem;
+        width: 2.5rem;
+        margin: 1.5em 0rem;
+    }
+
+    .group-scroll {
+        padding-bottom: 1rem;
+    }
+
+    //scrollbar width
+    .ps__thumb-y {
+        width: 2px;
+    }
+
+    .ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y {
+        width: 4px !important;
+    }
+
+    .tooltip {
+        position: absolute;
+        right: 100%;
+        z-index: 900;
+        max-width: 250px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

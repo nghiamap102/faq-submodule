@@ -1,0 +1,159 @@
+$spacing-keys: 'm', 'p';
+$spacing-properties: 'margin', 'padding';
+$spacing-special: (
+    "auto": auto,
+    "full": 100%,
+    "min": min-content,
+    "max": max-content,
+    "fit": fit-content,
+);
+$spacing-system: (
+    "px": 1px,
+    "0": 0,
+    "0\\.5": 0.125rem,
+    "1": 0.25rem,
+    "1\\.5": 0.375rem,
+    "2": 0.5rem,
+    "2\\.5": 0.625rem,
+    "3": 0.75rem,
+    "3\\.5": 0.875rem,
+    "4": 1rem,
+    "5": 1.25rem,
+    "6": 1.5rem,
+    "7": 1.75rem,
+    "8": 2rem,
+    "9": 2.25rem,
+    "10": 2.5rem,
+    "11": 2.75rem,
+    "12": 3rem,
+    "14": 3.5rem,
+    "16": 4rem,
+    "20": 5rem,
+    "24": 6rem,
+    "28": 7rem,
+    "32": 8rem,
+    "36": 9rem,
+    "40": 10rem,
+    "44": 11rem,
+    "48": 12rem,
+    "52": 13rem,
+    "56": 14rem,
+    "60": 15rem,
+    "64": 16rem,
+    "72": 18rem,
+    "80": 20rem,
+    "96": 24rem,
+);
+
+@function get-spacing-value($prefix, $dimension, $step, $p, $values, $negative: false) {
+    $val: var(--spacing-#{$step});
+
+    @if ($negative == true) {
+        $val: calc(var(--spacing-#{$step}) * -1);
+    }
+
+    @if ($prefix != 'space') {
+        @return $val;
+    }
+
+    @return unquote("calc(#{$val} * " + nth($values, $p));
+}
+
+@mixin spacing-rem-step($prefix, $dimension, $get-class, $properties, $get-value, $values, $negative: false) {
+    @each $step, $value in $spacing-system {
+        .#{call(get-function($get-class), $prefix, $dimension, $step, $negative)} {
+            @for $p from 1 through length($properties) {
+                #{nth($properties, $p)}: call(get-function($get-value), $prefix, $dimension, $step, $p, $values, $negative);
+            }
+        }
+    }
+}
+
+:root {
+    @each $item, $value in $spacing-special {
+        --spacing-#{$item}: #{$value};
+    }
+
+    @each $item, $value in $spacing-system {
+        --spacing-#{$item}: #{$value};
+    }
+
+    @for $i from 2 through 6 {
+        @for $j from 1 through $i - 1 {
+            --spacing-#{$j}\/#{$i}: #{$j / $i * 100%};
+        }
+    }
+
+    @for $i from 1 through 11 {
+        --spacing-#{$i}\/12: #{$i / 12 * 100%};
+    }
+}
+
+@for $k from 1 through length($spacing-keys) {
+    @for $j from 1 through length($box-position-keys) {
+        $prefix: nth($spacing-keys, $k);
+        $dimension: nth($box-position-keys, $j);
+        $properties: #{nth($spacing-properties, $k)}#{nth($box-positions, $j)};
+
+        @include spacing-rem-step($prefix, $dimension, get-class, $properties, get-spacing-value, '');
+
+        @if (nth($spacing-keys, $k) == 'm') {
+            @include spacing-rem-step($prefix, $dimension, get-class, $properties, get-spacing-value, '', true);
+        }
+    }
+}
+
+@for $k from 1 through length($spacing-keys) {
+    @each $axis in $box-position-axis {
+        $position1: '-left';
+        $position2: '-right';
+        $prefix: nth($spacing-keys, $k);
+
+        @if ($axis == 'y') {
+            $position1: '-top';
+            $position2: '-bottom';
+        }
+
+        $properties: #{nth($spacing-properties, $k)}#{$position1}, #{nth($spacing-properties, $k)}#{$position2};
+
+        @include spacing-rem-step($prefix, $axis, get-class, $properties, get-spacing-value, '');
+
+        @if (nth($spacing-keys, $k) == 'm') {
+            @include spacing-rem-step($prefix, $axis, get-class, $properties, get-spacing-value, '', true);
+        }
+    }
+}
+
+// Space Between
+// Utilities for controlling the space between child elements.
+[class*="space-x"] {
+    --space-x-reverse: 0;
+}
+
+[class*="space-y"] {
+    --space-y-reverse: 0;
+}
+
+.space-x-reverse > * + * {
+    --space-x-reverse: 1;
+}
+
+.space-y-reverse > * + * {
+    --space-y-reverse: 1;
+}
+
+@each $axis in $box-position-axis {
+    $position1: '-left';
+    $position2: '-right';
+    $values: "calc(1 - var(--space-#{$axis}-reverse)))", "var(--space-#{$axis}-reverse))";
+
+    @if ($axis == 'y') {
+        $position1: '-top';
+        $position2: '-bottom';
+    }
+
+    $properties: margin#{$position1}, margin#{$position2};
+
+    @include spacing-rem-step('space', $axis, get-class, $properties, get-spacing-value, $values);
+    @include spacing-rem-step('space', $axis, get-class, $properties, get-spacing-value, $values, true);
+}

@@ -1,0 +1,334 @@
+@import "styles/core/vars";
+@import "styles/core/functions";
+@import "styles/core/units";
+@import "styles/core/breakpoints";
+
+$handleButton: (
+    "color": (
+        "default",
+        "primary",
+        "success",
+        "info",
+        "danger",
+        "warning",
+    ),
+    "media": (
+        ">=tablet": $font-base-sm,
+        ">=width-1280": $font-base-md,
+        ">=width-hd": $font-base-lg,
+        ">=width-wqhd": $font-base-xl,
+    ),
+    "button-height": (
+        "xs": 24,
+        "sm": 32,
+        "md": 40,
+        "lg": 48,
+    ),
+    "icon-ratio-size": (
+        "xxs": 0.25,
+        "xs": 0.375,
+        "sm": 0.5,
+        "md": 0.625,
+        "lg": 0.75,
+        "xl": 0.875,
+        "xxl": 1,
+    ),
+);
+
+.btn {
+    --button-height: 2.25em;
+    --icon-ratio: 0;
+    --color: var(--button-color);
+    --hover-state: rgba(var(--white), var(--alpha-10));
+    --active-state: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) var(--btn-color);
+    --border-color: var(--btn-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(8px) rem(12px);
+    min-height: var(--button-height);
+    color: var(--color);
+    background-color: var(--button-background);
+    border-radius: 0.25rem;
+    touch-action: manipulation;
+    transition: all 0.15s ease;
+    cursor: pointer;
+
+    &:disabled {
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+        box-shadow: inset 0 0 0 100vh var(--hover-state);
+    }
+
+    &:active:not(:disabled) {
+        background: var(--active-state);
+    }
+
+    &:focus-visible:not(:disabled) {
+        border-color: var(--border-color);
+        box-shadow: 0 0 0 0.25rem rgba(var(--btn-color--rgb), 0.3);
+    }
+
+    &:focus:not(:disabled) {
+        border-color: var(--border-color);
+        box-shadow: 0 0 0 0.25rem rgba(var(--btn-color--rgb), 0.3);
+
+        &:not(:focus-visible) {
+            box-shadow: none;
+
+            &:hover {
+                box-shadow: inset 0 0 0 100vh var(--hover-state);
+            }
+        }
+    }
+}
+
+// Default variant of button is 'fill'
+.btn--fill {
+    --button-background: var(--btn-color);
+    --stroke-color: rgba(var(--contrast), 0.35);
+
+    .theme-dark & {
+        --stroke-color: rgba(var(--contrast), 0.5);
+    }
+
+    .theme-light & {
+        --stroke-color: rgba(var(--contrast), 0.35);
+    }
+
+    &.btn--empty {
+        color: var(--btn-color);
+
+        &.btn--default {
+            color: var(--text-color);
+        }
+    }
+}
+
+.btn--fade {
+    --button-background: rgba(var(--btn-color--rgb), 0.2);
+    --stroke-color: rgba(var(--btn-color--rgb), 0.5);
+    //
+    color: var(--btn-color);
+
+    &:hover:not(:disabled) {
+        --hover-state: rgba(var(--base-rgb), 0.34);
+
+        &:active:focus {
+            background: none;
+            box-shadow: none;
+            background-color: rgba(var(--btn-color--rgb), 0.3);
+        }
+    }
+}
+
+.btn--outline {
+    --button-outline: var(--btn-color);
+    //
+    color: var(--btn-color);
+    border: 1px solid var(--button-outline);
+
+    .theme-dark & {
+        --stroke-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .theme-light & {
+        --stroke-color: rgba(255, 255, 255, 0.8);
+    }
+
+    &:hover:not(:disabled) {
+        --color: var(--text-color);
+        --hover-state: rgba(var(--btn-color--rgb), 0.2);
+    }
+
+    &:active:not(:disabled) {
+        --color: var(--text-color);
+        --active-state: rgba(var(--btn-color--rgb), 0.2);
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+.btn--empty {
+    --button-color: var(--btn-color);
+    background: none;
+
+    &:hover:not(:disabled) {
+        --hover-state: var(--contrast-highlight);
+
+        // TODO: continue for each color
+    }
+
+    &:active:not(:disabled) {
+        --active-state: rgba(var(--btn-color--rgb), 0.2);
+    }
+}
+
+// handle button color, default is 'btn--default'
+@each $name in get("color", $handleButton) {
+    .btn--#{$name} {
+        --btn-color: var(--#{$name}-color); // ! double check
+        --btn-color--rgb: var(--#{$name}); // ! double check
+    }
+}
+
+.btn--loading {
+    $radius: 0.25;
+    $stroke-width: 1;
+    $saiso: 0.628;
+
+    //
+    position: relative;
+
+    // handle radius size for svg loading each media breakpoints
+    @each $media, $size in get("media", $handleButton) {
+        @include media(#{$media}) {
+            --radius: calc(#{$size} * #{$radius});
+        }
+    }
+
+    svg {
+        position: absolute;
+        // Add $saiso to svg loading is inner button in chrome
+        width: calc(100% - #{$stroke-width + 'px'} - #{$saiso}px);
+        height: calc(100% - #{$stroke-width + 'px'} - #{$saiso}px);
+        top: calc(#{$stroke-width /2 + 'px'} + #{$saiso}px);
+        left: calc(#{$stroke-width /2 + 'px'} + #{$saiso}px);
+        fill: transparent;
+        overflow: visible;
+    }
+
+    rect {
+        stroke: var(--stroke-color);
+        stroke-width: $stroke-width;
+        transition: 1.5s;
+        stroke-dasharray: 200%;
+        -webkit-animation: svganimation 1s linear infinite;
+        animation: svganimation 1s linear infinite;
+        width: 100%;
+        height: 100%;
+        rx: var(--radius);
+        ry: var(--radius);
+    }
+
+    @keyframes svganimation {
+        0% {
+            stroke-dashoffset: 400%;
+        }
+
+        100% {
+            stroke-dashoffset: 0;
+        }
+    }
+}
+
+// handle button size
+@each $size, $height in get("button-height", $handleButton) {
+    &.btn--#{$size} {
+        $button-height: #{$height};
+        $button-height-ratio: #{$button-height} / #{$font-base-int};
+
+        --button-height: calc(#{$button-height-ratio} * 1em);
+
+        &.btn--round {
+            // handle radius size for svg loading each media breakpoints
+            @each $media, $font-base-size in get("media", $handleButton) {
+                @include media(#{$media}) {
+                    --radius: calc(#{$font-base-size} * #{$button-height-ratio} / 2);
+                }
+            }
+        }
+    }
+}
+
+.btn--active:not(.btn--empty) {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) var(--btn-color);
+}
+
+.btn--round {
+    border-radius: 50vh;
+    padding-left: em(20px);
+    padding-right: em(20px);
+}
+
+.btn--full-width {
+    width: 100%;
+}
+
+[class*="btn--icon"] {
+    i {
+        font-size: calc(var(--button-height) * var(--icon-ratio)) !important;
+    }
+}
+
+// handle icon ratio size
+@each $size, $ratio in get("icon-ratio-size", $handleButton) {
+    .btn--icon-#{$size} {
+        --icon-ratio: #{$ratio};
+    }
+}
+
+.btn--only-icon {
+    width: var(--button-height);
+    height: var(--button-height);
+    padding: em(6px);
+}
+
+.btn-icon {
+    &.btn--default {
+        --btn-color: var(--sub-text-color);
+        --button-outline: var(--border-light);
+
+        &:hover:not(:disabled) {
+            --hover-state: var(--contrast-highlight);
+            color: var(--btn-color);
+        }
+
+        &:focus:not(:focus-visible) {
+            --border-color: var(--button-outline);
+        }
+    }
+}
+
+.btn--icon-left > * + * {
+    margin-inline-start: em(8px);
+}
+
+.btn--icon-right > * + * {
+    margin-inline-end: em(8px);
+}
+
+.btn__text {
+    font-size: var(--text-size);
+    margin: 0 0.5rem;
+
+    .btn--xs & {
+        $text-size: 12;
+        $text-size-ratio: #{$text-size} / #{$font-base-int};
+
+        --text-size: calc(#{$text-size-ratio} * 1rem);
+    }
+
+    .btn--sm &,
+    .btn--md & {
+        $text-size: 14;
+        $text-size-ratio: #{$text-size} / #{$font-base-int};
+
+        --text-size: calc(#{$text-size-ratio} * 1rem);
+    }
+
+    .btn--lg & {
+        $text-size: 16;
+        $text-size-ratio: #{$text-size} / #{$font-base-int};
+
+        --text-size: calc(#{$text-size-ratio} * 1rem);
+    }
+}

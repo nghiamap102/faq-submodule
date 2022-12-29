@@ -1,0 +1,29 @@
+.tracking-marker
+{
+    position: relative;
+
+    .tm-heading {
+        color: var(--primary-color);
+        position: absolute;
+        text-align: center;
+        top: -15%;
+        left: 35%;
+        height: 130%;
+        transform-origin: center center;
+        line-height: 0;
+    }
+}
+.tracking-marker-label{
+    font-size: 11px;
+    width: max-content;
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: absolute;
+    bottom: -55px;
+    background: rgba(48, 48, 48, 1);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

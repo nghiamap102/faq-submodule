@@ -1,0 +1,22 @@
+.multiline_input {
+    overflow: hidden;
+
+    &.form-control {
+        padding: 0;
+    }
+
+    .multiline_input-rapperDenVau {
+        display: block;
+        padding: 0.5rem;
+        padding-right: 1rem;
+
+        .post-textarea {
+            width: 100%;
+            caret-color: var(--text-color);
+            color: var(--text-color);
+            resize: none;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+    }
+}

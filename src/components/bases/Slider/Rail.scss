@@ -1,0 +1,17 @@
+.slider__rail {
+    display: block;
+    position: absolute;
+    background-color: rgba(192, 192, 192, .3);
+    border-radius: 5px;
+    width: 100%;
+    height: inherit;
+    top: 0;
+}
+
+.range-slider__container--vertical {
+    .slider__rail {
+        height: 100%;
+        width: inherit;
+        left: 0;
+    }
+}

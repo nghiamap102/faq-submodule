@@ -1,0 +1,57 @@
+@import "styles/core/vars";
+@import "styles/core/units";
+
+$font-size: $font-base;
+
+.breadcrumb {
+    font-size: rem($font-size);
+}
+
+.breadcrumb__node {
+    display: inline-block;
+    align-items: center;
+    white-space: nowrap;
+    position: relative;
+
+    a {
+        color: var(--sub-text-color);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    & + &:not(.breadcrumb__node--has-separator) {
+        &::before {
+            content: '';
+            display: inline-block;
+            margin: 0 em(16px, $font-size);
+            height: 0.82em;
+            transform: rotate(15deg);
+            border-right: 1px solid var(--sub-text-color);
+        }
+    }
+
+    &--show-child {
+        margin-left: .5rem;
+    }
+}
+
+.child-nodes--transform {
+    .overlay-main {
+        transform: translateX(0) !important;
+    }
+
+    &.not-first-child {
+        .overlay-main {
+            transform: translateX(2rem) !important;
+        }
+    }
+}
+
+.breadcrumb__separator {
+    margin: 0 em(8px, $font-size);
+    color: var(--sub-text-color);
+    user-select: none;
+}

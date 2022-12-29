@@ -1,0 +1,498 @@
+// Change name --prim-highlight to --primary-highlight
+// Change name --base-color-rgb to --base-rgb;
+// Change name --contrast-color-rgb to --contrast;
+// Change name --background-color to --bg-color;
+// Change name --border-rgb to --border;
+// Change name --border to --border-color;
+// Change name --text-color-rgb to --text-rgb;
+// Change name --text-color-light to --text-light;
+// Change name --text-color-dark to --text-dark;
+// Change name --prim-rgb to --primary;
+.theme-base {
+    --default: 99, 99, 99;
+    --success: 40, 167, 69;
+    --info: 23, 162, 184;
+    --warning: 255, 193, 7;
+    --danger: 220, 53, 69;
+    --primary: 37, 99, 235;
+    --secondary: 8, 145, 178;
+    --overlay-bg: #505050;
+    --primary-highlight-alpha: var(--alpha-30);
+    --secondary-light-alpha: var(--alpha-10);
+    --base-light-alpha: var(--alpha-5);
+    --base-lighter-alpha: var(--alpha-10);
+    --base-highlight-alpha: var(--alpha-15);
+    --text-alpha: var(--alpha-85);
+    --text-light-alpha: var(--alpha-90);
+    --text-dark-alpha: var(--alpha-55);
+    --sub-text-alpha: var(--alpha-55);
+    --font-leading: var(--leading-tight);
+    --btn-alpha: var(--alpha-95);
+    --border-alpha: var(--alpha-15);
+    --border-light-alpha: var(--alpha-10);
+    --border-lighter-alpha: var(--alpha-5);
+    --divide-alpha: var(--alpha-15);
+    --bg: var(--base-rgb);
+    --bg-alpha: var(--alpha-100);
+    --form-control-bg-alpha: var(--alpha-20);
+    --popup-border-radius: 0.5rem;
+    --tag-green-bg-light: #d1fae5;
+    --tag-green-fg-light: #065f46;
+    --tag-lime-bg-light: #e8fad1;
+    --tag-lime-fg-light: #415f06;
+    --tag-yellow-bg-light: #fcf3c3;
+    --tag-yellow-fg-light: #85460b;
+    --tag-orange-bg-light: #fee3c7;
+    --tag-orange-fg-light: #92380e;
+    --tag-red-bg-light: #fee2e2;
+    --tag-red-fg-light: #991c1c;
+    --tag-green-bg-dark: rgba(12, 185, 121, .18);
+    --tag-green-fg-dark: rgba(48, 225, 118, 0.94);
+    --tag-lime-bg-dark: rgba(133, 185, 12, 0.18);
+    --tag-lime-fg-dark: rgba(172, 225, 48, 0.94);
+    --tag-yellow-bg-dark: rgba(232, 184, 25, 0.18);
+    --tag-yellow-fg-dark: rgba(255, 207, 48, 0.94);
+    --tag-orange-bg-dark: rgba(232, 135, 25, 0.18);
+    --tag-orange-fg-dark: rgba(255, 131, 48, 0.94);
+    --tag-red-bg-dark: rgba(183, 26, 39, .18);
+    --tag-red-fg-dark: rgba(225, 143, 163, 0.94);
+    --map-tool-bg: var(--bg-color);
+    //
+    --feature-item-width: 2.5rem; // Using in FeatureItem component
+    --feature-item-height: 2.5rem; // Using in FeatureItem component
+    --theme-transit-duration: 300; // Duration of transit effect when switching theme
+
+    &.theme-switching {
+        transition-duration: calc(var(--theme-transit-duration) * 1ms) !important;
+        transition-property: color, background-color, background-image, border-color !important;
+
+        *,
+        ::before,
+        ::after {
+            transition-duration: calc(var(--theme-transit-duration) * 1ms) !important;
+            transition-property: color, background-color, background-image, border-color !important;
+        }
+    }
+}
+
+.theme-mobile {
+    // ! Must disable the scrolling on the mobile if the page use fullscreen map
+
+    // isMobileClipped
+    html,
+    body {
+        overflow: hidden;
+        touch-action: none;
+    }
+}
+
+.theme-dark {
+    --default-color: rgb(var(--default));
+    --primary-color: rgb(var(--primary));
+    --primary-highlight: rgba(var(--primary), var(--primary-highlight-alpha));
+    --secondary-color: rgb(var(--secondary));
+    --secondary-light: rgba(var(--secondary), var(--secondary-light-alpha)); // Useless on VUI, so double check on project.
+    --tertiary-color: rgb(var(--tertiary));
+    --success-color: rgb(var(--success));
+    --info-color: rgb(var(--info));
+    --warning-color: rgb(var(--warning));
+    --danger-color: rgb(var(--danger));
+
+    // base color
+    --base-rgb: var(--black);
+    --contrast: var(--white);
+    --base-color: rgb(var(--base-rgb));
+    --base-light: rgba(var(--base-rgb), var(--base-light-alpha));
+    --base-lighter: rgba(var(--base-rgb), var(--base-lighter-alpha));
+    --base-highlight: rgba(var(--base-rgb), var(--base-highlight-alpha));
+    --contrast-color: rgb(var(--contrast));
+    --contrast-light: rgba(var(--contrast), var(--base-light-alpha));
+    --contrast-lighter: rgba(var(--contrast), var(--base-lighter-alpha));
+    --contrast-highlight: rgba(var(--contrast), var(--base-highlight-alpha));
+    --bg-color: hsl(0, 0%, 19%);
+    --bg-dark: hsl(0, 0%, 13%);
+    --bg-light: hsl(0, 0%, 37%);
+
+    // text
+    --text-rgb: var(--contrast);
+    --text-color: rgba(var(--text-rgb), var(--text-alpha));
+    --text-contrast-color: rgba(var(--base-rgb), var(--text-alpha));
+    --text-light: rgba(var(--text-rgb), var(--text-light-alpha));
+    --text-dark: rgba(var(--text-rgb), var(--text-dark-alpha));
+    --sub-text-color: rgba(var(--text-rgb), var(--sub-text-alpha));
+
+    // border
+    --border: var(--contrast);
+    --border-color: rgba(var(--border), var(--border-alpha));
+    --border-light: rgba(var(--border), var(--border-light-alpha));
+    --border-lighter: rgba(var(--border), var(--border-lighter-alpha));
+
+    //
+    --overlay-bg: #505050;
+
+    // control
+    --sidebar-bg: var(--bg-color);
+    --tab-bg: hsl(0, 0%, 31%);
+    --panel-footer-bg: hsl(0, 0%, 26%);
+    --panel-header-bg: hsl(0, 0%, 13%);
+    --panel-bg: hsl(0, 0%, 19%);
+    --panel-split-shine: inset 2px 0 2px 0 rgba(110, 110, 110, 0.4);
+    --panel-split-shadow: -2px 0 2px 0 rgb(24, 24, 24);
+    --button-color: rgba(var(--contrast), var(--btn-alpha));
+    --form-control-bg: rgba(var(--base-rgb), var(--form-control-bg-alpha));
+    --popup-bg: hsl(0, 0%, 23%);
+    --popup-border: var(--border-color);
+    --marker-popup-border-radius: 0.25rem;
+    --card-container-bg-color: var(--bg-dark);
+    --card-bg-color: var(--contrast-light);
+    --card-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
+    --diff-bg: #2e303c;
+    --diff-added-bg: #044b53;
+    --diff-removed-bg: #632f34;
+    --diff-word-added-bg: #055d67;
+    --diff-word-removed-bg: #7d383f;
+    --diff-gutter-added-bg: #034148;
+    --diff-gutter-remove-bg: #632b30;
+    --diff-gutter-bg: #2c2f3a;
+    --diff-gutter-hover-bg: #262933;
+    --diff-gutter-highlight-bg: #2d4077;
+    --diff-highlight-bg: #2a3967;
+    --diff-fold-gutter-bg: #21232b;
+    --diff-fold-bg: #262831;
+    --diff-empty-line-bg: #363946;
+    --diff-fold-content-color: #555a7b;
+    --diff-title-bg: #2f323e;
+
+    // --default-color: var(--bg-light); //
+    --default-text-color: var(--button-color); // for Button.js component, remove if useless
+    --tag-green-bg: var(--tag-green-bg-dark);
+    --tag-green-fg: var(--tag-green-fg-dark);
+    --tag-lime-bg: var(--tag-lime-bg-dark);
+    --tag-lime-fg: var(--tag-lime-fg-dark);
+    --tag-yellow-bg: var(--tag-yellow-bg-dark);
+    --tag-yellow-fg: var(--tag-yellow-fg-dark);
+    --tag-orange-bg: var(--tag-orange-bg-dark);
+    --tag-orange-fg: var(--tag-orange-fg-dark);
+    --tag-red-bg: var(--tag-red-bg-dark);
+    --tag-red-fg: var(--tag-red-fg-dark);
+
+    //.app-overlay,
+    .action-menu,
+    .mapboxgl-popup,
+    .map-control,
+    .map-control-button,
+    .map-rotation-control,
+    .mapboxgl-ctrl {
+        //.mapboxgl-popup,
+        //.tooltip,
+        //.mapboxgl-marker, {
+        --base-rgb: var(--white);
+        --contrast: var(--black);
+        --base-color: rgb(var(--base-rgb));
+        --base-light: rgba(var(--base-rgb), var(--base-light-alpha));
+        --base-lighter: rgba(var(--base-rgb), var(--base-lighter-alpha));
+        --base-highlight: rgba(var(--base-rgb), var(--base-highlight-alpha));
+        --contrast-color: rgb(var(--contrast));
+        --contrast-light: rgba(var(--contrast), var(--base-light-alpha));
+        --contrast-lighter: rgba(var(--contrast), var(--base-lighter-alpha));
+        --contrast-highlight: rgba(var(--contrast), var(--base-highlight-alpha));
+        --bg-color: hsl(200, 37%, 97%);
+        --bg-dark: hsl(200, 37%, 94%);
+        --bg-light: hsl(200, 37%, 98%);
+
+        // text
+        --text-rgb: var(--contrast);
+        --text-color: rgba(var(--text-rgb), var(--text-alpha));
+        --text-contrast-color: rgba(var(--base-rgb), var(--text-alpha));
+        --text-light: rgba(var(--text-rgb), var(--text-light-alpha));
+        --text-dark: rgba(var(--text-rgb), var(--text-dark-alpha));
+        --sub-text-color: rgba(var(--text-rgb), var(--sub-text-alpha));
+
+        // border
+        --border: var(--contrast);
+        --border-color: rgba(var(--border), var(--border-alpha));
+        --border-light: rgba(var(--border), var(--border-light-alpha));
+        --border-lighter: rgba(var(--border), var(--border-lighter-alpha));
+
+        // control
+        --button-color: rgba(var(--base-rgb), var(--btn-alpha));
+        --form-control-bg: var(--base-color);
+        --panel-header-bg: var(--base-color);
+        --panel-footer-bg: var(--base-color);
+        --panel-split-shine: none;
+        --popup-bg: rgb(244, 248, 250);
+        --marker-popup-border-radius: 0.625rem;
+
+        // text
+        --default-color: rgba(var(--contrast), var(--alpha-60));
+        --default-text-color: var(--base-color); // for Button.js component, remove if useless
+    }
+}
+
+.theme-light {
+    --default-color: rgb(var(--default));
+    --primary-color: rgb(var(--primary));
+    --primary-highlight: rgba(var(--primary), var(--primary-highlight-alpha));
+    --secondary-color: rgb(var(--secondary));
+    --secondary-light: rgba(var(--secondary), var(--secondary-light-alpha)); // Useless on VUI, so double check on project.
+    --tertiary-color: rgb(var(--tertiary));
+    --success-color: rgb(var(--success));
+    --info-color: rgb(var(--info));
+    --warning-color: rgb(var(--warning));
+    --danger-color: rgb(var(--danger));
+
+    // base color
+    --base-rgb: var(--white);
+    --contrast: var(--black);
+    --base-color: rgb(var(--base-rgb));
+    --base-light: rgba(var(--base-rgb), var(--base-light-alpha));
+    --base-lighter: rgba(var(--base-rgb), var(--base-lighter-alpha));
+    --base-highlight: rgba(var(--base-rgb), var(--base-highlight-alpha));
+    --contrast-color: rgb(var(--contrast));
+    --contrast-light: rgba(var(--contrast), var(--base-light-alpha));
+    --contrast-lighter: rgba(var(--contrast), var(--base-lighter-alpha));
+    --contrast-highlight: rgba(var(--contrast), var(--base-highlight-alpha));
+    --bg-color: hsl(0, 0%, 100%);
+    --bg-dark: hsl(0, 0%, 90%);
+    --bg-light: hsl(210, 43%, 100%);
+    --form-control-bg: rgba(var(--base-rgb), var(--form-control-bg-alpha));
+
+    // text
+    --text-rgb: var(--contrast);
+    --text-color: rgba(var(--text-rgb), var(--text-alpha));
+    --text-contrast-color: rgba(var(--base-rgb), var(--text-alpha));
+    --text-light: rgba(var(--text-rgb), var(--text-light-alpha));
+    --text-dark: rgba(var(--text-rgb), var(--text-dark-alpha));
+    --sub-text-color: rgba(var(--text-rgb), var(--sub-text-alpha));
+
+    // border
+    --border: var(--contrast);
+    --border-color: rgba(var(--border), var(--border-alpha));
+    --border-light: rgba(var(--border), var(--border-light-alpha));
+    --border-lighter: rgba(var(--border), var(--border-lighter-alpha));
+
+    // control
+    --sidebar-bg: hsl(210, 43%, 97%);
+    --tab-bg: hsl(0, 0%, 90%);
+    --panel-footer-bg: hsl(0, 0%, 90%);
+    --panel-header-bg: hsl(0, 0%, 98%);
+    --panel-bg: hsl(0, 0%, 100%);
+    --panel-split-shine: inset 1px 0 1px 0 rgba(110, 110, 110, 0.4);
+    --panel-split-shadow: none;
+    --button-color: rgba(var(--base-rgb), var(--btn-alpha));
+    --popup-bg: hsl(0, 0%, 100%);
+    --popup-border: var(--border-color);
+    --marker-popup-border-radius: 0.25rem;
+    --card-bg-color: var(--bg-color);
+    --card-shadow: 0 2px 40px 0 rgba(0, 0, 0, 0.07);
+    --card-hover-shadow: 0 2px 2px rgba(45, 45, 45, 0.05), 0 4px 4px rgba(49, 49, 49, 0.05), 0 8px 8px rgba(42, 42, 42, 0.05), 0 16px 16px rgba(32, 32, 32, 0.05), 0 32px 32px rgba(49, 49, 49, 0.05), 0 64px 64px rgba(35, 35, 35, 0.05);
+    --diff-bg: var(--base-color);
+    --diff-added-bg: #e6ffed;
+    --diff-removed-bg: #ffeef0;
+    --diff-word-added-bg: #acf2bd;
+    --diff-word-removed-bg: #fdb8c0;
+    --diff-gutter-added-bg: #cdffd8;
+    --diff-gutter-remove-bg: #ffdce0;
+    --diff-gutter-bg: #f7f7f7;
+    --diff-gutter-hover-bg: #f3f1f1;
+    --diff-gutter-highlight-bg: #fff5b1;
+    --diff-highlight-bg: #fffbdd;
+    --diff-fold-gutter-bg: #dbedff;
+    --diff-fold-bg: #f1f8ff;
+    --diff-empty-line-bg: #fafbfc;
+    --diff-fold-content-color: #212529;
+    --diff-title-bg: #fafbfc;
+
+    // --default-color: var(--bg-dark);
+    --default-text-color: var(--base-color); // for Button.js component, remove if useless
+    --tag-green-bg: var(--tag-green-bg-light);
+    --tag-green-fg: var(--tag-green-fg-light);
+    --tag-lime-bg: var(--tag-lime-bg-light);
+    --tag-lime-fg: var(--tag-lime-fg-light);
+    --tag-yellow-bg: var(--tag-yellow-bg-light);
+    --tag-yellow-fg: var(--tag-yellow-fg-light);
+    --tag-orange-bg: var(--tag-orange-bg-light);
+    --tag-orange-fg: var(--tag-orange-fg-light);
+    --tag-red-bg: var(--tag-red-bg-light);
+    --tag-red-fg: var(--tag-red-fg-light);
+}
+
+.theme-gray {
+    --bg-color: hsl(209, 19%, 27%);
+    --bg-dark: hsl(196, 17%, 28%);
+    --bg-light: hsl(209, 19%, 42%);
+
+    // control
+    --sidebar-bg: hsl(210, 18%, 31%);
+    --tab-bg: hsl(210, 17%, 51%);
+    --panel-footer-bg: var(--bg-color);
+    --panel-header-bg: hsl(210, 18%, 37%);
+    --panel-bg: var(--bg-color);
+    --panel-split-shine: inset 1px 0 1px 0 rgb(82 100 122);
+    --panel-split-shadow: none;
+    --button-color: var(--contrast-color);
+    --popup-bg: hsl(0, 0%, 23%);
+
+    // text
+    --primary: 245, 200, 0;
+    --primary-light: rgb(255, 214, 163);
+    --primary-dark: rgb(85, 120, 139);
+    --secondary: 255, 214, 163;
+    --tertiary: 255, 190, 38;
+    --default-color: var(--bg-light);
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #ff5a4d;
+
+    .app-overlay,
+    .action-menu,
+    .mapboxgl-popup,
+        //.mapboxgl-popup,
+        //.tooltip,
+    .mapboxgl-marker {
+        --base-rgb: var(--white);
+        --contrast: var(--black);
+        --base-color: rgb(var(--base-rgb));
+        --base-light: rgba(var(--base-rgb), var(--base-light-alpha));
+        --base-lighter: rgba(var(--base-rgb), var(--base-lighter-alpha));
+        --base-highlight: rgba(var(--base-rgb), var(--base-highlight-alpha));
+        --contrast-color: rgb(var(--contrast));
+        --contrast-light: rgba(var(--contrast), var(--base-light-alpha));
+        --contrast-lighter: rgba(var(--contrast), var(--base-lighter-alpha));
+        --contrast-highlight: rgba(var(--contrast), var(--base-highlight-alpha));
+        --bg-color: hsl(200, 18%, 98%);
+        --bg-dark: hsl(200, 37%, 94%);
+        --bg-light: hsl(200, 37%, 98%);
+
+        // text
+        --text-rgb: var(--contrast);
+        --text-color: rgba(var(--text-rgb), var(--text-alpha));
+        --text-contrast-color: rgba(var(--base-rgb), var(--text-alpha));
+        --text-light: rgba(var(--text-rgb), var(--text-light-alpha));
+        --text-dark: rgba(var(--text-rgb), var(--text-dark-alpha));
+        --sub-text-color: rgba(var(--text-rgb), var(--sub-text-alpha));
+
+        // border
+        --border: var(--contrast);
+        --border-color: rgba(var(--border), var(--border-alpha));
+        --border-light: rgba(var(--border), var(--border-light-alpha));
+        --border-lighter: rgba(var(--border), var(--border-lighter-alpha));
+
+        // control
+        --button-color: rgba(var(--base-rgb), var(--btn-alpha));
+        --form-control-bg: var(--base-color);
+        --panel-header-bg: var(--base-color);
+        --panel-footer-bg: var(--base-color);
+        --panel-split-shine: none;
+        --popup-bg: rgb(244, 248, 250);
+        --marker-popup-border-radius: 0.625rem;
+        --default-color: var(--text-color);
+        --default-text-color: var(--base-color); // for Button.js component, remove if useless
+    }
+}
+
+.theme-steel {
+    --bg-color: hsl(196, 17%, 32%);
+    --bg-dark: hsl(196, 17%, 28%);
+    --bg-light: hsl(196, 17%, 42%);
+
+    // control
+    --sidebar-bg: hsl(198, 13%, 24%);
+    --tab-bg: hsl(0, 0%, 31%);
+    --panel-footer-bg: var(--bg-color);
+    --panel-header-bg: hsl(198, 13%, 29%);
+    --panel-bg: var(--bg-color);
+    --panel-split-shine: inset 1px 0 1px 0 rgb(48 57 60);
+    --button-color: var(--contrast-color);
+    --popup-bg: hsl(0, 0%, 23%);
+
+    // text
+    --primary: 61, 202, 212;
+    --primary-light: hsl(208, 100%, 55%);
+    --primary-dark: rgb(85, 120, 139);
+    --secondary: 255, 214, 163;
+    --tertiary: 255, 190, 38;
+    --default-color: var(--bg-light);
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #ff5a4d;
+
+    .app-overlay,
+    .action-menu,
+    .mapboxgl-popup,
+    .mapboxgl-marker {
+        //.mapboxgl-popup,
+        //.tooltip,
+        --base-rgb: var(--white);
+        --contrast: var(--black);
+        --base-color: rgb(var(--base-rgb));
+        --base-light: rgba(var(--base-rgb), var(--base-light-alpha));
+        --base-lighter: rgba(var(--base-rgb), var(--base-lighter-alpha));
+        --base-highlight: rgba(var(--base-rgb), var(--base-highlight-alpha));
+        --contrast-color: rgb(var(--contrast));
+        --contrast-light: rgba(var(--contrast), var(--base-light-alpha));
+        --contrast-lighter: rgba(var(--contrast), var(--base-lighter-alpha));
+        --contrast-highlight: rgba(var(--contrast), var(--base-highlight-alpha));
+        --bg-color: hsl(200, 18%, 98%);
+        --bg-dark: hsl(200, 37%, 94%);
+        --bg-light: hsl(200, 37%, 98%);
+
+        // text
+        --text-rgb: var(--contrast);
+        --text-color: rgba(var(--text-rgb), var(--text-alpha));
+        --text-contrast-color: rgba(var(--base-rgb), var(--text-alpha));
+        --text-light: rgba(var(--text-rgb), var(--text-light-alpha));
+        --text-dark: rgba(var(--text-rgb), var(--text-dark-alpha));
+        --sub-text-color: rgba(var(--text-rgb), var(--sub-text-alpha));
+
+        // border
+        --border: var(--contrast);
+        --border-color: rgba(var(--border), var(--border-alpha));
+        --border-light: rgba(var(--border), var(--border-light-alpha));
+        --border-lighter: rgba(var(--border), var(--border-lighter-alpha));
+
+        // control
+        --button-color: rgba(var(--base-rgb), var(--btn-alpha));
+        --form-control-bg: var(--base-color);
+        --panel-header-bg: var(--base-color);
+        --panel-footer-bg: var(--base-color);
+        --panel-split-shine: none;
+        --popup-bg: rgb(244, 248, 250);
+        --marker-popup-border-radius: 0.625rem;
+        --default-text-color: var(--base-color); // for Button.js component, remove if useless
+    }
+}
+
+.theme-blue {
+    --primary: 0, 136, 255;
+    --primary-light: hsl(208, 100%, 55%);
+    --primary-dark: rgb(85, 120, 139);
+    --secondary: 253, 65, 86;
+    --tertiary: 255, 190, 38;
+}
+
+.theme-red {
+    --primary: 253, 63, 85;
+    --primary-light: hsl(353, 98%, 72%);
+    --primary-dark: hsl(353, 78%, 52%);
+    --secondary: 253, 65, 86;
+    --tertiary: 255, 190, 38;
+}
+
+.theme-green {
+    --primary: 8, 161, 115;
+}
+
+.theme-purple {
+    --primary: 113, 75, 254;
+}
+
+.theme-ogis {
+    --primary: 62, 100, 225;
+    --feature-item-width: #{rem(48px)};
+    --feature-item-height: #{rem(48px)};
+    --feature-item-desktop-width: #{rem(44px)};
+    --feature-item-desktop-height: #{rem(44px)};
+}

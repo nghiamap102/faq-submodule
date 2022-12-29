@@ -1,0 +1,92 @@
+.resizable-v2-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+
+    .resizable-item {
+        position: absolute
+    }
+
+    > .draggable {
+        position: absolute;
+        display: flex;
+        z-index: 900; //BorderPanel's index is 899
+
+        &.dragging {
+            .line {
+                &::before {
+                    border-color: var(--primary-color) !important;
+                }
+            }
+        }
+
+        &.multi-dragging {
+            .line {
+                cursor: all-scroll !important;
+            }
+        }
+    }
+
+    .draggable.y {
+        height: 100%;
+        top: 0;
+
+        &:hover, &:active {
+            .line {
+                cursor: col-resize;
+            }
+        }
+
+        .line {
+            flex: 1;
+            position: absolute;
+            padding: 0 6px;
+            left: -6px;
+            height: 100%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                height: 100%;
+                transform: translate(-50%, -50%);
+                border-right: 2px solid var(--border-color);
+                transition: border-color .15s ease;
+            }
+        }
+    }
+
+    .draggable.x {
+        width: 100%;
+        left: 0;
+
+        &:hover, &:active {
+            .line {
+                cursor: row-resize;
+            }
+        }
+
+        .line {
+            flex: 1;
+            position: absolute;
+            padding: 6px 0;
+            top: -6px;
+            width: 100%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                transform: translate(-50%, -50%);
+                border-top: 2px solid var(--border-color);
+                transition: border-color .15s ease;
+            }
+        }
+    }
+}

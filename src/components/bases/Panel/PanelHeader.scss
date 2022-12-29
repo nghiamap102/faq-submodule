@@ -1,0 +1,48 @@
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2.5rem;
+    color: var(--text-color);
+    border-bottom: 0.1rem solid var(--border-color);
+    box-sizing: border-box;
+    background: var(--panel-header-bg);
+
+    h3 {
+        padding: 0 0.625rem;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+        white-space: nowrap;
+        overflow: hidden;
+        font-weight: 600;
+        font-size: 0.9rem;
+        flex: 1;
+    }
+
+    .panel-header-actions {
+        padding-right: 0.25rem;
+        display: flex;
+
+        button {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            text-align: center;
+            transition: all .3s;
+            color: var(--contrast-color);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                background-color: rgba(var(--contrast), 0.1);
+            }
+
+            span {
+                margin-left: 0.625rem;
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+
+export enum DataTypes {
+    Boolean = 1,
+    Currency = 2,
+    Datetime = 3,
+    Numeric = 4,
+    Real = 5,
+    Date = 6,
+    Select = 7,
+    MultiSelect = 8,
+    Image = 9,
+    Link = 10,
+    JSON = 11,
+    Chart = 12,
+    Text = 13,
+    Map = 14,
+    File = 15,
+    List = 16,
+    MapVN2000 = 17,
+    ReactNode = 18,
+    MultiLine = 19,
+    RichText = 20,
+}
+
+export enum VDMSDataTypes {
+    Boolean = 1,
+    Number = 2,
+    String = 3,
+    Real = 4,
+    Datetime = 5,
+    BigString = 6,
+    Map = 7,
+    Text = 8,
+    File = 9,
+    List = 10,
+    MapVN2000 = 11,
+}
+
+export const MapVDMSDataTypesToDataTypes = {
+    [VDMSDataTypes.Boolean]: DataTypes.Boolean,
+    [VDMSDataTypes.Number]: DataTypes.Numeric,
+    [VDMSDataTypes.String]: DataTypes.Text,
+    [VDMSDataTypes.Real]: DataTypes.Real,
+    [VDMSDataTypes.Datetime]: DataTypes.Date,
+    [VDMSDataTypes.BigString]: DataTypes.MultiLine,
+    [VDMSDataTypes.Map]: DataTypes.Map,
+    [VDMSDataTypes.Text]: DataTypes.RichText,
+    [VDMSDataTypes.File]: DataTypes.File,
+    [VDMSDataTypes.List]: DataTypes.List,
+    [VDMSDataTypes.MapVN2000]: DataTypes.MapVN2000,
+};
+
+export enum DisplaySchema {
+    Boolean = 'boolean',
+    Currency = 'currency',
+    Datetime = 'datetime',
+    Date = 'date',
+    Numeric = 'numeric',
+    Select = 'select',
+    MultiSelect = 'multi-select',
+    Image = 'image',
+    Link = 'link',
+    JSON = 'json',
+    ReactNode = 'react-node',
+    RenderNode = 'render-node',
+}
+
+export const MapDisplaySchemaToDisplayTypes = {
+    [DisplaySchema.Boolean]: DataTypes.Boolean,
+    [DisplaySchema.Currency]: DataTypes.Currency,
+    [DisplaySchema.Date]: DataTypes.Date,
+    [DisplaySchema.Datetime]: DataTypes.Datetime,
+    [DisplaySchema.Numeric]: DataTypes.Numeric,
+    [DisplaySchema.Select]: DataTypes.Select,
+    [DisplaySchema.MultiSelect]: DataTypes.MultiSelect,
+    [DisplaySchema.Image]: DataTypes.Image,
+    [DisplaySchema.Link]: DataTypes.Link,
+    [DisplaySchema.JSON]: DataTypes.JSON,
+    [DisplaySchema.ReactNode]: DataTypes.ReactNode,
+};

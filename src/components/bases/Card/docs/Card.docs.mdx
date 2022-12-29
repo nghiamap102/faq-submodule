@@ -1,0 +1,39 @@
+import { Story } from 'components/story/blocks';
+
+Card components are used for displaying data by card.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of Contents
+
+- [Default Card](#default-card)
+- [Card with image](#card-with-image)
+- [Card with footer](#card-with-footer)
+- [Layout](#layout)
+- [Disabled Card](#disabled-card)
+- [Custom children](#custom-children)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Default Card
+Default card should contain `title`, `description`, `icon`. The card can be clicked by giving it `onClick` or `href`.<Story id="display-card--default" />
+
+## Card with image
+Image can be added at the top of the card by passing href to the `image` prop.
+<Story id="display-card--with-image" />
+
+## Card with footer
+Footer can be added at the bottom of the card by passing content to the `footer` prop.
+<Story id="display-card--width-footer" />
+
+## Disabled Card
+Card can't be clickable if it is given `onClick` or `href`.
+<Story id="display-card--disabled" />
+
+## Layout
+A Card component has 2 layouts: `vertical` and `horizontal`. The default layout is `vertical`, card displays from top to bottom. With `horizontal`, the icon will be displayed to the left of the content.
+<Story id="display-card--layout" />
+
+## Custom children
+User can add custom children to the card component if user needs more than paragraph text with the `description` prop.
+<Story id="display-card--custom-children" />

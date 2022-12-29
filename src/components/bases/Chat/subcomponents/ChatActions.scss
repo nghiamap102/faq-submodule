@@ -1,0 +1,23 @@
+.chat-actions {
+    box-sizing: border-box;
+    flex-grow: 0;
+    border-top: 1px solid var(--border-color);
+    padding: 0.5rem;
+    display: block;
+
+    .post-form {
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+
+        .post-textarea {
+            caret-color: var(--text-color);
+            color: var(--text-color);
+            flex-grow: 1;
+            padding: 0.5rem;
+            resize: none;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+    }
+}

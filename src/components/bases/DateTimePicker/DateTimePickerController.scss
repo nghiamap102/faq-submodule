@@ -1,0 +1,69 @@
+.dtp-control-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    outline: 0;
+    border-radius: 0.25rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
+    min-height: 2rem;
+    cursor: pointer;
+
+    .form-control:focus {
+        border: none !important;
+    }
+
+    .input-text {
+        color: var(--text-color);
+        padding: 0 0.5rem;
+        cursor: pointer;
+        border: none;
+        border-radius: unset;
+        line-height: 2rem;
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .calendar {
+        width: 2rem;
+        height: 2rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background: inherit;
+
+        i {
+            color: var(--text-color) !important;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, .35);
+
+            &.fa-times {
+                opacity: 0.6;
+            }
+        }
+    }
+
+    .clear {
+        width: 2rem;
+        height: 2rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background-color: var(--form-control-bg);
+
+        i {
+            color: var(--text-color) !important;
+            text-shadow: 0 1px 1px rgba(0, 0, 0, .35);
+
+            &.fa-times {
+                opacity: 0.6;
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+/**
+ * The VUI layout panel concept is the application panels
+ * `flex: 1` to stretch the flex container to the full width of the parent.
+ */
+.flex--panel {
+    flex: 1;
+}
+
+/**
+ * If the flex environment is `flex-wrap` and not set the `width/height`, should use the automatic width/height of content.
+ */
+.flex-scroll-inner.flex-wrap {
+    > * {
+        flex: 0 0 auto;
+    }
+}

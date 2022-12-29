@@ -1,0 +1,45 @@
+.mapboxgl-popup {
+    z-index: 5;
+
+    &.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+        border-bottom-color: var(--bg-color) !important;
+    }
+
+    &.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+        border-right-color: var(--bg-color) !important;
+    }
+
+    &.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+        border-left-color: var(--bg-color) !important;
+    }
+
+    &.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+        border-top-color: var(--bg-color) !important;
+    }
+
+    .mapboxgl-popup-content {
+        background: var(--bg-color) !important;
+        color: var(--text-color) !important;
+
+        border-radius: 0.25rem !important;
+        padding: 0.5em 1rem !important;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) !important;
+
+        .mapboxgl-popup-close-button {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: transparent;
+
+            border-radius: 50%;
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 24 24' width='16px' height='16px' xmlns='http://www.w3.org/2000/svg'> <path fill-rule='evenodd' style='fill:rgba(0, 0, 0, .4)' d='M6.293 7.707l0 0 0 0c-0.391,-0.39 -0.391,-1.024 0,-1.414 0.39,-0.391 1.024,-0.391 1.414,0l4.293 4.293 4.293 -4.293c0.39,-0.391 1.024,-0.391 1.414,0 0.391,0.39 0.391,1.024 0,1.414l0 0 0 0 -4.293 4.293 4.293 4.293c0.391,0.39 0.391,1.024 0,1.414 -0.39,0.391 -1.023,0.39 -1.414,0l0 0 -4.293 -4.293 -4.293 4.293 0 0c-0.391,0.39 -1.024,0.391 -1.414,0 -0.391,-0.39 -0.391,-1.024 0,-1.414l4.293 -4.293 -4.293 -4.293z'/> </svg>");
+
+            &:hover {
+                background-color: transparent;
+                background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 24 24' width='16px' height='16px' xmlns='http://www.w3.org/2000/svg'> <path fill-rule='evenodd' style='fill:rgba(0, 0, 0, 1)' d='M6.293 7.707l0 0 0 0c-0.391,-0.39 -0.391,-1.024 0,-1.414 0.39,-0.391 1.024,-0.391 1.414,0l4.293 4.293 4.293 -4.293c0.39,-0.391 1.024,-0.391 1.414,0 0.391,0.39 0.391,1.024 0,1.414l0 0 0 0 -4.293 4.293 4.293 4.293c0.391,0.39 0.391,1.024 0,1.414 -0.39,0.391 -1.023,0.39 -1.414,0l0 0 -4.293 -4.293 -4.293 4.293 0 0c-0.391,0.39 -1.024,0.391 -1.414,0 -0.391,-0.39 -0.391,-1.024 0,-1.414l4.293 -4.293 -4.293 -4.293z'/> </svg>");
+            }
+        }
+    }
+}

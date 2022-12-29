@@ -1,0 +1,86 @@
+div.form-input-group {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    outline: 0;
+    padding: 0;
+    margin: 0.125rem 0;
+
+    background: rgba(var(--base-rgb), 0.2);
+    border: 0;
+    box-shadow: 0 0 0 0.7px var(--border-color);
+
+    &:focus-within {
+        border: 0 !important;
+        box-shadow: 0 0 0 0.7px rgba(var(--primary), 0.9);
+    }
+
+    .checkbox-form,
+    .as-container {
+        flex: 1;
+
+        &.check-infinity {
+            margin-left: 0.25rem;
+        }
+    }
+
+    .dtp-control-container,
+    .as-control-container {
+        background: none;
+        border: none;
+    }
+
+    .input-append,
+    .input-prepend {
+        background: rgba(var(--contrast), 0.15);
+
+        > span,
+        button {
+            padding: 0.5rem 0.75rem;
+            box-sizing: border-box;
+            display: block;
+            height: 2.25rem;
+            width: auto;
+            background: transparent;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            color: var(--text-color);
+        }
+
+        > .as-container {
+            padding: 0;
+
+            .as-control-container {
+                border-radius: 0.25rem 0 0 0.25rem;
+                border: 0;
+            }
+        }
+
+        & + input {
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
+    }
+
+    input:not([type="checkbox"]):not([type="radio"]) {
+        text-overflow: inherit;
+        box-sizing: border-box;
+        flex: 1;
+
+        color: var(--text-color);
+
+        width: 100%;
+        height: 2.25rem;
+
+        padding: 0.5rem;
+        outline: none;
+    }
+
+    .input-append {
+        border-radius: 0 0.25rem 0.25rem 0;
+    }
+
+    .input-prepend {
+        border-radius: 0.25rem 0 0 0.25rem;
+    }
+}

@@ -1,0 +1,58 @@
+.fsi {
+    display: inline-block;
+    cursor: pointer;
+
+    .fsi-container {
+        margin: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        .fsi-content {
+            background: #303030;
+            box-sizing: border-box;
+            border: 2px solid #fff;
+
+            &.active {
+                border: 2px solid var(--primary-color);
+            }
+        }
+
+        .fsi-label {
+            position: absolute;
+            display: block;
+            width: 100%;
+            line-height: 1.5;
+            background: rgba(0, 0, 0, 0.5);
+            height: 20px;
+            text-align: center;
+            font-size: 12px;
+
+            &.top {
+                top: 2px;
+            }
+
+            &.bottom {
+                bottom: 2px;
+            }
+        }
+
+        img {
+            cursor: pointer !important;
+        }
+    }
+
+    &.fsi-best-match {
+        .fsi-content {
+            &.active {
+                border: 2px solid #d40005;
+            }
+        }
+
+        .fsi-label {
+            background: rgba(255, 0, 0, 0.5)
+        }
+    }
+}

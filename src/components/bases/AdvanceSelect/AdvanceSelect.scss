@@ -1,0 +1,207 @@
+.as-container {
+    min-width: 100px;
+    position: relative;
+    flex: 1;
+
+    .as-control-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        outline: 0;
+        border-radius: 0.25rem;
+        background: var(--form-control-bg);
+        border: 1px solid var(--border-color);
+        box-sizing: border-box;
+        min-height: 2rem;
+        cursor: pointer;
+
+        .dropdown-btn {
+            width: 100%;
+            text-align: left;
+            outline: none;
+            color: var(--text-color);
+            max-height: 8rem;
+            overflow: hidden;
+            padding: 0.5rem;
+            line-height: normal;
+
+            .dropdown-btn-text {
+                .placeholder {
+                    color: var(--text-dark);
+                }
+            }
+
+            &.dropdown-btn--searchable {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                z-index: 1;
+            }
+
+            &.dropdown-btn--hidden {
+                opacity: 0;
+            }
+        }
+
+        &:focus-within {
+            border: 1px solid rgba(var(--primary), 0.9);
+        }
+
+        .dropdown-input {
+            color: var(--text-color);
+            background: transparent;
+            text-align: left;
+            outline: none;
+            width: 100%;
+        }
+
+        .clear {
+            width: 2rem;
+            height: 2rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: none;
+
+            i {
+                color: var(--text-color) !important;
+                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+
+                &.fa-times {
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        .arrow {
+            width: 2rem;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            i {
+                color: var(--text-color) !important;
+                text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+
+                &.fa-chevron-down {
+                    opacity: 0.6;
+                }
+
+                &.fa-chevron-up {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &:focus {
+        .as-control-container {
+            border-color: rgba(var(--primary), 0.9);
+        }
+    }
+
+    &.as-container-disabled {
+        .as-control-container {
+            color: var(--text-dark);
+            background-color: var(--contrast-light);
+        }
+    }
+
+    &.as-container-invisible {
+        opacity: 0;
+    }
+
+    .as-dropdown-title {
+        padding: 0.5rem 0.75rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        text-align: center;
+        white-space: nowrap;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+
+.as-dropdown-container {
+    min-width: 130px;
+    // Todo: use Input's height css variable for this min-height (equal to input height)
+    min-height: 2.2rem;
+
+    border-radius: 0.25rem;
+    color: var(--text-color);
+    background: var(--bg-color);
+    border: 1px solid var(--border-light);
+
+    box-shadow:
+        0 0.9px 4px -1px rgba(0, 0, 0, 0.08),
+        0 2.6px 8px -1px rgba(0, 0, 0, 0.06),
+        0 5.7px 12px -1px rgba(0, 0, 0, 0.05),
+        0 15px 15px -1px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+
+    z-index: 20;
+    padding: 0.25rem 0;
+    margin: 2px 0;
+
+    user-select: none;
+
+    .as-dropdown-filter-cover {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: 0.25rem 0.5rem;
+    }
+
+    &:focus {
+        border-color: var(--primary-color);
+    }
+}
+
+.as-dropdown-list {
+    max-height: 250px;
+
+    .as-dropdown-item {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        padding: 0.5rem 0.75rem;
+        cursor: pointer;
+        user-select: none;
+        // transition: all .2s;
+        overflow: hidden;
+
+        .as-dropdown-icon-cover {
+            flex: 1;
+        }
+
+        .as-dropdown-item-button {
+            flex: 9;
+        }
+
+        span {
+            display: inline-block;
+        }
+
+        &.active {
+            background: var(--primary-color);
+        }
+
+        &.keypress-active {
+            background: rgba(var(--primary), 0.084);
+        }
+
+        &:hover {
+            background: rgba(var(--contrast), 0.06);
+        }
+
+        &.dividers {
+            border-bottom: 1px solid var(--border-color);
+        }
+    }
+}

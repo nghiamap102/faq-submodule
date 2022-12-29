@@ -1,0 +1,97 @@
+.tb-secondary {
+    color: rgba(var(--contrast), 0.45);
+}
+
+.tb1 {
+    display: block;
+}
+
+.tb2 {
+    display: block;
+    line-height: 1.2;
+    font-size: 0.75rem;
+}
+
+.hd {
+    margin-bottom: 0.35em;
+}
+
+.hd1 {
+    font-size: 6rem;
+    font-weight: 300;
+    line-height: 1.167;
+    letter-spacing: -0.01562em;
+}
+
+.hd2 {
+    font-size: 3.75rem;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.00833em;
+}
+
+.hd3 {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1.167;
+    letter-spacing: 0;
+}
+
+.hd4 {
+    font-size: 2.125rem;
+    font-weight: 400;
+    line-height: 1.235;
+    letter-spacing: 0.00735em;
+}
+
+.hd5 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.334;
+    letter-spacing: 0;
+}
+
+.hd6 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.0075em;
+}
+
+.sub1 {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75;
+    letter-spacing: 0.00938em;
+}
+
+.sub2 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.57;
+    letter-spacing: 0.00714em;
+}
+
+.sub-default {
+    color: var(--default-color);
+}
+
+.sub-primary {
+    color: var(--primary-color);
+}
+
+.sub-success {
+    color: var(--success-color);
+}
+
+.sub-info {
+    color: var(--info-color);
+}
+
+.sub-danger {
+    color: var(--danger-color);
+}
+
+.sub-warning {
+    color: var(--warning-color);
+}

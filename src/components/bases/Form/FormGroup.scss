@@ -1,0 +1,52 @@
+.form-group {
+    display: flex;
+    padding: 1rem;
+    flex: 1;
+
+    .form-group {
+        padding-right: 0;
+        background: none;
+    }
+
+    &.form-group-row {
+        flex-direction: row;
+
+        .form-control-label {
+            margin-right: 0.25rem;
+        }
+    }
+
+    &.form-group-column {
+        flex-direction: column;
+
+        .form-group-left {
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+
+        .form-group-right {
+            margin-bottom: 0.25rem;
+        }
+    }
+
+    .field-set__no-border {
+        border: 0;
+
+        .field-set-legend {
+            position: absolute;
+            clip: rect(0, 0, 0, 0);
+        }
+    }
+
+    .field-set-legend__left {
+        text-align: left;
+    }
+
+    .field-set-legend__center {
+        text-align: center;
+    }
+
+    .field-set-legend__right {
+        text-align: right;
+    }
+}

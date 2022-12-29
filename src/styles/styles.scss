@@ -1,0 +1,7 @@
+// Core
+@import './core/all';
+
+// Vendor
+// @import '~@vbd/vicon/dist/vicon.css'; // enable this line will appear relative path issue of font-face
+@import '~animate.css/animate.min.css';
+@import '../lib/perfect-scrollbar/css/perfect-scrollbar.css';

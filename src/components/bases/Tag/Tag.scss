@@ -1,0 +1,73 @@
+@import "styles/core/units";
+
+.tag-container {
+    display: inline-block;
+    position: relative;
+    margin: em(2px, 12px) em(4px, 12px) em(6px, 12px) 0;
+    background: var(--primary-color);
+    color: var(--button-color);
+
+    // for tag will not split to second line while resize column in DataGrid
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    span {
+        text-decoration: none;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 8rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.tag-close-button {
+    margin-left: 0.5rem;
+    color: var(--button-color);
+}
+
+.tag--small {
+    padding: 2px 6px;
+    font-size: rem(12px);
+    border-radius: 2px;
+
+    .tag-close-button {
+        margin-left: 6px !important;
+    }
+}
+
+.tag--medium {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.875rem;
+    border-radius: 3px;
+}
+
+.tag--large {
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+
+    span {
+        font-weight: bold;
+    }
+}
+
+.tag--round {
+    padding-left: em(8px, 12px);
+    padding-right: em(8px, 12px);
+    border-radius: 50vh;
+}
+
+.tag--title {
+    text-transform: capitalize;
+}
+
+.tag--upper {
+    text-transform: uppercase;
+}
+
+.tag--lower {
+    text-transform: lowercase;
+}

@@ -1,0 +1,15 @@
+
+.menu-layout {
+    padding: 0;
+    list-style: none;
+    outline: none;
+
+    &.vertical {
+        //border-right: 1px solid var(--contrast-highlight);
+        transition: background 0.3s, width 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+    }
+
+    &.horizontal {
+        transition: background 0.3s, width 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+    }
+}

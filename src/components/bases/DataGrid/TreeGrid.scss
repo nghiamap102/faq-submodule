@@ -1,0 +1,16 @@
+.tree_handler {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .tree_handler-icon {
+        width: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .tree_handler-label {
+        padding-left: 0.5rem;
+    }
+}

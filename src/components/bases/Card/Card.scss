@@ -1,0 +1,119 @@
+.vui-card__title--link,
+.vui-card__title--button {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    .vui-card--isDisabled & {
+        cursor: inherit;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+.vui-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    flex: 1;
+    border-radius: 0.25rem;
+    background-color: var(--card-bg-color);
+    color: var(--text-color);
+    transition: box-shadow .3s ease-out, transform .3s ease-out, opacity .2s ease-out;
+    transition-delay: .1s;
+
+    &.vui-card--centerAlign {
+        text-align: center;
+    }
+
+    &.vui-card--leftAlign {
+        text-align: left;
+    }
+
+    &.vui-card--rightAlign {
+        text-align: right;
+    }
+
+    &.vui-card--hasShadow {
+        box-shadow: var(--card-shadow);
+    }
+
+    &.vui-card--isClickable {
+        &:hover,
+        &:focus,
+        &:focus-within {
+            box-shadow: var(--card-hover-shadow);
+
+            .vui-card__title--link,
+            .vui-card__title--button {
+                text-decoration: underline;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            transform: translate(0, -4px);
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &.vui-card--isDisabled {
+        cursor: not-allowed;
+        box-shadow: none;
+        background-color: var(--contrast-light);
+        color: var(--text-dark);
+    }
+}
+
+.vui-card__title {
+    font-weight: 700;
+    font-size: 1.25rem;
+
+    .vui-card--horizontal & {
+        text-align: left;
+    }
+}
+
+.vui-card__content {
+    .vui-card--horizontal & {
+        text-align: left;
+    }
+}
+
+.vui-card__image {
+    position: relative;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    overflow: hidden;
+    width: calc(100% + 2rem);
+    top: -1rem;
+    left: -1rem;
+
+    img {
+        width: 100%;
+    }
+}
+
+.vui-card__icon {
+    margin-bottom: 1rem;
+}
+
+.vui-card__footer {
+    margin-top: 0.5rem;
+}
+
+.vui-card__tag {
+    text-align: left;
+    margin-top: 1rem;
+}

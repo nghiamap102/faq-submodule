@@ -1,0 +1,19 @@
+.range-time-container{
+    margin-top: 24px;
+    position:relative;
+}
+
+.range-time-display{
+    position: absolute;
+    top: 16px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: 0.75rem;
+
+    div + div {
+        margin-left: 0.5rem;
+    }
+}

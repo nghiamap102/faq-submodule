@@ -1,0 +1,19 @@
+.group-item {
+    position: relative;
+
+    .unread-count {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        padding: 1px 2px;
+        padding-right: 3px;
+        font-size: 0.7rem;
+        border-radius: 30%;
+        background-color: red;
+        color: white;
+        border: 1px solid var(--bg-color);
+        width: 12px;
+        height: 12px;
+        text-align: center;
+    }
+}

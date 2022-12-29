@@ -1,0 +1,35 @@
+.dtp-container {
+    position: relative;
+    flex: 1;
+
+    &:focus,
+    &:focus-within {
+        .dtp-control-container {
+            border-color: rgba(var(--primary), 0.9);
+        }
+    }
+
+    &.dtp-container-disabled {
+        .dtp-control-container {
+            color: var(--text-dark);
+            background-color: var(--contrast-light);
+        }
+    }
+}
+
+.dtp-overlay {
+    border: none;
+
+    .popover-container {
+        border: none;
+        background: none;
+        box-shadow: unset;
+    }
+
+    .m-input-moment {
+        margin-top: 1px;
+        background-color: var(--bg-color);
+        border: 1px solid var(--border-light);
+        border-radius: 5px;
+    }
+}

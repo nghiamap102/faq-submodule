@@ -1,0 +1,39 @@
+.image-container {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    line-height: 0;
+
+    .image-content {
+        width: 100%;
+        display: block;
+    }
+
+    .image-label {
+        background: black;
+    }
+
+    &:hover {
+        .image-zoom {
+            opacity: 1;
+        }
+    }
+
+    .image-zoom {
+        opacity: 0;
+        position: absolute;
+        top: 0.2rem;
+        right: 0.2rem;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--default-color);
+        transition: .3s ease;
+        text-align: center;
+        cursor: pointer;
+    }
+}

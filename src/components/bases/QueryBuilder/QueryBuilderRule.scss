@@ -1,0 +1,40 @@
+.qr-rule {
+    position: relative;
+    margin: 0 0 0 0.5rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid transparent;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 1rem;
+        height: calc(50% + 1rem);
+        border-color: #929292;
+        border-style: solid;
+    }
+
+    &:before {
+        top: -1rem;
+        border-width: 0 0 2px 2px;
+    }
+
+    &:after {
+        top: 50%;
+        border-width: 0 0 0 2px;
+    }
+
+    &:last-child:after {
+        border: none;
+    }
+
+    .qr-rule-value {
+        flex: 1;
+    }
+
+    .qr-rule-actions {
+        flex: 0;
+    }
+}

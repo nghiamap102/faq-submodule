@@ -1,0 +1,33 @@
+.popover-tooltip {
+    pointer-events: none;
+
+    &.popover-on-map {
+        z-index: var(--overlay-z-index);
+    }
+}
+
+.popover-tooltip-container {
+    background-color: var(--bg-color);
+    border-radius: 3px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .popover-tooltip-header {
+        position: relative;
+        padding: 0.25rem 0.75rem;
+        box-sizing: border-box;
+
+        .popover-tooltip-sub-header {
+            position: relative;
+            padding: 0.2rem 0;
+            box-sizing: border-box;
+            font-size: 0.7rem;
+            font-weight: 300;
+            color: var(--text-dark);
+        }
+    }
+}

@@ -1,0 +1,13 @@
+$usual-opacities: 0, 5, 10, 15, 35, 55, 85, 100;
+
+:root {
+    @for $i from 0 through 20 {
+        --alpha-#{$i * 5}: #{$i * 5 / 100};
+    }
+}
+
+@for $i from 0 through 20 {
+    .opacity-#{$i * 5} {
+        opacity: var(--alpha-#{$i * 5});
+    }
+}

@@ -1,0 +1,37 @@
+.des-item {
+    display: flex;
+    margin: 0.125rem 0;
+    min-height: 2rem;
+
+    &.des-item-row {
+        flex-direction: row;
+        align-items: center;
+
+        .des-item-label {
+            margin-right: 0.5rem;
+        }
+    }
+
+    &.des-item-column {
+        flex-direction: column;
+        margin-bottom: 0.5rem;
+
+        .des-item-label {
+            line-height: 2rem;
+        }
+    }
+
+    .des-item-label-align-left {
+        text-align: left;
+    }
+
+    .des-item-align-right {
+        text-align: right;
+    }
+
+}
+
+.des-item-label {
+    color: var(--text-dark);
+    font-size: 0.875em;
+}

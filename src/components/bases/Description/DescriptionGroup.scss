@@ -1,0 +1,22 @@
+.des-group {
+    display: flex;
+    padding: 1rem;
+    flex: 1;
+
+    .des-group {
+        padding-right: 0;
+        background: none;
+    }
+
+    &.des-group-row {
+        flex-direction: row;
+
+        .des-item {
+            margin-right: 0.25rem;
+        }
+    }
+
+    &.des-group-column {
+        flex-direction: column;
+    }
+}

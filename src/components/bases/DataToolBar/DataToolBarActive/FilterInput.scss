@@ -1,0 +1,45 @@
+.data-filter-input {
+    flex-grow: 1;
+    margin: 0.5rem;
+
+    .data-filter-value {
+        .field-value-between-date {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            flex: 1;
+        }
+
+        input {
+            width: fit-content !important;
+            height: 100%;
+        }
+    }
+
+    &.horizontal {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+
+    &.vertical {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        max-width: 11rem;
+
+        .data-filter-value {
+            .field-value-between-date {
+                flex-direction: column;
+            }
+
+            input {
+                width: 11rem !important;
+            }
+        }
+    }
+}

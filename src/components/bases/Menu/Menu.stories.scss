@@ -1,0 +1,17 @@
+.item-menu {
+    line-height: 40px;
+    min-height: 40px;
+    padding: 0 16px;
+
+    &:hover {
+        background: rgba(var(--primary), 0.3);
+    }
+
+    &.active-leaf {
+        background: rgba(var(--primary), 0.5);
+    }
+
+    &.active-root {
+        color: var(--primary);
+    }
+}

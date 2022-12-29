@@ -1,0 +1,287 @@
+$font-size: (
+    "xs": (
+        font-size: 0.75rem,
+        line-height: 1rem,
+    ),
+    "sm": (
+        font-size: 0.875rem,
+        line-height: 1.25rem,
+    ),
+    "base": (
+        font-size: 1rem,
+        line-height: 1.5rem,
+    ),
+    "lg": (
+        font-size: 1.125rem,
+        line-height: 1.75rem,
+    ),
+    "xl": (
+        font-size: 1.25rem,
+        line-height: 1.75rem,
+    ),
+    "2xl": (
+        font-size: 1.5rem,
+        line-height: 2rem,
+    ),
+    "3xl": (
+        font-size: 1.875rem,
+        line-height: 2.25rem,
+    ),
+    "4xl": (
+        font-size: 2.25rem,
+        line-height: 2.5rem,
+    ),
+    "5xl": (
+        font-size: 3rem,
+        line-height: 1,
+    ),
+    "6xl": (
+        font-size: 3.75rem,
+        line-height: 1,
+    ),
+    "7xl": (
+        font-size: 4.5rem,
+        line-height: 1,
+    ),
+    "8xl": (
+        font-size: 6rem,
+        line-height: 1,
+    ),
+    "9xl": (
+        font-size: 8rem,
+        line-height: 1,
+    ),
+);
+
+$font-weight: (
+    thin: 100,
+    extralight: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    black: 900,
+);
+
+$leading: (
+    none: 1,
+    tight: 1.25,
+    snug: 1.375,
+    normal: 1.5,
+    relaxed: 1.625,
+    loose: 2,
+);
+
+$tracking: (
+    tighter: -0.05em,
+    tight: -0.025em,
+    normal: 0,
+    wide: 0.025em,
+    wider: 0.05em,
+    widest: 0.1em,
+);
+
+$text-atomic: (
+    "text-align": (
+        (left, center, right, justify),
+        // empty is scss work around case, because no use empty, scss not get the whole line above but take each item.
+        "empty",
+    ),
+    "text-decoration": (
+        (underline, line-through),
+        "no-underline",
+    ),
+    "text-transform": (
+        (uppercase, lowercase, capitalize),
+        "normal-case",
+    ),
+    "text-overflow": (
+        (ellipsis, clip),
+        "empty",
+    ),
+    "vertical-align": (
+        (baseline, top, middle, bottom, text-top, text-bottom),
+        "empty",
+    ),
+    "white-space": (
+        (normal, nowrap, pre, pre-line, pre-wrap),
+        "empty",
+    ),
+    "list-style-type": (
+        (none, disc, decimal),
+        "empty",
+    ),
+    "list-style-position": (
+        (inside, outside),
+        "empty",
+    ),
+);
+
+:root {
+    // Leading variables
+    @for $i from 0 through 7 {
+        --leading-#{$i + 3}: #{$i * 0.25 + 0.75}rem;
+    }
+
+    @each $name, $value in $leading {
+        --leading-#{$name}: #{$value};
+    }
+}
+
+// Font Size
+// Utilities for controlling the font size of an element.
+@each $size, $map in $font-size {
+    .text-#{$size} {
+        @each $property, $value in $map {
+            #{$property}: $value;
+        }
+    }
+}
+
+.italic {
+    font-style: italic !important;
+}
+
+.not-italic {
+    font-style: normal !important;
+}
+
+// Font Weight
+// Utilities for controlling the font weight of an element.
+@each $name, $value in $font-weight {
+    .font-#{$name} {
+        font-weight: $value !important;
+    }
+}
+
+// Line Height
+// Utilities for controlling the leading (line height) of an element.
+@for $i from 0 through 7 {
+    .leading-#{$i + 3} {
+        --font-leading: var(--leading-#{$i + 3});
+    }
+}
+
+@each $name, $value in $leading {
+    .leading-#{$name} {
+        --font-leading: var(--leading-#{$name});
+    }
+}
+
+// Letter Spacing
+// Utilities for controlling the tracking (letter spacing) of an element.
+@each $name, $value in $tracking {
+    .tracking-#{$name} {
+        letter-spacing: $value !important;
+    }
+}
+
+// Another typography property
+@each $property, $values in $text-atomic {
+    $prefix: "";
+
+    @if ($property == "text-align") {
+        $prefix: "text-";
+    }
+
+    @if ($property == "text-overflow") {
+        $prefix: "overflow-";
+    }
+
+    @if ($property == "vertical-align") {
+        $prefix: "align-";
+    }
+
+    @if ($property == "white-space") {
+        $prefix: "whitespace-";
+    }
+
+    @if ($property == "list-style-type") {
+        $prefix: "list-";
+    }
+
+    @each $line in $values {
+        @if (type-of($line) == list) {
+            @each $item in $line {
+                .#{$prefix}#{$item} {
+                    #{$property}: $item !important;
+                }
+            }
+        }
+
+        @if (type-of($line) == string and $line != "empty") {
+            .#{$line} {
+                #{$property}: none !important;
+            }
+        }
+    }
+}
+
+// Text Overflow
+// Utilities for controlling text overflow in an element.
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ellipsis {
+    @extend .truncate;
+}
+
+//---------------------------------------------------------------
+// Text Color
+// Utilities for controlling the text color of an element.
+.text-transparent {
+    color: transparent;
+}
+
+.text-current {
+    color: currentColor;
+}
+
+.text-black {
+    color: rgba(var(--black), var(--text-alpha));
+}
+
+.text-white {
+    color: rgba(var(--white), var(--text-alpha));
+}
+
+@mixin text-colors($map-system) {
+    @each $color-name, $map in $map-system {
+        @each $step, $rgb in $map {
+            .text-#{$color-name}-#{$step} {
+                color: rgba(var(--#{$color-name}-#{$step}), var(--text-alpha));
+            }
+        }
+    }
+}
+
+@include text-colors($color-system);
+
+//---------------------------------------------------------------
+// Text Opacity
+// Utilities for controlling the opacity of an element's text color.
+@each $step in $usual-opacities {
+    .text-alpha-#{$step} {
+        --text-alpha: var(--alpha-#{$step});
+    }
+}
+
+// Word Break
+// Utilities for controlling word breaks in an element.
+.break-normal {
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+}
+
+.break-words {
+    overflow-wrap: break-word !important;
+}
+
+.break-all {
+    word-break: break-all !important;
+}

@@ -1,0 +1,10 @@
+.afc-feature-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    padding: 0.25rem;
+
+    border-bottom: 1px solid var(--border-color);
+    background: var(--contrast-light);
+}

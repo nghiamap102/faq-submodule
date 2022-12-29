@@ -1,0 +1,38 @@
+.search-box-container {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 0 0 0.5rem !important;
+    height: 2.2rem;
+    min-height: 2.2rem;
+
+    .search-box-icon-cover {
+        margin-left: 0.25rem;
+        padding: 0.25rem;
+
+        .search-box-icon {
+            font-size: 1rem !important;
+            width: 1.5rem;
+            text-align: center;
+        }
+    }
+
+    .search-box-close-icon {
+        border-radius: 50%;
+        text-align: center;
+        transition: all .3s;
+
+        background: none;
+        color: var(--contrast-color);
+
+        &:hover {
+            background-color: rgba(var(--contrast), 0.1);
+        }
+    }
+
+    .search-box-control {
+        color: var(--text-color);
+        width: 100%;
+    }
+}

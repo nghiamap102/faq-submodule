@@ -1,0 +1,54 @@
+.spinner {
+    --spinner-size: 3;
+    --line-color: var(--primary-color);
+    --ring-color: var(--contrast-color);
+    --ring-alpha: 0.2;
+    --ring-size: 2;
+
+    &.size-xl {
+      --ring-size: 1.5;
+    }
+
+    &.size-xxl {
+      --ring-size: 1;
+    }
+
+    width: calc(var(--size) * 2);
+    height: calc(var(--size) * 2);
+    border-radius: 50%;
+
+    @keyframes spinner-rotate {
+        to { transform: rotate3d(0, 0, 1, 360deg); }
+    }
+
+    @keyframes spinner-arc {
+        from {
+            stroke-dasharray: 0 150;
+            stroke-dashoffset: 0;
+        }
+
+        to {
+            stroke-dasharray: 100 150;
+            stroke-dashoffset: -140;
+        }
+    }
+}
+
+.spinner__line {
+    fill: none;
+    stroke: var(--line-color);
+    stroke-width: var(--ring-size);
+    stroke-linecap: round;
+    transform-origin: 50% 50%;
+    transform: rotate3d(0, 0, 1, 0deg);
+    animation:
+        2156ms spinner-arc ease-in-out infinite,
+        1829ms spinner-rotate linear infinite;
+}
+
+.spinner__ring {
+    fill: none;
+    stroke: var(--ring-color);
+    stroke-width: var(--ring-size);
+    opacity: var(--ring-alpha);
+}

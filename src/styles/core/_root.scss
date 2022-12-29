@@ -1,0 +1,90 @@
+body,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+p,
+input,
+textarea,
+th,
+ul,
+div,
+span,
+i,
+pre {
+    font-size: var(--internal-font-base, 0.875rem);
+}
+
+:root {
+    // ======================================================================
+    // based variables
+    // ======================================================================
+    --size-xs: 0.25rem;
+    --size-sm: 0.5rem;
+    --size-md: 1rem;
+    --size-lg: 1.5rem;
+    --size-xl: 2rem;
+    --size-xxl: 2.5rem;
+
+    // please don't use, just for color reference
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* stylelint-disable-line value-keyword-case */
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* stylelint-disable-line value-keyword-case */
+    font-size: var(--font-base-xs, 16px);
+
+    @include media(">=mobile") {
+        font-size: var(--font-base-mobile, 16px);
+    }
+
+    @include media(">=tablet") {
+        font-size: var(--font-base-tablet, 12.5px);
+    }
+
+    @include media(">=desktop-sm") {
+        font-size: var(--font-base-desktop-sm, 12.5px);
+    }
+
+    @include media(">=desktop") {
+        font-size: var(--font-base-desktop, 12.5px);
+    }
+
+    @include media(">=width-1280") {
+        font-size: var(--font-base-1280, 13.6px);
+    }
+
+    @include media (">=width-1440") {
+        font-size: var(--font-base-1440, 13.6px);
+    }
+
+    @include media (">=width-hd") {
+        font-size: var(--font-base-hd, 13.6px);
+    }
+
+    @include media (">=width-1800") {
+        font-size: var(--font-base-1800, 14px);
+    }
+
+    @include media (">=width-wqhd") {
+        font-size: var(--font-base-wdhd, 16px);
+    }
+
+    @include media (">=width-4k") {
+        font-size: var(--font-base-4k, 16px);
+    }
+
+    @include media (">=width-5k") {
+        font-size: var(--font-base-5k, 16px);
+    }
+}

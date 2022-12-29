@@ -1,0 +1,56 @@
+.callout-container {
+    display: flex;
+    padding: 0.5em 1em;
+    font-weight: 400;
+    line-height: 1.43;
+    border-radius: 0.25rem;
+    letter-spacing: 0.01071em;
+    position: relative;
+}
+
+.callout-icon {
+    display: flex;
+    opacity: 0.9;
+    padding: 0.25em 0;
+    margin-right: 0.75em;
+}
+
+.callout-message {
+    padding: 0.25em 0;
+    margin-right: 2rem;
+}
+
+.callout-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.25em;
+}
+
+.callout-action {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    color: var(--contrast-color);
+    display: flex;
+}
+
+.callout-error {
+    color: var(--color-sub-red-fg);
+    background-color: var(--color-sub-red-bg);
+}
+
+.callout-warning {
+    color: var(--color-sub-orange-fg);
+    background-color: var(--color-sub-orange-bg);
+}
+
+.callout-info {
+    color: var(--color-sub-blue-fg);
+    background-color: var(--color-sub-blue-bg);
+}
+
+.callout-success {
+    color: var(--color-sub-green-fg);
+    background-color: var(--color-sub-green-bg);
+}

@@ -1,0 +1,38 @@
+.cs-container {
+    background: var(--bg-color);
+    display: flex;
+    height: 28rem;
+    flex-direction: column;
+
+    .cs-cards {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.5rem;
+
+        .row {
+            cursor: move;
+        }
+
+        .text {
+            margin-left: 0.5rem;
+            flex: 1;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .cs-buttons {
+        display: flex;
+        flex: 1 1;
+        justify-content: space-between;
+        padding: 1rem 0.5rem;
+        background: rgba(0, 0, 0, .1);
+
+        button {
+            // flex: 1 1;
+            margin: 0 .2rem;
+        }
+    }
+}

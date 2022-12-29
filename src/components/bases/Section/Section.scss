@@ -1,0 +1,131 @@
+.section-collapse-panel {
+    word-break: break-word;
+    display: flex;
+    flex-direction: column;
+
+    flex-grow: 0.001;
+    flex-shrink: 1;
+    flex-basis: 3rem;
+    transition: flex-grow .2s, height .2s, min-height .2s, max-height .2s;
+    overflow: hidden;
+
+    .section-header {
+        border-bottom: none;
+        transition: background-color .2s;
+        box-shadow: var(--bg-dark) 0 -6px 6px -6px inset,
+                    var(--bg-dark) 0 -8px 6px -6px inset;
+    }
+
+    &.animated {
+        .section-panel-body {
+            opacity: 0;
+            visibility: hidden;
+            overflow: hidden;
+            transition: height .2s, visibility 0s;
+        }
+    }
+
+    &.expanded {
+        flex-grow: 1;
+
+        .section-panel-body {
+            visibility: visible;
+            opacity: 1;
+            transition: height .2s,
+                        visibility 0s,
+                        opacity cubic-bezier(0.694, 0.0482, 0.335, 1) .2s;
+        }
+    }
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+
+    text-transform: uppercase;
+    font-weight: 600;
+
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--border-color);
+
+    color: var(--text-light);
+
+    .section-collapse-panel & {
+        border-top: 1px solid var(--border-color);
+
+        &.clickable {
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--contrast-light);
+            }
+
+            .fa-chevron-up {
+                transform: rotate(0deg);
+                transition: transform .1s linear;
+            }
+
+            .show {
+                .fa-chevron-up {
+                    transform: rotate(-180deg);
+                    transition: transform .1s linear;
+                }
+            }
+        }
+    }
+}
+
+.section-panel {
+    .section-header {
+        padding: 0.5rem 1rem;
+        margin-bottom: 0;
+        display: flex;
+
+        h3 {
+            text-overflow: ellipsis;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            font-weight: 700;
+            flex: 1;
+        }
+
+        button {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            text-align: center;
+            transition: all .3s;
+            color: var(--contrast-color);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgba(var(--contrast), 0.1);
+            }
+
+            span {
+                margin-left: 0.625rem;
+                display: none;
+            }
+        }
+
+        .section-header-actions {
+            padding-right: 0.25rem;
+            display: flex;
+        }
+    }
+
+    .section-panel {
+        .section-header {
+            border: none;
+            padding: 0.5rem 0;
+        }
+    }
+}

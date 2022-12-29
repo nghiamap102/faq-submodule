@@ -1,0 +1,79 @@
+import { Story } from 'components/story/blocks';
+
+Slider - a component for displaying current value and intervals in range.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+## Table of Contents
+
+- [The `wrapper` prop](#the-wrapper-prop)
+- [The `reverse` prop](#the-reverse-prop)
+- [Size and style](#size-and-style)
+- [Marks](#marks)
+- [Disabled](#disabled)
+- [Step](#step)
+- [Custom thumb](#custom-thumb)
+- [Range slider](#range-slider)
+- [Indicator](#indicator)
+- [Disabled swap](#disabled-swap)
+- [Vertical](#vertical)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## The `wrapper` prop
+Allows you to add elements to the left and the right of slider.
+
+<Story id="inputs-slider--wrapper" />
+
+## The `reverse` prop
+Using `reverse` to render slider reversely.
+<Story id="inputs-slider--reverse" />
+
+## Size and style
+Allows you to change the size and styles of the slider by using `thumbSize`, `thumbColor`, `rangeSize`, `rangeColor`, `railStyle` props.
+<Story id="inputs-slider--size-and-style" />
+
+## Marks
+Allows you to tick mark of Slider, type of key must be number, each mark can declare its own style
+- Default marks
+<Story id="inputs-slider-marks--default" />
+
+- Square marks
+<Story id="inputs-slider-marks--square-marks" />
+
+- Line marks
+<Story id="inputs-slider-marks--line-marks" />
+
+- Marks have label with step is null
+<Story id="inputs-slider-marks--marks-have-label-with-step" />
+
+- Marks without label with step
+<Story id="inputs-slider-marks--marks-no-label-with-step" />
+
+## Disabled
+The slider can not be interactable.
+<Story id="inputs-slider--disabled" />
+
+## Step
+Allows you to step through values. Must greater than 0, and be divided by (max - min) . When `marks` no null, step can be null.
+<Story id="inputs-slider--step" />
+
+## Custom thumb
+Allows you to custom thumbs of the slider by other elements.
+<Story id="inputs-slider--custom-thumb" />
+
+## Range slider
+Allows you to set the start and end of a range by supplying an array of values to the `values` prop.
+<Story id="inputs-slider--custom-thumb-range" />
+
+## Indicator
+Allows you to show indicators on the slider.
+<Story id="inputs-slider--indicator" />
+
+## Disabled swap
+The active thumb doesn't swap when moving pointer over a thumb while dragging another thumb.
+<Story id="inputs-slider--disable-swap" />
+
+## Vertical
+Allows you to show the vertical slider .
+<Story id="inputs-slider--vertical" />

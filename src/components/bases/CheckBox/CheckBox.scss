@@ -1,0 +1,150 @@
+$icon-ratio-size: (
+    "xs": 0.8,
+    "sm": 0.9,
+    "md": 1,
+    "lg": 1.1,
+    "xl": 1.2,
+);
+
+// handle icon ratio size
+@each $size, $ratio in $icon-ratio-size {
+    .checkbox--icon-#{$size} {
+        --icon-ratio: #{$ratio};
+    }
+
+    .radio--icon-#{$size} {
+        --icon-ratio: #{$ratio};
+    }
+}
+
+.checkbox-input {
+    border-radius: 0.25rem;
+}
+
+.radio-input {
+    border-radius: 50%;
+}
+
+.checkbox-form {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.25rem 0;
+
+    .checkbox-label {
+        margin-left: 0.5rem;
+        cursor: pointer;
+    }
+
+    .checkbox-input,
+    .radio-input {
+        width: calc(1.25rem * var(--icon-ratio));
+        height: calc(1.25rem * var(--icon-ratio));
+        min-width: calc(1.25rem * var(--icon-ratio));
+        min-height: calc(1.25rem * var(--icon-ratio));
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        background-color: var(--form-control-bg);
+        border: 0.1rem solid var(--border-color);
+        cursor: pointer;
+        position: relative;
+    }
+
+    &.disabled {
+        cursor: default;
+
+        .checkbox-label {
+            opacity: 0.6;
+        }
+    }
+
+    .checkbox-item {
+        position: relative;
+        display: inline-flex;
+        box-sizing: border-box;
+        align-items: center;
+        max-width: 100%;
+        vertical-align: top;
+        isolation: isolate;
+        padding: 0.25rem;
+    }
+
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+
+        &:checked {
+            ~ .checkbox-input {
+                border-color: var(--primary-color);
+                background-color: var(--primary-color);
+                font-size: 1.5rem;
+
+                &::after {
+                    content: "\f00c";
+                    font-size: calc(0.75rem * var(--icon-ratio));
+                    color: var(--button-color);
+                    font-family: 'Font Awesome 5 Pro', sans-serif;
+                    font-weight: 900;
+                }
+            }
+
+            ~ .radio-input {
+                background-color: var(--button-color);
+                border-color: var(--primary-color);
+                // The checked white dot is equivalent 25% of radio dot
+                border-width: calc((1.25rem * var(--icon-ratio)) / 2 * 0.75);
+            }
+
+            ~ .indeterminate {
+                &::after {
+                    content: "\f068";
+                }
+            }
+        }
+
+        &:disabled {
+            ~ .checkbox-input {
+                border-color: var(--contrast-highlight);
+                background-color: var(--contrast-highlight);
+            }
+
+            ~ .radio-input {
+                border-color: var(--contrast-highlight);
+                background-color: var(--contrast-highlight);
+
+                &::after {
+                    color: var(--contrast-highlight);
+                }
+            }
+        }
+
+        &:focus {
+            ~ .checkbox-input,
+            ~ .radio-input {
+                outline: none;
+                box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.5);
+            }
+
+            ~ .checkbox-input {
+                border-radius: 0.25rem;
+            }
+
+            ~ .radio-input {
+                border-radius: 50%;
+            }
+
+            &:not(:checked) ~ .radio-input {
+                border: 0.1px solid var(--primary-color);
+            }
+        }
+    }
+}
+
+.form-input-group {
+    .checkbox-form {
+        margin: 0;
+    }
+}

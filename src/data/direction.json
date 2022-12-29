@@ -1,0 +1,44 @@
+{
+  "Data": [
+    {
+      "code": 0,
+      "V": "Đi tiếp",
+      "E": "Direction continue"
+    },
+    {
+      "code": 1,
+      "V": "Rẽ trái vào",
+      "E": "Direction turn left"
+    },
+    {
+      "code": 2,
+      "V": "Rẽ phải vào",
+      "E": "Direction turn right"
+    },
+    {
+      "code": 3,
+      "V": "Đi tiếp",
+      "E": "Direction continue"
+    },
+    {
+      "code": 4,
+      "V": "Đến vòng xoay",
+      "E": "Direction roundabout"
+    },
+    {
+      "code": 5,
+      "V": "Rẽ vào",
+      "E": "Direction turn straight"
+    },
+    {
+      "code": 6,
+      "V": "Đến",
+      "E": "Direction arrive"
+    },
+    {
+      "code": 7,
+      "V": "Qua",
+      "E": "Direction turn straight"
+    }
+  ]
+}

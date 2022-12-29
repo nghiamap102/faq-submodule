@@ -1,0 +1,17 @@
+.separator-container {
+  box-sizing: border-box;
+  margin: auto 0px;
+  .separator-bold {
+    font-weight: bold;
+  }
+  .separator-bolder {
+    font-weight: bolder;
+  }
+  .separator-normal {
+    font-weight: normal;
+  }
+  .separator-lighter {
+    font-weight: lighter;
+  }
+}
+

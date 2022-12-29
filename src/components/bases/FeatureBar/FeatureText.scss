@@ -1,0 +1,17 @@
+.feature-text {
+    background-color: var(--base-highlight);
+
+    .text-container {
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 0.75rem;
+        box-sizing: border-box;
+        border: 1px solid var(--text-color);
+        color: var(--contrast-color);
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-align: center;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+    }
+}

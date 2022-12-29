@@ -1,0 +1,107 @@
+.list-item-reader,
+.list-item-container {
+    position: relative;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
+
+    display: flex;
+    align-items: center;
+
+    &.splitter {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .list-item-icon {
+        margin-right: 0.75rem;
+        display: flex;
+        width: 1.5rem;
+
+        .list-icon {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .list-item-icon-inner {
+            img {
+                width: 1.5rem;
+            }
+        }
+    }
+
+    .list-item-content {
+        .list-item-title {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        .list-item-subtitle-line {
+            font-size: 0.75rem;
+            padding-top: 0.25rem;
+
+            .list-item-subtitle {
+                display: inline-block;
+                color: var(--text-dark);
+            }
+        }
+    }
+
+    .list-item-secondary {
+        margin-left: 0.75rem;
+
+        .list-item-secondary-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            display: flex;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .list-item-secondary-content {
+            display: inline-block;
+        }
+    }
+}
+
+.list-item-container {
+    cursor: pointer;
+
+    &.active,
+    &.active:hover {
+        background-color: var(--contrast-highlight);
+    }
+
+    &:hover {
+        background-color: var(--contrast-light);
+    }
+
+    .list-item-secondary {
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        .list-item-secondary-content {
+            cursor: pointer;
+        }
+    }
+}
+
+// addition
+.list-item {
+    &--direction-row {
+        flex-direction: row;
+
+        & .list-item-content {
+            flex: 1;
+        }
+    }
+
+    &--direction-column {
+        flex-direction: column;
+        justify-content: center;
+
+        & .list-item-content {
+            flex: 0;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.form-control {
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+
+    color: var(--text-color);
+    background: var(--form-control-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+
+    width: 100%;
+    min-height: 2rem;
+
+    padding: 0 0.5rem;
+    outline: none;
+
+    &:disabled,
+    > :disabled,
+    input :read-only,
+    textarea :read-only {
+        color: var(--text-dark);
+        background-color: var(--contrast-light);
+    }
+
+    &:focus-within {
+        border: 1px solid rgba(var(--primary), 0.9) !important;
+    }
+
+    span:not(.checkbox-label) {
+        margin: 0 !important;
+    }
+
+    input:not([type='checkbox']):not([type='radio']) {
+        width: 100%;
+    }
+}

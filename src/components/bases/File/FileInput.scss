@@ -1,0 +1,15 @@
+.file_input {
+    & * {
+        cursor: pointer;
+    }
+
+    .file_input-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 14px;
+        height: 14px;
+        padding: 0 0.5rem;
+    }
+}

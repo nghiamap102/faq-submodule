@@ -1,0 +1,19 @@
+.chat-box {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .chat-box-header {
+        flex-grow: 0;
+        box-sizing: border-box;
+    }
+}

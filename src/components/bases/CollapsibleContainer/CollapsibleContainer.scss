@@ -1,0 +1,74 @@
+@import "styles/core/breakpoints-mixin";
+
+.collapsible-container {
+    width: 100%;
+    height: 0;
+    touch-action: pan-x;
+    box-sizing: border-box;
+    border-top-left-radius: 1.625rem;
+    border-top-right-radius: 1.625rem;
+    overflow: hidden;
+
+    &.collapsible-active {
+        transition: height .3s;
+    }
+
+    .collapsible {
+        &__body {
+            width: 100%;
+            height: 100%;
+
+            &--scroll {
+                height: min-content;
+
+                .ps__rail-x,
+                .ps__rail-y {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    &.collapsible-toolbar {
+        color: var(--text-color);
+        border-top-left-radius: 1.625rem;
+        border-top-right-radius: 1.625rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 0;
+        box-shadow: var(--toobar-shadow-mobile);
+        z-index: var(--subbar-z-index);
+        overflow: hidden;
+
+        background-color: var(--base-color);
+
+        @include mobile-up {
+            padding-bottom: 0;
+            box-shadow: var(--subbar-shadow-desktop);
+            border-radius: 0;
+            box-sizing: border-box;
+        }
+    }
+}
+
+.mb-dragger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mb-dragger__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem;
+
+    &::before {
+        content: '';
+        width: 100px;
+        height: 5px;
+        border-radius: 10px;
+        background-color: var(--border-color);
+    }
+}

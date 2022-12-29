@@ -1,0 +1,73 @@
+@import "styles/core/breakpoints";
+
+@mixin mobile {
+    @include media("<mobile") {
+        @content;
+    }
+}
+
+@mixin mobile-up {
+    @include media(">=mobile") {
+        @content;
+    }
+}
+
+@mixin tablet-down {
+    @include media("<tablet") {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @include media(">=tablet", "<desktop") {
+        @content;
+    }
+}
+
+@mixin tablet-up {
+    @include media(">=tablet") {
+        @content;
+    }
+}
+
+@mixin desktop-sm-down {
+    @include media("<desktop-sm") {
+        @content;
+    }
+}
+
+@mixin desktop-down {
+    @include media("<desktop") {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @include media(">=desktop") {
+        @content;
+    }
+}
+
+@mixin width-1280 {
+    @include media(">=width-1280") {
+        @content;
+    }
+}
+
+@mixin width-1440 {
+    @include media(">=width-1440") {
+        @content;
+    }
+}
+
+@mixin width-hd {
+    @include media(">=width-hd") {
+        @content;
+    }
+}
+
+@mixin width-wqhd {
+    @include media(">=width-wqhd") {
+        @content;
+    }
+}

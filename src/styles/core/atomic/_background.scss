@@ -1,0 +1,41 @@
+// Background Color
+// Utilities for controlling an element's background color.
+[class*="bg-"] {
+    background-color: rgba(var(--bg), var(--bg-alpha));
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+.bg-current {
+    background-color: currentColor;
+}
+
+.bg-black {
+    --bg: var(--black);
+}
+
+.bg-white {
+    --bg: var(--white);
+}
+
+@mixin bg-colors($map-system) {
+    @each $color-name, $map in $map-system {
+        @each $step, $rgb in $map {
+            .bg-#{$color-name}-#{$step} {
+                --bg: var(--#{$color-name}-#{$step});
+            }
+        }
+    }
+}
+
+@include bg-colors($color-system);
+
+// Background Opacity
+// Utilities for controlling the opacity of an element's background color.
+@for $i from 0 through 20 {
+    .bg-opacity-#{$i * 5} {
+        --bg-alpha: var(--alpha-#{$i * 5});
+    }
+}

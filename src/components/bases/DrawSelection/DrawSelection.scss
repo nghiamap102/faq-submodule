@@ -1,0 +1,37 @@
+.draw-selection-container {
+    padding-right: 1.5rem;
+
+    .y-list {
+        padding-right: 1rem;
+    }
+
+    .x-list {
+        .x-item {
+            transform: translateX(-1.45rem);
+        }
+    }
+
+    .draw-selection {
+        display: flex;
+        height: 100%;
+        cursor: pointer;
+        border: 2px solid var(--border-color);
+        border-top: none;
+
+        .big-cell:not(:last-child) {
+            padding-right: .4rem;
+        }
+
+        .cell {
+            background-color: var(--bg-dark);
+
+            &:hover {
+                background-color: rgba(var(--primary), .5);
+            }
+
+            &.selected {
+                background-color: var(--primary-color);
+            }
+        }
+    }
+}

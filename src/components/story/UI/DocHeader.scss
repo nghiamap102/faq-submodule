@@ -1,0 +1,37 @@
+.doc-header__name {
+    display: inline-block;
+    color: #000;
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.doc-header__version {
+    display: inline-block;
+    margin-left: 0.5rem;
+    color: rgba(0, 0, 0, 0.55);
+}
+
+.doc-header__status {
+    margin-top: 0.5rem;
+
+    span {
+        display: inline-block;
+        color: #fff;
+        border-radius: 50vh;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.078rem;
+    }
+}
+
+.doc-header__status--deprecated span {
+    background-color: rgb(220, 53, 69);
+}
+
+.doc-header__status--experimental span {
+    background-color: rgb(255, 193, 7);
+}
+
+.doc-header__status--released span {
+    background-color: rgb(40, 167, 69);
+}

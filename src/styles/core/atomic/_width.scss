@@ -1,0 +1,95 @@
+$min-max-common: "0", "full";
+$width-atomic: (
+    "width": (
+        "screen": 100vw,
+    ),
+    "max-width": (
+        "none": none,
+        "md": 28rem,
+        "lg": 32rem,
+        "xl": 36rem,
+        "2xl": 42rem,
+        "3xl": 48rem,
+        "4xl": 56rem,
+        "5xl": 64rem,
+        "6xl": 72rem,
+        "7xl": 80rem,
+        "prose": 65ch,
+    ),
+    "min-width": (
+        "min", "max"
+    ),
+);
+
+:root {
+    // Width
+    @each $item, $value in get("width", $width-atomic) {
+        --spacing-w-#{$item}: #{$value};
+    }
+
+    @each $item, $value in get("max-width", $width-atomic) {
+        --spacing-w-#{$item}: #{$value};
+    }
+}
+
+// Width
+@each $key in $max-list {
+    $prefix: #{$key}w;
+    $properties: #{$key}width;
+
+    @each $item, $value in $spacing-special {
+        .#{$key}w-#{$item} {
+            #{$key}width: var(--spacing-#{$item});
+        }
+    }
+
+    @each $item, $value in get("width", $width-atomic) {
+        .#{$key}w-#{$item} {
+            #{$key}width: var(--spacing-w-#{$item});
+        }
+    }
+
+    @include spacing-rem-step($prefix, '', get-class, $properties, get-spacing-value, '');
+
+    @if $key == "" {
+        @for $i from 2 through 6 {
+            @for $j from 1 through $i - 1 {
+                .#{$key}w-#{$j}\/#{$i} {
+                    #{$key}width: var(--spacing-#{$j}\/#{$i});
+                }
+            }
+        }
+
+        @for $i from 1 through 11 {
+            .#{$key}w-#{$i}\/12 {
+                #{$key}width: var(--spacing-#{$i}\/12);
+            }
+        }
+    }
+}
+
+// Min-Width
+// Utilities for setting the minimum width of an element
+@each $item in $min-max-common {
+    .min-w-#{$item} {
+        min-width: var(--spacing-#{$item});
+    }
+}
+
+@each $item in get("min-width", $width-atomic) {
+    .min-w-#{$item} {
+        min-width: var(--spacing-w-#{$item});
+    }
+}
+
+// Max-Width
+// Utilities for setting the maximum width of an element
+.max-w-full {
+    max-width: var(--spacing-full);
+}
+
+@each $item, $value in get("max-width", $width-atomic) {
+    .max-w-#{$item} {
+        max-width: var(--spacing-w-#{$item});
+    }
+}

@@ -1,0 +1,10 @@
+.group-setting {
+    display: flex;
+
+    .group-control {
+        padding: 0.3rem;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+}

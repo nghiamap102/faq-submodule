@@ -1,0 +1,85 @@
+{
+    "layers": [
+        {
+            "id": "label-vnpoi-hospital-index",
+            "layout": {
+                "text-font": ["Roboto Medium"],
+                "text-size": {
+                    "base": 1,
+                    "stops": [
+                        [0, 10],
+                        [20, 12]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "label-vnpoi-park-index",
+            "layout": {
+                "text-font": ["Roboto Medium"],
+                "text-size": {
+                    "base": 1,
+                    "stops": [
+                        [0, 10],
+                        [20, 12]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "label-vnpoi-police-index",
+            "comment": "add police layer as a top label",
+            "add": true,
+            "after": "label-vnpoi-park-index",
+            "source": "vietbando",
+            "source-layer": "label_vnpoi_index",
+            "type": "symbol",
+            "minzoom": 8,
+            "filter": ["==", "categoryco", 7322],
+            "layout": {
+                "text-field": "{name}",
+                "text-font": ["Roboto Medium"],
+                "text-size": {
+                    "base": 1,
+                    "stops": [
+                        [0, 10],
+                        [20, 14]
+                    ]
+                },
+                "text-anchor": "top",
+                "text-padding": 0,
+                "text-letter-spacing": 0.01,
+                "text-pitch-alignment": "viewport",
+                "text-offset": [0, 0.8],
+                "icon-image": "{categoryco}",
+                "icon-padding": 0,
+                "icon-allow-overlap": false
+            },
+            "paint": {
+                "text-color": "#714c12",
+                "text-halo-color": "#fff",
+                "text-halo-width": 1
+            }
+        },
+        {
+            "id": "label-vnpoi-index",
+            "comment": "display all POI below level 16 and filter out hospital, park, police",
+            "minzoom": 16,
+            "filter": [
+                "all",
+                ["!=", "groupcode", 5],
+                ["!in", "categoryco", 9362, 7322]
+            ],
+            "layout": {
+                "text-font": ["Roboto Medium"],
+                "text-size": {
+                    "base": 1,
+                    "stops": [
+                        [0, 10],
+                        [20, 12]
+                    ]
+                }
+            }
+        }
+    ]
+}

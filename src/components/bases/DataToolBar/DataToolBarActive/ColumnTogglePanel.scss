@@ -1,0 +1,33 @@
+.column-toggle-container {
+    background-color: var(--popup-bg);
+    min-width: 18rem;
+
+    .column-toggle-body {
+        padding: 1rem;
+
+        .column-toggle-filter {
+            padding: 0.5rem 0;
+            color: var(--text-color);
+            border-bottom: 1.5px solid var(--border-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .column-toggle-item {
+            display: flex;
+        }
+    }
+
+    .column-toggle-footer {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.1);
+
+        button {
+            flex: 1;
+            margin: 0 0.25rem;
+        }
+    }
+}

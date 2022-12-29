@@ -1,0 +1,12 @@
+.story-header__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.story-header__header {
+    font-size: 2rem;
+    color: #000;
+    border-bottom: 1px solid #000;
+}

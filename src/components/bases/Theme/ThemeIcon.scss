@@ -1,0 +1,8 @@
+.theme-icon {
+    background-image: linear-gradient(to right, var(--bg-color) 49%, var(--primary-color) 51%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+}

@@ -1,0 +1,96 @@
+.resizable-grid {
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    touch-action: none;
+
+    .resizable-grid-item {
+        position: relative;
+
+        .draggable.display {
+            pointer-events: unset;
+            opacity: 1;
+            z-index: 900;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    .draggable {
+        position: absolute;
+        display: flex;
+        opacity: 0;
+        pointer-events: none;
+
+        &.dragging {
+            &.x .line {
+                cursor: row-resize;
+            }
+
+            &.y .line {
+                cursor: col-resize;
+            }
+
+            .line {
+                &::before {
+                    border-color: var(--primary-color) !important;
+                }
+            }
+        }
+
+        &.multi-dragging {
+            .line {
+                cursor: all-scroll !important;
+            }
+        }
+    }
+
+    .draggable.y {
+        height: 100%;
+        top: 0;
+
+        .line {
+            flex: 1;
+            position: absolute;
+            padding: 0 6px;
+            left: -6px;
+            height: 100%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                height: 100%;
+                transform: translate(-50%, -50%);
+                border-right: 2px solid var(--border-color);
+                transition: border-color .15s ease;
+            }
+        }
+    }
+
+    .draggable.x {
+        width: 100%;
+        left: 0;
+
+        .line {
+            flex: 1;
+            position: absolute;
+            padding: 6px 0;
+            top: -6px;
+            width: 100%;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                transform: translate(-50%, -50%);
+                border-top: 2px solid var(--border-color);
+                transition: border-color .15s ease;
+            }
+        }
+    }
+}

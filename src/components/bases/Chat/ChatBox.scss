@@ -1,0 +1,168 @@
+.chat-box {
+    box-sizing: border-box;
+    // border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    position: relative;
+    font-size:  20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-behavior: smooth;
+
+    .chat-box-header {
+        flex-grow: 0;
+        box-sizing: border-box;
+    }
+
+    .chat-view {
+        position: relative;
+        flex-grow: 1;
+        overflow: hidden;
+
+        .down-btn {
+            position: absolute;
+            right: 1rem;
+            bottom: 1rem;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: var(--text-color);
+            background-color: var(--contrast-highlight);
+            z-index: 1;
+        }
+
+        .post-list {
+            padding: 0.5rem 0.7rem;
+            min-height: calc(100% - 1rem);
+            justify-content: flex-end;
+            display: flex;
+            flex-direction: column;
+
+            .post-loading-icon {
+                position: absolute;
+                text-align: center;
+                padding: 0.5rem 1rem;
+                div {
+                    display: inline-block;
+                }
+
+                div + div {
+                    margin-left: 0.5rem;
+                }
+            }
+
+            .post {
+                margin: 0.1rem;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+
+                .post-header {
+                    align-self: center;
+                    display: flex;
+                    flex-direction: row;
+                    font-size: 0.65rem;
+                    padding-top: 0.7rem;
+                    padding-bottom: 0.2rem;
+                    a + a {
+                        margin: 0 0.5rem;
+                    }
+                }
+
+                .post-content {
+                    display: flex;
+                    flex-grow: 10;
+                    flex-direction: row;
+                    justify-content: flex-start;
+                    align-items: flex-end;
+
+                    .post-avatar {
+                        align-self: flex-end;
+                        flex: 0 0 1.5rem;
+                        height: 1.5rem;
+                        margin-left: 0;
+                        margin-right: 0.4rem;
+                        border-radius: 50%;
+                    }
+
+                    .post-content-body {
+                        display: flex;
+                        flex-direction: column;
+                        max-width: 70%;
+                        p {
+                            align-self: flex-start;
+                            word-break: break-word;
+                            word-wrap: break-word;
+                            border-radius: 4px;
+                            padding: 7px 10px;
+                            background-color: var(--border-color);
+                            white-space: pre-wrap;
+                        }
+
+                        .post-sender {
+                            font-size: 0.6rem;
+                            opacity: 0.8;
+                        }
+                    }
+                }
+
+                .post-footer {
+                    font-size: 0.6rem;
+                }
+            }
+
+            .post.from-me {
+                .post-content {
+                    flex-direction: row-reverse;
+                    .post-avatar {
+                        margin-right: 0;
+                        margin-left: 0.4rem;
+                    }
+                    .post-content-body {
+                        align-items: flex-end;
+
+                        p {
+                            background-color: var(--primary-color);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .chat-actions {
+        box-sizing: border-box;
+        flex-grow: 0;
+        border-top: 1px solid var(--border-color);
+        padding: 8px;
+        display: block;
+
+        .post-form {
+            border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+
+            .post-textarea {
+                caret-color: var(--text-color);
+                color: var(--text-color);
+                flex-grow: 1;
+                padding: 8px;
+                resize: none;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+        }
+
+        .post-send-btn {
+            color: var(--text-color);
+            flex-grow: 0;
+            margin-right: 0.5rem;
+        }
+    }
+}

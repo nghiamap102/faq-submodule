@@ -1,0 +1,66 @@
+.panel-header-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    height: 34px;
+    padding: 0 10px;
+
+    background: var(--panel-header-bg);
+    border-bottom: 1px solid var(--contrast-highlight);
+
+    h3 {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-color);
+    }
+
+    .panel-header-switch-actions {
+        display: flex;
+        align-items: center;
+
+        .setting-btn {
+            width: 2rem;
+            height: 2rem;
+
+            border-radius: 50%;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            transition: all .3s;
+            background-image: url("data:image/svg+xml;charset=utf-8,<svg viewBox='0 0 24 24' width='24px' height='24px' xmlns='http://www.w3.org/2000/svg'> <path fill-rule='evenodd' style='fill:rgb(230,230,230)' d='M5.001 8l8.999 0 0 -1c0,-0.55 0.449,-1 1,-1l0 0c0.549,0 1,0.45 1,1l0 4c0,0.55 -0.451,1 -1,1l0 0c-0.551,0 -1,-0.45 -1,-1l0 -1 -8.999 0c-0.549,0 -1.001,-0.449 -1.001,-1l0 0c0,-0.549 0.451,-1 1.001,-1zm6.999 6.001l7 0c0.55,0 1,0.45 1,1l0 0c0,0.55 -0.453,1 -1,1l-7 0 0 -2zm-2.001 -1l0 4c0,0.55 -0.45,1 -1,1l0 0c-0.55,0 -1,-0.45 -1,-1l0 -1 -2.998 0c-0.547,0 -1.001,-0.45 -1.001,-1l0 0c0,-0.55 0.45,-1 1.001,-1l2.998 0 0 -1c0,-0.551 0.45,-1 1,-1l0 0c0.55,0 1,0.449 1,1zm8.001 -5.001l1 0c0.55,0 1,0.451 1,1l0 0c0,0.551 -0.451,1 -1,1l-1 0 0 -2z'/> </svg>");
+
+            &:hover {
+                background-color: var(--contrast-highlight);
+            }
+
+            &.active {
+                opacity: 0.8;
+            }
+        }
+
+        .switch-toggle {
+            .react-switch-bg {
+                box-sizing: border-box;
+                border: 1px solid var(--border-color);
+            }
+
+            .react-switch-handle {
+                background-color: var(--button-color) !important;
+            }
+
+            &.active {
+                .react-switch-bg {
+                    background-color: var(--primary-color) !important;
+                }
+            }
+
+            &.disable {
+                .react-switch-bg {
+                    background-color: var(--contrast-highlight) !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.form-field-item {
+    margin-bottom: 8px;
+
+    .tb1 {
+        color: var(--text-color);
+    }
+
+    &.form-field-horizontal {
+        display: flex;
+        color: var(--contrast-color);
+
+        .form-field-left {
+            flex: 0 0 30px;
+            margin-right: 8px;
+            align-self: center;
+        }
+
+        .form-field-right {
+            flex: 1;
+        }
+    }
+
+    &.form-field-vertical {
+        color: var(--contrast-color);
+
+        .form-field-left {
+            margin-bottom: 5px;
+        }
+
+        .form-field-right {
+            margin-bottom: 5px;
+        }
+    }
+}

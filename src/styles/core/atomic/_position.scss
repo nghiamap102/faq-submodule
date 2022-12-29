@@ -1,0 +1,22 @@
+$positions: 'top', 'right', 'bottom', 'left';
+$positionX: 'left', 'right';
+$positionY: 'top', 'bottom';
+$position-variant: static, fixed, absolute, relative, sticky;
+
+@each $item in $position-variant {
+    .#{$item} {
+        position: $item !important;
+    }
+}
+
+@include spacing-rem-step('inset', '', get-class, $positions, get-spacing-value, '');
+@include spacing-rem-step('inset', '', get-class, $positions, get-spacing-value, '', true);
+@include spacing-rem-step('inset', '-x', get-class, $positionX, get-spacing-value, '');
+@include spacing-rem-step('inset', '-x', get-class, $positionX, get-spacing-value, '', true);
+@include spacing-rem-step('inset', '-y', get-class, $positionY, get-spacing-value, '');
+@include spacing-rem-step('inset', '-y', get-class, $positionY, get-spacing-value, '', true);
+
+@each $p in $positions {
+    @include spacing-rem-step($p, '', get-class, $p, get-spacing-value, '');
+    @include spacing-rem-step($p, '', get-class, $p, get-spacing-value, '', true);
+}

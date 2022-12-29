@@ -1,0 +1,31 @@
+.user-list-item {
+    position: relative;
+    padding: 0.2rem;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: var(--base-highlight);
+        cursor: pointer;
+    }
+
+    .checkbox-btn {
+        margin: auto;
+        margin-right: 0.5rem;
+    }
+
+    .user-avatar 
+    {
+        margin-right: 1rem;
+    }
+
+    .user-name {
+        width: 100%;
+        padding: 0.5rem 0 0.1rem 0;
+    }
+
+    .info {
+        font-size: 0.8rem;
+        opacity: 0.6;
+    }
+
+}

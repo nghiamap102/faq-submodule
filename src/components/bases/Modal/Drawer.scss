@@ -1,0 +1,48 @@
+@import "styles/core/breakpoints";
+
+.app-overlay.drawer {
+    display: block;
+
+    .overlay-main {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        max-height: 100% !important;
+
+        @include media("<mobile") {
+            width: 100% !important;
+            max-width: none !important;
+        }
+    }
+
+    &.drawer--right {
+        .overlay-main {
+            right: 0;
+
+            @include media("<mobile") {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .popup-container {
+        border: 0;
+        border-radius: 0;
+    }
+
+    .popup-container.with-close-icon {
+        padding-top: 3rem;
+    }
+
+    .overlay-background {
+        opacity: 0.35;
+
+        .theme-dark & {
+            opacity: 0.7;
+        }
+    }
+
+    .nav-container {
+        background-color: transparent;
+    }
+}

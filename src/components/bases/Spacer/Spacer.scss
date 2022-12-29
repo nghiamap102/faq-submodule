@@ -1,0 +1,24 @@
+.spacer-component {
+    display: inline-block;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        background: var(--border-color);
+    }
+
+    &.spacer-with-horizontal-divider::after {
+        width: 100%;
+        height: 1px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &.spacer-with-vertical-divider::after {
+        width: 1px;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

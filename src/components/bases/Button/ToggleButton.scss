@@ -1,0 +1,7 @@
+button.btn-toggle {
+    &.active,
+    &.btn-active {
+        background: var(--contrast-lighter);
+        border-color: rgba(var(--primary), 0.9);
+    }
+}

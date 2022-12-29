@@ -1,0 +1,46 @@
+.qr-group {
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid var(--border-color)!important;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    flex: 1 1;
+    background: var(--contrast-light);
+
+    &.qr-group-root {
+        margin-left: 0 !important;
+        margin-bottom: 1rem;
+    }
+
+    &:not(:first-child) {
+        margin-left: 2rem;
+    }
+
+    .qr-group-header {
+        flex: 1;
+        display: flex;
+        margin-bottom: 1rem;
+    }
+
+    .qr-group-operator {
+        flex: 0;
+        display: flex;
+
+        > * {
+            margin-right: 1rem;
+        }
+    }
+
+    .qr-group-expander {
+        flex: 1
+    }
+
+    .qr-group-actions {
+        display: flex;
+
+        button {
+            margin-left: 0.5rem;
+        }
+    }
+}

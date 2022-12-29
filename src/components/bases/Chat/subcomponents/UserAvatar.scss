@@ -1,0 +1,28 @@
+.user-avatar {
+    position: relative;
+    height: 100%;
+    img {
+        border-radius: 10rem;
+        height: 100%;
+    }
+
+    .user-status {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        border: 2px solid var(--bg-color);
+        box-sizing: border-box;
+
+        &.online {
+            background-color: var(--success-color);
+        }
+
+        &.offline {
+            background-color: var(--default-color);
+        }
+    }
+}

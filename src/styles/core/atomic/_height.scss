@@ -1,0 +1,52 @@
+$height-special: (
+    "screen": 100vh,
+);
+
+:root {
+    @each $item, $value in $height-special {
+        --spacing-h-#{$item}: #{$value};
+    }
+}
+
+@each $key in $max-list {
+    $prefix: #{$key}h;
+    $properties: #{$key}height;
+
+    @each $item, $value in $spacing-special {
+        .#{$key}h-#{$item} {
+            #{$key}height: var(--spacing-#{$item});
+        }
+    }
+
+    @each $item, $value in $height-special {
+        .#{$key}h-#{$item} {
+            #{$key}height: var(--spacing-h-#{$item});
+        }
+    }
+
+    @include spacing-rem-step($prefix, '', get-class, $properties, get-spacing-value, '');
+
+    @if $key == "" {
+        @for $i from 2 through 6 {
+            @for $j from 1 through $i - 1 {
+                .#{$key}h-#{$j}\/#{$i} {
+                    #{$key}height: var(--spacing-#{$j}\/#{$i});
+                }
+            }
+        }
+    }
+}
+
+// Min-Height
+// Utilities for setting the minimum height of an element
+@each $item in $min-max-common {
+    .min-h-#{$item} {
+        min-height: var(--spacing-#{$item});
+    }
+}
+
+@each $item, $value in $height-special {
+    .min-h-#{$item} {
+        min-height: var(--spacing-h-#{$item});
+    }
+}

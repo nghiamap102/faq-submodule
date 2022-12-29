@@ -1,0 +1,33 @@
+.popup-contain {
+    padding: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.popup-field {
+    display: flex;
+
+    &.pf-horizontal {
+        flex-direction: column;
+    }
+}
+
+.popup-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    padding: 0.5rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+}
+
+.popup-info {
+    flex: 1;
+    padding: 0.5rem;
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    word-break: break-word;
+}

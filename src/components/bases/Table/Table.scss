@@ -1,0 +1,64 @@
+.table-panel {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    position: relative;
+
+    th {
+        vertical-align: middle;
+        font-weight: 600;
+        color: var(--text-color);
+        background: var(--bg-light);
+        position: relative;
+
+        > div {
+            margin: 0.5rem;
+        }
+    }
+
+    &.fixed-header {
+        th {
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+    }
+
+    tbody {
+        z-index: 1;
+
+        tr {
+            transition: background 0.3s ease;
+            line-height: 2;
+
+            &:hover {
+                background: var(--contrast-highlight);
+            }
+
+            &.active {
+                border-left: 5px solid var(--primary-color);
+            }
+        }
+
+        tr:nth-child(even) {
+            background: var(--contrast-light);
+
+            &:hover {
+                background: var(--contrast-highlight)
+            }
+        }
+    }
+
+    td {
+        color: var(--text-color);
+        padding: 0.5rem;
+        display: table-cell;
+        cursor: pointer;
+    }
+
+    .check-btn {
+        font-weight: 400;
+        background-color: transparent !important;
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,422 @@
+.data-grid-wrapper {
+    --border-color: var(--contrast-lighter);
+    --border-light: var(--contrast-light);
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+
+    .data-grid-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .toolbar {
+        // height: 50px;
+    }
+
+    .data-grid-container {
+        overflow: hidden;
+        width: 100%;
+        flex: 1;
+        border: 1px solid var(--border-color);
+        position: relative;
+
+        .ps__rail-x,
+        .ps__rail-y {
+            opacity: 0.8;
+            z-index: 10;
+        }
+
+        .data-grid {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            border-collapse: collapse;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+
+            .dg-header, .dg-footer {
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+                box-sizing: border-box;
+
+                margin: 0;
+                border: 0;
+                padding: 0;
+
+                position: sticky;
+                top: 0;
+                z-index: 3;
+
+                // overflow: hidden;
+
+                .dg-header-item,
+                .dg-footer-item {
+                    position: relative;
+                    background-color: var(--bg-color);
+                    box-sizing: border-box;
+
+                    &.dg-header-sort {
+                        cursor: pointer;
+
+                        .dg-header-sort-icon {
+                            padding-left: 5px;
+                        }
+                    }
+
+                    &.dg-header-sorting {
+                        .dg-cell {
+                            background-color: var(--contrast-highlight);
+                        }
+                    }
+
+                    .dg-cell {
+                        height: 100%;
+                        vertical-align: middle;
+                        font-weight: 600;
+                        color: var(--text-color);
+                        background: var(--contrast-light);
+                        word-break: break-word;
+                        white-space: nowrap;
+                        padding: 0.5rem;
+                        box-sizing: border-box;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                        &.check-cell {
+                            display: flex;
+                            justify-content: center;
+                            padding: 0.4rem;
+                        }
+
+                        div {
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                    }
+
+                    .btn {
+                        padding: 0.25rem;
+                    }
+
+                    .react-resizable {
+                        position: relative;
+                        background-clip: padding-box;
+
+                        &:last-child {
+                            .react-resizable-handle {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .react-resizable-handle {
+                        position: absolute;
+                        top: 0;
+                        right: 1px;
+                        width: 13px;
+                        height: 100%;
+                        transform: translateX(50%);
+                        z-index: 1;
+                        cursor: col-resize !important;
+
+                        &::after {
+                            position: absolute;
+                            top: 0;
+                            left: 50%;
+                            bottom: 0;
+
+                            display: block;
+                            content: "";
+                            width: 1px;
+                            height: 100%;
+
+                            z-index: 1;
+                            transform: translateX(-50%);
+                            transition: background-color 0.3s;
+
+                            background-color: var(--border-color);
+                        }
+
+                        &:active::after,
+                        &:hover::after {
+                            width: 3px;
+                            background-color: var(--primary-color);
+                        }
+                    }
+                }
+
+                &.summary {
+                    // bottom: 0.5rem;
+                    height: 45px;
+                    border-top: 1px solid var(--border-color);
+
+                    .dg-cell {
+                        justify-content: space-between;
+                    }
+                }
+            }
+
+            .dg-body {
+                flex: 1;
+
+                &--stripes {
+                    .dg-row {
+                        &:nth-child(even) .dg-cell {
+                            background-color: var(--contrast-light);
+                        }
+
+                        .dg-row-filtering .dg-cell {
+                            background-color: rgba(var(--info-color-rgb), 0.05);
+                        }
+                    }
+                }
+            }
+
+            .dg-row {
+                display: flex;
+                flex-direction: row;
+
+                .dg-row-item {
+                    position: relative;
+                    background-color: var(--bg-color);
+                    display: flex;
+                    box-sizing: border-box;
+
+                    .number {
+                        margin-left: auto;
+                    }
+
+                    .trailing {
+                        text-align: center;
+                    }
+
+                    .boolean,
+                    .input-editable {
+                        display: flex;
+                        justify-content: center;
+
+                        .checkbox-input::before {
+                            box-shadow: unset !important;
+                        }
+
+                        .checkbox-icon {
+                            font-weight: 900;
+                            margin-right: .5rem;
+                        }
+
+                        .checkbox-field {
+                            display: none;
+                            position: absolute;
+                        }
+                    }
+
+                    &.row--border {
+                        border-right: 1px solid var(--border-color);
+                        border-top: 1px solid var(--border-color);
+                    }
+
+                    &.row--vertical-border {
+                        border-right: 1px solid var(--border-color);
+                    }
+
+                    &.row--horizontal-border {
+                        border-top: 1px solid var(--border-color);
+                    }
+                }
+
+                .dg-cell {
+                    color: var(--text-color);
+                    display: flex;
+                    align-items: center;
+                    flex: 1;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    word-break: break-word;
+                    border: 1px solid transparent;
+                    flex-wrap: wrap;
+
+                    &.check-cell {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    &.no-cell {
+                    }
+
+                    &.editable.selected-field {
+                        border: 1px solid var(--primary-color);
+                        cursor: pointer;
+
+                        .text {
+                            color: var(--primary-color);
+                        }
+
+                        .checkbox-field {
+                            display: unset !important;
+                        }
+
+                        .checkbox-icon {
+                            display: none !important;
+                        }
+                    }
+
+                    &.editable {
+                        .dynamic-container {
+                            > * {
+                                flex: 1;
+                            }
+
+                            .dtp-control-container,
+                            .as-control-container {
+                                background-color: transparent;
+                                border: none;
+                                min-height: unset;
+
+                                .calendar,
+                                .arrow {
+                                    height: fit-content;
+                                }
+
+                                .dropdown-btn {
+                                    padding: 0;
+                                }
+                            }
+
+                            .input-editable {
+                                padding: unset;
+
+                                input {
+                                    padding-left: 0;
+                                }
+
+                                &,
+                                &:focus-within {
+                                    box-shadow: unset;
+                                }
+                            }
+                        }
+                    }
+
+                    .tag-container {
+                        line-height: normal;
+                        margin-top: 0.3em;
+                        margin-bottom: 0.3em;
+                    }
+
+                    > *:not(.tag-container) {
+                        padding: 0.5rem;
+                        display: flex;
+                        align-items: center;
+                        height: 100%;
+                        width: 100%;
+
+                        &.checkbox-form {
+                            justify-content: center;
+                        }
+                    }
+
+                    .auto-number {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+
+                &:last-child .dg-row-item {
+                    border-bottom: 1px solid var(--border-color);
+                }
+
+                // sort style
+                .dg-row-filtering .dg-cell {
+                    background-color: var(--contrast-light);
+                }
+
+                &:hover .dg-row-item .dg-cell,
+                &.selected-row .dg-cell {
+                    background-color: var(--contrast-highlight-fade);
+                }
+
+                &:hover {
+                    .editable {
+                        .checkbox-field {
+                            display: unset !important;
+                        }
+
+                        .checkbox-icon {
+                            display: none !important;
+                        }
+                    }
+                }
+
+                &.selectable-row {
+                    cursor: pointer;
+                }
+            }
+
+            // freezeColumn
+            .dg-freeze {
+                z-index: 2;
+                position: sticky !important;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: -1.5px;
+                    width: 2px;
+                    height: 100%;
+                    background-color: rgba(var(--border), .3);
+                }
+            }
+
+            .dg-freeze-end {
+                z-index: 2;
+                right: 0;
+                position: sticky !important;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: -1.5px;
+                    width: 2px;
+                    height: 100%;
+                    background-color: rgba(var(--border), .3);
+                }
+            }
+        }
+    }
+
+    .search-box-container {
+        height: 100%;
+    }
+}
+
+.dg-empty {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+
+    .empty-data {
+        align-items: flex-start;
+        margin-top: 5rem;
+    }
+}

@@ -1,0 +1,16 @@
+.group-item-title{
+    transition: all .3s;
+    color: gray;
+    line-height: unset !important;
+    //width: fit-content;
+    min-height: unset  !important;
+    cursor:default !important;
+    padding-top:8px !important;
+    padding-bottom:8px !important;
+}
+
+.group-item-container{
+    .group-horizontal-content .item{
+        padding-left: 24px;
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "Trường này là bắt buộc.": "This field is required.",
+  "Giá trị của trường nhỏ hơn giá trị tối thiểu.": "This field's value is smaller than min value.",
+  "Giá trị của trường lớn hơn giá trị tối đa.": "This field's value is greater than max value.",
+  "Số ký tự của trường nhỏ hơn giới hạn tối thiểu.": "This field's value length is smaller than min field value length.",
+  "Số ký tự của trường vượt quá giới hạn tối đa.": "This field's value length is greater than max field value length.",
+  "Giá trị của trường sai mẫu.": "This field's value is not match the pattern.",
+  "Giá trị của trường không hợp lệ.": "This field's value is not pass the validation."
+}

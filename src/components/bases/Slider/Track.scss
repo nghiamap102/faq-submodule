@@ -1,0 +1,23 @@
+.track {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(192, 192, 192, .3);
+    border-radius: 5px;
+
+    &.disabled {
+        background-color: gray !important;
+    }
+}
+
+// still not complete
+.trackVertical {
+    position: absolute;
+    height: 100%;
+    left: 14px;
+    width: 4px;
+    border-radius: 10;
+    background-color: white;
+    border: 1px solid #2771e2;
+}

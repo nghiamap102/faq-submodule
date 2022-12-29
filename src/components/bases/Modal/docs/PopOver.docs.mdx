@@ -1,0 +1,50 @@
+import { Story } from 'components/story/blocks';
+
+A PopOver component can be used to display some content on top of anothers.
+
+#### Basic Popover
+PopOver component require 'anchorEl' prop to identify it popup content position.
+It's default placement is 'bottom-left'.
+
+<Story id="overlays-popover--basic" />
+
+#### Custom popover placement
+Use the 'placement' prop to control popup content position.
+
+<Story id="overlays-popover--custom-placement" />
+
+#### Auto flip behavior
+In case popup content is out of screen (with your configured placement) and the opposite direction has enough space for wrapped element.
+Popup content will automaticly positoned to opposite direction.
+
+<Story id="overlays-popover--auto-flip-behavior" />
+
+#### Auto alignment behavior (horizontal placements)
+In case wrapped element's height is longer than anchor element and related screen's border distance,
+popup content will automaticly aligned to the screen's border.
+
+This behavior applied on 'left-top', 'left-bottom', 'right-top', 'right-bottom', 'left', 'right' placements.
+
+<Story id="overlays-popover--auto-align-behavior" />
+
+#### Auto fit screen & add scrollbar (horizontal placements)
+In case wrapped element's height is longer than view-port's height, popup content will automaticly fit to the top & bottom screen's border & a vertical scrollbar will be added.
+
+This behavior applied on 'left-top', 'left-bottom', 'right-top', 'right-bottom', 'left', 'right' placements.
+
+<Story id="overlays-popover--auto-fit-screen" />
+
+#### Auto fit space (vertical placements)
+In case wrapped element's height is longer than the longest distance between anchor element and screen's border,
+popup content will automaticly fit the available space & a vertical scrollbar will be added.
+
+This behavior applied on 'top-left', 'top', 'top-right', 'bottom-left', 'bottom', 'bottom-right' placements.
+
+<Story id="overlays-popover--auto-fit-screen" />
+
+#### Handle dynamic content
+If your popup content is change dynamicly, enable PopOver's dynamic content feature by 'dynamicContent' prop.
+
+The popup content position will re-calculate if it's size changed.
+
+<Story id="overlays-popover--handle-dynamic-content" />

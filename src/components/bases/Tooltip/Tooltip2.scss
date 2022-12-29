@@ -1,0 +1,78 @@
+.tooltip-v2-container {
+    .overlay-main {
+        cursor: pointer;
+        background-color: var(--bg-color);
+        border-radius: 3px;
+        border: 1px solid var(--popup-border);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+        display: flex;
+        flex-direction: column;
+        padding: 0.4rem;
+        transition: opacity 0.3s;
+        z-index: 2147483647;
+        position: relative;
+        color: var(--text-color);
+        min-width: unset !important;
+
+        &[data-placement^='top'] {
+            margin-bottom: .5rem;
+        }
+
+        &[data-placement^='bottom'] {
+            margin-top: .5rem;
+        }
+
+        &[data-placement^='left'] {
+            margin-right: .5rem;
+        }
+
+        &[data-placement^='right'] {
+            margin-left: .5rem;
+        }
+    }
+
+    &.show-arrow {
+        .overlay-main {
+            &::before {
+                content: '';
+                position: absolute;
+                width: 8px;
+                height: 8px;
+                border: 1px solid var(--popup-border);
+                background-color: var(--bg-color);
+            }
+
+            &[data-placement^='top']::before {
+                bottom: -4.5px;
+                left: 50%;
+                transform: translateX(-50%) rotate(45deg);
+                border-top: none;
+                border-left: none;
+            }
+
+            &[data-placement^='bottom']::before {
+                top: -4.5px;
+                left: 50%;
+                transform: translateX(-50%) rotate(45deg);
+                border-right: none;
+                border-bottom: none;
+            }
+
+            &[data-placement^='right']::before {
+                left: -4.5px;
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+                border-top: none;
+                border-right: none;
+            }
+
+            &[data-placement^='left']::before {
+                right: -4.5px;
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+                border-left: none;
+                border-bottom: none;
+            }
+        }
+    }
+}

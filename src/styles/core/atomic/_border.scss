@@ -1,0 +1,231 @@
+$border-style: solid, dashed, dotted, double, none;
+$border-radius: (
+    '-none': 0,
+    '-xs': 0.125rem,
+    '': 0.25rem,
+    '-md': 0.375rem,
+    '-lg': 0.5rem,
+    '-xl': 0.75rem,
+    '-2xl': 1rem,
+    '-3xl': 1.5rem,
+    '-full': 9999px,
+);
+$corner-position-prefixes: '', '-t', '-r', '-b', '-l', '-tl', '-tr', '-br', '-bl';
+$corner-position: ('', ('-top-left', '-top-right'), ('-top-right', '-bottom-right'), ('-bottom-left', '-bottom-right'), ('-top-left', '-bottom-left'), '-top-left', '-top-right', '-bottom-right', '-bottom-left');
+
+@mixin border-step($prefix, $get-class, $dimension, $properties, $get-value, $values) {
+    @if ($prefix == 'divide') {
+        .#{call(get-function($get-class), $prefix, $dimension, '', false)} {
+            @for $p from 1 through length($properties) {
+                #{nth($properties, $p)}: call(get-function($get-value), $dimension, '', $p, $values);
+            }
+        }
+    }
+
+    @for $i from 0 to 4 {
+        $step: pow(2, $i);
+
+        @if $i == 0 {
+            $step: $step - 1;
+        }
+
+        .#{call(get-function($get-class), $prefix, $dimension, $step, false)} {
+            @for $p from 1 through length($properties) {
+                #{nth($properties, $p)}: call(get-function($get-value), $dimension, $step, $p, $values);
+            }
+        }
+    }
+}
+
+@function get-border-value($dimension, $step, $p, $values) {
+    $stepper: $step;
+
+    @if ($step == '') {
+        $stepper: 1;
+    }
+
+    @if (in_list($dimension, $box-position-keys-kebab)) {
+        @return get-px($stepper);
+    }
+
+    @return unquote("calc(#{$stepper}px * " + nth($values, $p));
+}
+
+.border,
+[class*="border-"],
+.divide > * + *,
+[class*="divide-"] > * + * {
+    border-style: solid;
+}
+
+.border,
+[class*="border-"] {
+    border-color: rgba(var(--border), var(--border-alpha));
+}
+
+.divide > * + *,
+[class*="divide-"] > * + * {
+    border-color: rgba(var(--border), var(--divide-alpha));
+}
+
+//---------------------------------------------------------------
+// Divide width
+// Control the border width between elements.
+[class*="divide-x"] {
+    --divide-x-reverse: 0;
+}
+
+[class*="divide-y"] {
+    --divide-y-reverse: 0;
+}
+
+.divide-x-reverse {
+    --divide-x-reverse: 1;
+}
+
+.divide-y-reverse {
+    --divide-y-reverse: 1;
+}
+
+//---------------------------------------------------------------
+// Border Width
+// Utilities for controlling the width of an element's borders.
+@for $k from 1 through length($box-position-keys-kebab) {
+    $dimension: quote(nth($box-position-keys-kebab, $k));
+    $property: border#{nth($box-positions, $k)}-width;
+
+    .border#{$dimension} {
+        #{$property}: 1px;
+    }
+
+    @include border-step('border', get-class, $dimension, $property, get-border-value, '');
+}
+
+//---------------------------------------------------------------
+// Border Opacity
+// Utilities for controlling the opacity of an element's border color.
+@each $step in $usual-opacities {
+    .border-alpha-#{$step} {
+        --border-alpha: var(--alpha-#{$step});
+    }
+}
+
+//---------------------------------------------------------------
+// Border Color
+// Utilities for controlling the color of an element's borders.
+.border-transparent {
+    border-color: transparent;
+}
+
+.border-current {
+    border-color: currentColor;
+}
+
+.border-white {
+    border-color: rgba(var(--white), var(--border-alpha));
+}
+
+.border-black {
+    border-color: rgba(var(--black), var(--border-alpha));
+}
+
+@mixin border-colors($map-system) {
+    @each $color-name, $map in $map-system {
+        @each $step, $rgb in $map {
+            .border-#{$color-name}-#{$step} {
+                border-color: rgba(var(--#{$color-name}-#{$step}), var(--border-alpha));
+            }
+        }
+    }
+}
+
+@include border-colors($color-system);
+
+//---------------------------------------------------------------
+// Border Style
+// Utilities for controlling the style of an element's borders.
+@each $style in $border-style {
+    .border-#{$style} {
+        border-style: $style;
+    }
+}
+
+//---------------------------------------------------------------
+// Border Radius
+// Utilities for controlling the border radius of an element.
+@for $i from 1 through length($corner-position-prefixes) {
+    @each $step, $value in $border-radius {
+        .rounded#{nth($corner-position-prefixes, $i)}#{$step} {
+            @each $property in nth($corner-position, $i) {
+                border#{$property}-radius: $value;
+            }
+        }
+    }
+}
+
+//---------------------------------------------------------------
+// Divide Width
+// Utilities for controlling the border width between elements.
+@each $axis in $box-position-axis {
+    $position1: '-left';
+    $position2: '-right';
+    $values: "calc(1 - var(--divide-#{$axis}-reverse)))", "var(--divide-#{$axis}-reverse))";
+
+    @if ($axis == 'y') {
+        $position1: '-top';
+        $position2: '-bottom';
+    }
+
+    $properties: border#{$position1}-width, border#{$position2}-width;
+
+    @include border-step('divide', get-class, $axis, $properties, get-border-value, $values);
+}
+
+//---------------------------------------------------------------
+// Divide Opacity
+// Utilities for controlling the opacity borders between elements.
+@each $step in $usual-opacities {
+    .divide-alpha-#{$step} {
+        --divide-alpha: var(--alpha-#{$step});
+    }
+}
+
+//---------------------------------------------------------------
+// Divide Color
+// Utilities for controlling the border color between elements.
+.divide-transparent > * + * {
+    border-color: transparent;
+}
+
+.divide-current > * + * {
+    border-color: currentColor;
+}
+
+.divide-white > * + * {
+    border-color: rgba(var(--white), var(--divide-alpha));
+}
+
+.divide-black > * + * {
+    border-color: rgba(var(--black), var(--divide-alpha));
+}
+
+@mixin divide-colors($map-system) {
+    @each $color-name, $map in $map-system {
+        @each $step, $rgb in $map {
+            .divide-#{$color-name}-#{$step} > * + * {
+                border-color: rgba(var(--#{$color-name}-#{$step}), var(--divide-alpha));
+            }
+        }
+    }
+}
+
+@include divide-colors($color-system);
+
+//---------------------------------------------------------------
+// Divide Style
+// Utilities for controlling the border style between elements.
+@each $style in $border-style {
+    .divide-#{$style} > * + * {
+        border-style: $style;
+    }
+}

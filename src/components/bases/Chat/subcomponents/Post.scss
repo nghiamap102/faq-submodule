@@ -1,0 +1,113 @@
+.post {
+    color: var(--text-color);
+    margin: 0.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    .post-header {
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        font-size: 0.65rem;
+        padding-top: 0.7rem;
+        padding-bottom: 0.2rem;
+
+        a + a {
+            margin: 0 0.5rem;
+        }
+    }
+
+    .post-content {
+        display: flex;
+        flex-grow: 10;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-end;
+
+        .post-avatar {
+            align-self: flex-end;
+            flex: 0 0 1.5rem;
+            height: 1.5rem;
+            margin-left: 0;
+            margin-right: 0.4rem;
+            border-radius: 50%;
+        }
+
+        .post-content-body {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                align-self: flex-start;
+                word-break: break-word;
+                border-radius: 4px;
+                padding: 7px 10px;
+                background-color: var(--border-color);
+                white-space: pre-wrap;
+            }
+
+            .post-sender {
+                font-size: 0.6rem;
+                opacity: 0.8;
+            }
+        }
+    }
+
+    .post-footer {
+        font-size: 0.6rem;
+
+        .user-avatar {
+            display: inline-block;
+            margin-top: 0.2rem;
+            height: 10px;
+        }
+    }
+}
+
+
+.post.from-me {
+    padding-right: 0.5rem;
+
+    .post-content {
+        flex-direction: row-reverse;
+
+        .post-avatar {
+            display: none;
+            margin-right: 0;
+            margin-left: 0.4rem;
+        }
+
+        .post-content-body {
+            align-items: flex-end;
+
+            p {
+                background-color: var(--primary-color);
+                color: var(--button-color);
+            }
+        }
+    }
+}
+
+.post.system {
+    .post-content {
+        align-self: stretch;
+        display: flex;
+        justify-content: center;
+
+        .post-avatar {
+            display: none;
+        }
+
+        .post-content-body {
+
+            p {
+                background: none;
+            }
+
+            .post-sender {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.panel-footer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.5rem;
+    background-color: var(--panel-footer-bg);
+
+    .panel-footer-docked {
+        position: absolute;
+        bottom: 0;
+    }
+
+    .panel-footer-actions {
+        display: flex;
+
+        button {
+            flex: 1;
+            margin: 0.25rem;
+            background-color: var(--primary-color);
+            color: var(--button-color);
+
+            &:hover:enabled {
+                background-color: var(--primary-light);
+            }
+        }
+    }
+}
