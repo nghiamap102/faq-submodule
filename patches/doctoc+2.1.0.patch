@@ -1,0 +1,13 @@
+diff --git a/node_modules/doctoc/lib/file.js b/node_modules/doctoc/lib/file.js
+index 1479be9..ab49857 100644
+--- a/node_modules/doctoc/lib/file.js
++++ b/node_modules/doctoc/lib/file.js
+@@ -2,7 +2,7 @@ var path  =  require('path')
+  ,  fs  =  require('fs')
+  ,  _   =  require('underscore');
+ 
+-var markdownExts = ['.md', '.markdown'];
++var markdownExts = ['.md', '.markdown', '.mdx'];
+ var ignoredDirs  = ['.', '..', '.git', 'node_modules'];
+ 
+ function separateFilesAndDirs(fileInfos) {

@@ -1,0 +1,108 @@
+/* Workaround for the changelog scrollbar issue - START */
+body .css-10ro1m {
+    background-color: white;
+}
+
+body .css-zgt7u1 {
+    min-height: initial;
+}
+
+/* Workaround for the changelog scrollbar issue - END */
+
+.change-log-content li code:not([class*="language-"]),
+.change-log-content p code:not([class*="language-"]),
+.change-log-content h1 code:not([class*="language-"]),
+.change-log-content h2 code:not([class*="language-"]),
+.change-log-content h3 code:not([class*="language-"]),
+.change-log-content h4 code:not([class*="language-"]) {
+  color: rgba(99, 102, 241, 1);
+  font-weight: 600;
+  border: none;
+  background-color: rgba(245, 245, 245, 0.75); }
+
+div.docblock-source {
+  box-shadow: none;
+  background-color: rgba(248, 250, 252, 1); }
+
+div.sbdocs-preview {
+  box-shadow: none; }
+  div.sbdocs-preview code.language-jsx {
+    color: unset;
+    font-size: 100%;
+    border: none;
+    background-color: transparent; }
+
+.change-log-content h1.sbdocs {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+  margin: 2rem 0 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .change-log-content h1.sbdocs a {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 500;
+    text-decoration: none; }
+    .change-log-content h1.sbdocs:first-child {
+    margin-top: 0; }
+
+.change-log-content h2.sbdocs {
+  font-weight: 600; }
+
+.change-log-content h3.sbdocs {
+  margin-top: 1rem; }
+
+.change-log-content .sbdocs code {
+  margin: 0;
+  padding: .2em .4em;
+  font-size: 0.875rem;
+  font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace;
+  border-radius: 6px; }
+
+h1.sbdocs-h1 {
+  margin: 0 0 2rem;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 900; }
+  .change-log-content h1.sbdocs-h1 code {
+    padding: 0 .2em;
+    font-size: 85%;
+    white-space: nowrap; }
+
+.change-log-content h2.sbdocs-h2 code {
+  padding: 0 .2em;
+  font-size: 85%;
+  white-space: nowrap; }
+
+h3.sbdocs-h3 {
+  margin: 2rem 0 1rem;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 700; }
+  .change-log-content h3.sbdocs-h3 code {
+    padding: 0 .2em;
+    font-size: 85%;
+    white-space: nowrap; }
+
+p.sbdocs-p {
+  margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 1rem;
+  line-height: 1.5; }
+
+li.sbdocs-li {
+  margin: 0 0 0.5rem;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 1rem;
+  line-height: 1.5; }
+
+a.sbdocs-a {
+  color: rgba(29, 78, 216, 0.85);
+  font-size: 1rem;
+  line-height: 1.5; }
+  a.sbdocs-a:hover {
+    text-decoration: underline; }
+  a.sbdocs-a > code:hover {
+    text-decoration: underline; }

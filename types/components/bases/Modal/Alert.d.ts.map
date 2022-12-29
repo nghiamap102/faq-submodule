@@ -1,0 +1,1 @@
+{"version":3,"file":"Alert.d.ts","sourceRoot":"","sources":["../../../../src/components/bases/Modal/Alert.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAsB,UAAU,EAAE,MAAM,8BAA8B,CAAC;AAI9E,OAAO,eAAe,CAAC;AAEvB,oBAAY,UAAU,GAAG;IACrB,OAAO,EAAE,MAAM,CAAC;CACnB,GAAG,IAAI,CAAC,UAAU,EAAE,OAAO,GAAG,MAAM,CAAC,CAAA;AAEtC,eAAO,MAAM,KAAK,UAAW,UAAU,KAAG,WAuBzC,CAAC"}

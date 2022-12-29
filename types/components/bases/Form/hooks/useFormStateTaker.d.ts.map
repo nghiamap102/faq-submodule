@@ -1,0 +1,1 @@
+{"version":3,"file":"useFormStateTaker.d.ts","sourceRoot":"","sources":["../../../../../src/components/bases/Form/hooks/useFormStateTaker.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,SAAS,EAAE,MAAM,iBAAiB,CAAC;AAIzD,UAAU,kBAAkB;IAC1B,MAAM,EAAE,MAAM,CAAA;CACf;AAED;;;;;;;;EAQE;AACF,eAAO,MAAM,iBAAiB,sCAAuC,kBAAkB,6BAItF,CAAC"}

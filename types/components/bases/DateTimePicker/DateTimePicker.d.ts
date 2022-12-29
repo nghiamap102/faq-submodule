@@ -1,0 +1,41 @@
+import React from 'react';
+import moment, { Moment, MomentInput } from 'moment';
+import { CustomOnChange, IControllableField } from '../../../components/bases/Form/model/smartFormType';
+import './DateTimePicker.scss';
+export declare type DateTimePickerProps = {
+    className?: string;
+    onChange?: (value?: Moment, rangeTime?: [number, number]) => void;
+    value?: Moment;
+    rangeTime?: [number, number];
+    disabled?: boolean;
+    showTimeSelect?: boolean;
+    showTimeSelectOnly?: boolean;
+    showTimeRange?: boolean;
+    clearable?: boolean;
+    placeholder?: string;
+    minDate?: MomentInput;
+    maxDate?: MomentInput;
+    minTime?: MomentInput;
+    maxTime?: MomentInput;
+    isVisible?: boolean;
+    readOnly?: boolean;
+} & CustomOnChange & IControllableField;
+export declare const DateTimePicker: React.ForwardRefExoticComponent<{
+    className?: string | undefined;
+    onChange?: ((value?: moment.Moment | undefined, rangeTime?: [number, number] | undefined) => void) | undefined;
+    value?: moment.Moment | undefined;
+    rangeTime?: [number, number] | undefined;
+    disabled?: boolean | undefined;
+    showTimeSelect?: boolean | undefined;
+    showTimeSelectOnly?: boolean | undefined;
+    showTimeRange?: boolean | undefined;
+    clearable?: boolean | undefined;
+    placeholder?: string | undefined;
+    minDate?: MomentInput;
+    maxDate?: MomentInput;
+    minTime?: MomentInput;
+    maxTime?: MomentInput;
+    isVisible?: boolean | undefined;
+    readOnly?: boolean | undefined;
+} & CustomOnChange & IControllableField<Record<string, unknown>> & React.RefAttributes<HTMLInputElement>>;
+//# sourceMappingURL=DateTimePicker.d.ts.map

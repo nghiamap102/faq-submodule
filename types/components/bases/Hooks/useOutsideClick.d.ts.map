@@ -1,0 +1,1 @@
+{"version":3,"file":"useOutsideClick.d.ts","sourceRoot":"","sources":["../../../../src/components/bases/Hooks/useOutsideClick.ts"],"names":[],"mappings":"AAAA,OAAO,KAAoB,MAAM,OAAO,CAAC;AAGzC,aAAK,eAAe,CAAC,CAAC,SAAS,WAAW,GAAG,WAAW,IAAI,CAAC,GAAG,EAAE,KAAK,CAAC,SAAS,CAAC,CAAC,CAAC,EAAE,QAAQ,EAAE,MAAM,IAAI,KAAK,IAAI,CAAA;AACnH,eAAO,MAAM,eAAe,EAAE,eAoB7B,CAAC"}

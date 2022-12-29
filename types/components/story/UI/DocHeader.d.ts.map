@@ -1,0 +1,1 @@
+{"version":3,"file":"DocHeader.d.ts","sourceRoot":"","sources":["../../../../src/components/story/UI/DocHeader.tsx"],"names":[],"mappings":"AAAA,OAAO,kBAAkB,CAAC;AAE1B,QAAA,MAAM,gBAAgB,qDAAsD,CAAC;AAE7E,oBAAY,cAAc,GAAG;IAC3B,IAAI,EAAE,MAAM,CAAA;IACZ,MAAM,CAAC,EAAE,CAAC,OAAO,gBAAgB,CAAC,CAAC,MAAM,CAAC,CAAA;CAC3C,CAAA;AAED,eAAO,MAAM,SAAS,UAAW,cAAc,KAAG,WAqBjD,CAAC"}

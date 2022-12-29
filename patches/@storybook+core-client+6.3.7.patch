@@ -1,0 +1,42 @@
+diff --git a/node_modules/@storybook/core-client/dist/cjs/preview/url.js b/node_modules/@storybook/core-client/dist/cjs/preview/url.js
+index 2b5e53d..984e62c 100644
+--- a/node_modules/@storybook/core-client/dist/cjs/preview/url.js
++++ b/node_modules/@storybook/core-client/dist/cjs/preview/url.js
+@@ -143,7 +143,8 @@ var getSelectionSpecifierFromPath = function getSelectionSpecifierFromPath() {
+   var globals = typeof query.globals === 'string' ? (0, _parseArgsParam.parseArgsParam)(query.globals) : undefined;
+   var viewMode = getFirstString(query.viewMode);
+ 
+-  if (typeof viewMode !== 'string' || !viewMode.match(/docs|story/)) {
++  // This fix is available on @storybook v6.5.0-alpha.2. Remove It if upgrate to v6.5.0 (when it stable)
++  if (['settings', 'about', 'release'].includes(viewMode)) {
+     viewMode = 'story';
+   }
+ 
+diff --git a/node_modules/@storybook/core-client/dist/esm/preview/url.js b/node_modules/@storybook/core-client/dist/esm/preview/url.js
+index d8af28f..dea0695 100644
+--- a/node_modules/@storybook/core-client/dist/esm/preview/url.js
++++ b/node_modules/@storybook/core-client/dist/esm/preview/url.js
+@@ -105,7 +105,8 @@ export var getSelectionSpecifierFromPath = function getSelectionSpecifierFromPat
+   var globals = typeof query.globals === 'string' ? parseArgsParam(query.globals) : undefined;
+   var viewMode = getFirstString(query.viewMode);
+ 
+-  if (typeof viewMode !== 'string' || !viewMode.match(/docs|story/)) {
++  // This fix is available on @storybook v6.5.0-alpha.2. Remove It if upgrate to v6.5.0 (when it stable)
++  if (['settings', 'about', 'release'].includes(viewMode)) {
+     viewMode = 'story';
+   }
+ 
+diff --git a/node_modules/@storybook/core-client/dist/modern/preview/url.js b/node_modules/@storybook/core-client/dist/modern/preview/url.js
+index 3fad9fb..b941f14 100644
+--- a/node_modules/@storybook/core-client/dist/modern/preview/url.js
++++ b/node_modules/@storybook/core-client/dist/modern/preview/url.js
+@@ -85,7 +85,8 @@ export const getSelectionSpecifierFromPath = () => {
+   const globals = typeof query.globals === 'string' ? parseArgsParam(query.globals) : undefined;
+   let viewMode = getFirstString(query.viewMode);
+ 
+-  if (typeof viewMode !== 'string' || !viewMode.match(/docs|story/)) {
++  // This fix is available on @storybook v6.5.0-alpha.2. Remove It if upgrate to v6.5.0 (when it stable)
++  if (['settings', 'about', 'release'].includes(viewMode)) {
+     viewMode = 'story';
+   }
+ 

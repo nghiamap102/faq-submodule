@@ -1,0 +1,1 @@
+{"version":3,"file":"AdministrativeMapContext.d.ts","sourceRoot":"","sources":["../../../../src/components/bases/Administrative/AdministrativeMapContext.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAwB,MAAM,OAAO,CAAC;AAU7C,QAAA,MAAM,wBAAwB,mBAAoB,CAAC;AAEnD,QAAA,MAAM,yBAAyB,EAAE,KAAK,CAAC,iBActC,CAAC;AAEF,OAAO,EAAE,wBAAwB,EAAE,yBAAyB,EAAE,CAAC"}

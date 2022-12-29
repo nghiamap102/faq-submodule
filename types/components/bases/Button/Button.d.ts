@@ -1,0 +1,41 @@
+import React, { ReactElement, ReactNode, Ref } from 'react';
+import { Tooltip2Props } from '../../../components/bases/Tooltip';
+import './Button.scss';
+export declare type ButtonVariant = 'fill' | 'fade' | 'outline';
+export declare type ButtonColor = 'default' | 'primary' | 'success' | 'info' | 'danger' | 'warning';
+export declare type ButtonProps = {
+    innerRef?: Ref<HTMLButtonElement>;
+    isLoading?: boolean;
+    loadingText?: string | ReactElement;
+    text?: string | ReactElement;
+    iconType?: 'solid' | 'regular' | 'light';
+    iconLocation?: 'left' | 'right';
+    onlyIcon?: boolean;
+    icon?: string;
+    iconSize?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+    isDefault?: boolean;
+    className?: string;
+    color?: ButtonColor;
+    size?: 'xs' | 'sm' | 'md' | 'lg';
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+    disabled?: boolean;
+    tooltip?: ReactNode;
+    tooltipPosition?: Tooltip2Props['placement'];
+    hideTooltipArrow?: boolean;
+    isRound?: boolean;
+    pressed?: boolean;
+    variant?: ButtonVariant;
+    fullWidth?: boolean;
+    minWidth?: number;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+declare const Button: React.FC<ButtonProps>;
+export declare type EmptyButtonProps = Omit<ButtonProps, 'variant' | 'pressed'>;
+declare const EmptyButton: React.FC<EmptyButtonProps>;
+declare type IconButtonVariant = ButtonVariant | 'empty';
+export declare type IconButtonProps = Omit<ButtonProps, 'variant' | 'onlyIcon' | 'text' | 'loadingText' | 'iconLocation' | 'fullWidth' | 'minWidth'> & {
+    variant?: IconButtonVariant;
+};
+declare const IconButton: React.FC<IconButtonProps>;
+export { Button, EmptyButton, IconButton };
+export declare const isCallBackRef: <E extends HTMLElement = HTMLElement>(ref: ((instance: E | null) => void) | React.MutableRefObject<E | null>) => ref is (instance: E | null) => void;
+//# sourceMappingURL=Button.d.ts.map

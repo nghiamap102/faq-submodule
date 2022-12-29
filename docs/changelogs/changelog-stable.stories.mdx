@@ -1,0 +1,11 @@
+import { Description } from '@storybook/addon-docs/blocks';
+import changelog from '../../CHANGELOG.md';
+
+<Meta
+    title='Guides/Changelog/Stable'
+    parameters={{ previewTabs: { canvas: { hidden: true } }}}
+/>
+
+<div className="change-log-content">
+    <Description markdown={changelog} />
+</div>

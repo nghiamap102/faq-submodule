@@ -1,0 +1,1 @@
+{"version":3,"file":"Ratio.d.ts","sourceRoot":"","sources":["../../../../src/components/bases/Ratio/Ratio.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAwB,MAAM,OAAO,CAAC;AAC7C,OAAO,cAAc,CAAC;AAEtB,oBAAY,UAAU,GAAG;IACrB,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,KAAK,EAAE,MAAM,CAAC;IACd,MAAM,EAAE,MAAM,CAAC;CAClB,CAAA;AAMD,eAAO,MAAM,KAAK,EAAE,KAAK,CAAC,EAAE,CAAC,UAAU,CAgBtC,CAAC"}

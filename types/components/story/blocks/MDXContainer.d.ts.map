@@ -1,0 +1,1 @@
+{"version":3,"file":"MDXContainer.d.ts","sourceRoot":"","sources":["../../../../src/components/story/blocks/MDXContainer.tsx"],"names":[],"mappings":";AACA,OAAO,EAAE,YAAY,EAAE,MAAM,mBAAmB,CAAC;AAGjD,aAAK,kBAAkB,GAAG;IACtB,QAAQ,EAAE,KAAK,CAAC,YAAY,CAAA;IAC5B,OAAO,EAAE,YAAY,CAAA;CACxB,CAAA;AAED;;;;GAIG;AAEH,eAAO,MAAM,YAAY,0BAA2B,kBAAkB,KAAG,WAQxE,CAAC"}

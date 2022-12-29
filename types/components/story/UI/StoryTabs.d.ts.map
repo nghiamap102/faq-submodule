@@ -1,0 +1,1 @@
+{"version":3,"file":"StoryTabs.d.ts","sourceRoot":"","sources":["../../../../src/components/story/UI/StoryTabs.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAkE,YAAY,EAAE,MAAM,OAAO,CAAC;AAGrG,OAAO,kBAAkB,CAAC;AAE1B,oBAAY,cAAc,GAAG;IACzB,UAAU,EAAE,YAAY,CAAA;IACxB,WAAW,EAAE,KAAK,CAAC,iBAAiB,GAAG,KAAK,CAAC,qBAAqB,GAAE,MAAM,CAAA;CAC7E,CAAA;AAKD,eAAO,MAAM,SAAS,UAAW,cAAc,KAAG,WAiDjD,CAAC"}
