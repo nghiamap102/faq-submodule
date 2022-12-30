@@ -1,0 +1,29 @@
+{
+    "name": "@vbd/faq",
+    "version": "0.7.1",
+    "description": "",
+    "main": "dist/vui.js",
+    "types": "types",
+    "scripts": {
+        "storybook": "start-storybook --no-manager-cache -p 6006",
+        "build-storybook": "build-storybook",
+        "build": "tsc && tsc-alias && rollup -c",
+        "start": "concurrently --kill-others \"tsc -w & tsc-alias -w\" \"rollup -w -c\"",
+        "postinstall": "patch-package",
+        "prepare": "husky install",
+        "bundle-size": "cat dist/vui.js | gzip | wc -c",
+        "doctoc": "doctoc --title '## Table of Contents' --update-only ./src/components"
+    },
+    "engines": {
+        "node": ">=12.0.0"
+    },
+    "keywords": [],
+    "author": "Vietbando",
+    "license": "MIT",
+    "np": {
+        "contents": [
+            "dist",
+            "types"
+        ]
+    }
+}

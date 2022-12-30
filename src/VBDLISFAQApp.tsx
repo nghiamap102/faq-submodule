@@ -22,7 +22,7 @@ const VBDLISFAQApp = () => {
                 if (newDate > parseInt(Cookies.get('expires_in')) + 84000) {
                     refreshToken();
                 }
-            }, 5000)
+            }, 5000);
         }
 
     }, [accessToken])
@@ -42,11 +42,12 @@ const VBDLISFAQApp = () => {
         }
     }
 
-    const saveAuthen = (res: any) => {
+    const saveAuthen = (res: any) =>
+    {
         res['access_token'] && Cookies.set('access_token', res['access_token']);
         res['refresh_token'] && Cookies.set('refresh_token', res['refresh_token']);
         res['expires_in'] && Cookies.set('expires_in', (new Date().getTime() + parseInt(res['expires_in']) * 1000).toString());
-    }
+    };
 
     const renderWithAccessToken = () => {
         if (accessToken) {
